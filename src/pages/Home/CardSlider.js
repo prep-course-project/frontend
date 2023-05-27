@@ -42,12 +42,6 @@ export default function Cities() {
           <h3>Abu Dhabi</h3>
           </div>
       </Link>
-          <Link to = '/propertyList/:Abu-Dhabi'>
-          <div className="city">
-          <img src={img4} alt="" />
-            <h3>Abu Dhabi</h3>
-            </div>
-        </Link>
       </div>
     </div>
   )

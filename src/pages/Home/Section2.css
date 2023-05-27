@@ -1,0 +1,38 @@
+.section2{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     margin-top: 150px
+}
+
+.section2 img{
+     width: 400px;
+     height: 400px;
+     object-fit: cover;
+     border-radius: 20px;
+}
+
+.section2 .text{
+     display: flex;
+     flex-direction: column;
+     width: 400px;
+     gap: 20px;
+
+}
+
+.text h2{
+     font-size: 35px;
+}
+
+.img1{
+     position: relative;
+     left: 300px;
+     top: 50px;
+}
+
+.text p {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+}
