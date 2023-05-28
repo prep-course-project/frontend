@@ -9,7 +9,6 @@ import Footer from './Components/Footer/Footer';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import PropertyList from './pages/PropertyList/PropertyList';
 import Favorite from './pages/Favorite/Favorite'
-import PropertyDetail from './pages/DetailsPage/DetailsPage'
 function App() {
   return (
     <div className="App">
@@ -18,7 +17,7 @@ function App() {
       <Route path='/' element={<Home/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite/>}/>
-      <Route path='/property/details/:id' element={<PropertyDetail/>}/>
+      <Route path='/property/details/:id' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/> 
