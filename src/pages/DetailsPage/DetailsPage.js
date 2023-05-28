@@ -31,7 +31,7 @@ function DetailsPage() {
                         </Carousel>
 
                     </section>
-
+                   
                 </div>
                 <section className='allDeitalis' >
 
@@ -39,7 +39,7 @@ function DetailsPage() {
                     <p id='purpose'>{data.purpose.toUpperCase()} </p>
                     
                         <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | {data.area} Sq Ft  <i class="fa-solid fa-square"></i>
-                                                   
+                                                 
                          </div>
                     <p className='titelP'>{data.title}  </p>
                     <h6> <i class="fa-solid fa-location-dot"></i> location:{data.location.map(location => {
