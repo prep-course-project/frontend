@@ -11,7 +11,7 @@ function MainCards({data}) {
        <div className='main-cards-icons'>
         <p> <i class="fa-solid fa-bed"></i> {data.rooms} </p>
         <p> <i class="fa-solid fa-bath"></i> {data.baths}  </p>
-        <p>  <i class="fa-solid fa-ruler-combined"></i> {Math.floor(data.area)}   </p>
+        <p>  <i class="fa-solid fa-ruler-combined"></i> {Math.floor(data.area)}</p>
        </div>
         <br />
         <br />
@@ -19,7 +19,7 @@ function MainCards({data}) {
 
         {/* <Button variant="primary"> </Button>  */}
         <button> Detalis </button>
-       <p>  Price {data.price} AED  </p>
+       <p>  Price {data.price} AED</p>
         </div>
       </Card.Body>
     </Card>
