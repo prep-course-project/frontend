@@ -8,6 +8,8 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
 import Favorite from './pages/Favorite/Favorite';
+import Slide from './SlideShow/Slide';
+
 function App() {
   return (
     <div className="App">
@@ -21,6 +23,8 @@ function App() {
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/>
+      <Home/>
+      {/* <Slide/> */}
     </div>
   );
 }

@@ -4,7 +4,7 @@ import img6 from './assets/img6.jpg'
 import './Section2.css'
 export default function Serction2() {
   return (
-    <div className='section2'>
+    <div className='section2-home'>
           <div className="text">
                <h2>We're Here To Hlep You Find Your Dream House</h2>
                <div>

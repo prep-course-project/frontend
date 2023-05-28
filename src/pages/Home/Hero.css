@@ -3,21 +3,19 @@ body{
      padding: 0;
 }
 
-.hero{
+.hero-home{
      width: 100%;
      height: 100vh;
      position: relative;
 }
 
-video{
+.hero-home video{
      width: 100%;
      object-fit: cover;
      height: 100vh;
-
-
 }
 
-.contant{
+.contant-home{
      position: absolute;
      width: 50%;
      height: 100vh;
@@ -29,17 +27,17 @@ video{
      justify-content: center;
 }
 
-.contant p{
+.contant-home p{
      font-size: 20px;
 }
 
-.contant .btn{
+.contant-home .btn{
      display: flex;
      padding-left: 0;
 
 }
 
-.contant .btn button {
+.contant-home .btn button {
      border-radius: 8px;
      border: none;
      padding: 10px;
@@ -47,7 +45,7 @@ video{
      width: 65px;
 }
 
-.section1{
+.hero-home .section1{
      display: flex;
      justify-content: center;
      align-items: center;
@@ -57,7 +55,7 @@ video{
      top: -150px;
 }
 
-.section1 .card{
+.hero-home .section1 .card{
      background-color: white;
      width: 250px;
      height: 150px;
@@ -69,15 +67,15 @@ video{
      padding : 25px
 }
 
-.section1 .card h3{
+.hero-home .section1 .card h3{
      font-size: 20px;
 }
 
-.section1 .card .icon{
+.hero-home .section1 .card .icon{
      font-size: 30px;
 }
 
-.section1 .card::after{
+.hero-home .section1 .card::after{
      content: "";
      width: 100px;
      background-color: black;
