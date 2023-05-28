@@ -24,7 +24,6 @@ function DetailsPage() {
                                             src={item.url}
                                             alt="Second slide"
                                         />
-
                                     </Carousel.Item>
                                 )
                             })}
