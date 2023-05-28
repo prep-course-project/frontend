@@ -14,21 +14,21 @@ export default function Cities() {
       <h1>We are avilable in many Well-known Cities</h1>
       
       <div className="cards">
-      <Link to = '/propertyList/:Dubai'>
+      <Link to = '/propertyList/:Dubai' className='a'>
         <div className="city">
           <img src={img1} alt="" />
           <h3>Dubai</h3>
            </div>
       </Link>
 
-        <Link to = '/propertyList/:Ajman'>
+        <Link to = '/propertyList/:Ajman'className='a'>
         <div className="city">
         <img src={img2} alt="" />
           <h3>Ajman</h3>
           </div>
       </Link>
 
-        <Link to = '/propertyList/:Fujairah'>
+        <Link to = '/propertyList/:Fujairah'className='a'>
         <div className="city">
         <img src={img3} alt="" />
           <h3>Fujairah</h3>
@@ -36,7 +36,7 @@ export default function Cities() {
           </div>
       </Link>
       
-        <Link to = '/propertyList/:Abu-Dhabi'>
+        <Link to = '/propertyList/:Abu-Dhabi'className='a'>
         <div className="city">
         <img src={img4} alt="" />
           <h3>Abu Dhabi</h3>

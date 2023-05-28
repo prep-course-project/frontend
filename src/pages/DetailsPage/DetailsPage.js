@@ -37,7 +37,7 @@ function DetailsPage() {
                     <div className='icons'> <p>  Price {data.price} AED  </p>
                     <p id='purpose'>{data.purpose.toUpperCase()} </p>
                     
-                        <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | {data.area} Sq Ft  <i class="fa-solid fa-square"></i>
+                        <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | {data.area} Sq Ft  <i class="fa-solid fa-ruler-combined"></i>
                                                  
                          </div>
                     <p className='titelP'>{data.title}  </p>
@@ -70,7 +70,7 @@ function DetailsPage() {
                                     )
                                 })}    </h6>
                                 <p> <i class="fa-solid fa-house"></i> purpose : {data.purpose} </p>
-                                <p>  <i class="fa-solid fa-square"></i>Area: {data.area} Sq Ft </p>
+                                <p>  <i class="fa-solid fa-ruler-combined"></i> Area: {data.area} Sq Ft </p>
 
                             </div>
                         </section>
@@ -108,6 +108,9 @@ function DetailsPage() {
                         </div>
                     </div>
                 </section >
+            
+            { data.videos.length && (
+
             <section className='video-section'>
                     <p> Video </p>
                 <div className='video-div'>
@@ -115,6 +118,8 @@ function DetailsPage() {
                 </div>
                 
             </section>
+
+            )}
             <section className='cards-section'>
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>

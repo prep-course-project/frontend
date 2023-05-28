@@ -8,21 +8,22 @@ import Home from './pages/Home/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
-import Favorite from './pages/Favorite/Favorite';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
+import Favorite from './pages/Favorite/Favorite';
+
 function App() {
   return (
-    <div className="App"> 
-    <Header/>
-    <Routes>
-    <Route path='/' element={<Home/>}/>
-    <Route path='/propertyList' element ={<PropertyList/>}/>
-    <Route path='/favorites' element={<Favorite/>}/>
-    <Route path='/property/details' element={<DetailsPage/>}/>
-    <Route path='/About' element = {<About />}/>
-    </Routes>
-    <Footer/>
-  </div>
+    <div className="App">
+      <Header/>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/propertyList' element ={<PropertyList/>}/>
+      <Route path='/favorites' element={<Favorite/>}/>
+      <Route path='/property/details' element={<DetailsPage/>}/>
+      <Route path='/About' element = {<About />}/>
+      </Routes>
+      <Footer/>
+    </div>
   );
 }
 

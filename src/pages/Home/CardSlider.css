@@ -6,7 +6,8 @@
      width: 100%;
      /* height: 600px; */
      margin-top: 150px;
-     gap: 30px
+     gap: 30px;
+     
 }
 
 .cities h1{
@@ -14,7 +15,7 @@
      font-size: 30px;
      text-align: center;
 }
-.cards{
+.cities .cards{
      display: flex;
      justify-content: center;
      align-items: center;
@@ -22,21 +23,28 @@
      position: relative;
 }
 
-.city img{
+.cards .city img{
      width: 250px;
      height: 350px;
      border-radius: 20px;
+     transition: 0.5s;
+
 }
 
-.city h3{
+.cities .cards .city h3{
      position: relative;
      top: -300px;
      display: flex;
      justify-content: center;
 }
 
-a {
+.a {
      text-decoration: none;
      color: white;
+     transition: 1s;
 
+}
+
+.cards .city img:hover{
+     transform: translateY(-10px);
 }

@@ -54,8 +54,10 @@
         }
 
         i {
-            font-size: 20px;
-            color: rgb(48, 35, 235);
+            color:rgb(71,120,183);
+            background-color: rgb(204,220,236);
+            padding: 8px;
+            border-radius: 50%;
         }
 
         p {
@@ -179,8 +181,10 @@
 
     // filter: drop-shadow(0 0 5px rgba(10, 0, 0, 0.3));
     i {
-        font-size: 18px;
-        color: rgb(48, 35, 235);
+        color:rgb(71,120,183);
+        background-color: rgb(204,220,236);
+        padding: 8px;
+        border-radius: 50%;
     }
 
     .contact-info {
@@ -207,8 +211,10 @@
 
 
     i {
-        font-size: 18px;
-        color: rgb(48, 35, 235);
+        color:rgb(71,120,183);
+        background-color: rgb(204,220,236);
+        padding: 8px;
+        border-radius: 50%;
     }
 
     .Property-info {
@@ -265,13 +271,19 @@
     width: 100%;    
     #cards-titel{
         font-size: 24px;
-        font-weight: 700;
+        font-weight: 700;    
         font-family: system-ui;
         padding: 15px 25px;
         
         border-bottom: 2px solid gray;
     }
-    
+    button{
+        background-color: rgb(1,73,155);
+        color: #fff;
+        border-radius: 20px;
+        padding: 10px;
+        border: none;
+    }
     .cards-div{
         display: flex;
         justify-content: space-around;

@@ -1,0 +1,31 @@
+.main-cards-icons{
+    display: flex;
+    p{
+        width: 30%;
+    }
+  i{
+    color:rgb(71,120,183);
+    background-color: rgb(204,220,236);
+    padding: 8px;
+    border-radius: 50%;
+  }
+  
+}
+#location{
+    color:rgb(71,120,183);
+    background-color: rgb(204,220,236);
+    // padding: 6px;
+    // border-radius: 60%;
+    font-size: 18px;
+}
+.main-cards-price{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    p{
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+}
