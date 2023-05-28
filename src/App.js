@@ -8,23 +8,21 @@ import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
 import Favorite from './pages/Favorite/Favorite';
+import DetailsPage from './pages/DetailsPage/DetailsPage'
 import Slide from './SlideShow/Slide';
 
 function App() {
   return (
     <div className="App">
-      {/* comment from mohamad */}
       <Header/>
       <Routes>
-      <Route path='/' element={<DetailsPage/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite/>}/>
       <Route path='/property/details' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/>
-      <Home/>
-      {/* <Slide/> */}
     </div>
   );
 }
