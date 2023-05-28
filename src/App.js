@@ -21,8 +21,7 @@ function App() {
       <Route path='/property/details/:id' element={<PropertyDetail/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
-      <Footer/>
-      <DetailsPage />
+      <Footer/> 
     </div>
   );
 }
