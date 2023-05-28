@@ -4,7 +4,7 @@ import React from 'react';
 import ReactPlayer from 'react-player';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
-import Slider from './section/slider/Slider';
+import MainCards from '../../Components/mainCards/mainCards';
 function DetailsPage() {
 
     return (
@@ -12,6 +12,7 @@ function DetailsPage() {
         <div className='main-div-for-detalis'>
 
             <div className='contant'>
+                
                 <div className='top-section'>
                     <section className="slider">
                         <Carousel fade>
@@ -38,8 +39,7 @@ function DetailsPage() {
                     <p id='purpose'>{data.purpose.toUpperCase()} </p>
                     
                         <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | {data.area} Sq Ft  <i class="fa-solid fa-square"></i>
-                            
-                        
+                                                   
                          </div>
                     <p className='titelP'>{data.title}  </p>
                     <h6> <i class="fa-solid fa-location-dot"></i> location:{data.location.map(location => {
@@ -119,16 +119,14 @@ function DetailsPage() {
             <section className='cards-section'>
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
-                    
-            <Slider />
-            <Slider />
-            <Slider />
-                    
-                    </div>               
+                    <MainCards data={data}/>
+                    <MainCards  data={data}/>
+                    <MainCards  data={data}/>
+               </div>               
 
             </section>
             
-            
+          
             </div>
         </div>
     );

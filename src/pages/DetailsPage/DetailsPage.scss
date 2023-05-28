@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    background-color:rgb(247,248,249);
+   
 }
 
 .contant {
@@ -12,7 +13,8 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
+    // min-height: 500vh;
+    gap: 5px;
 
 }
 
@@ -32,15 +34,14 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 110vh;
-    gap: 19px;
+    gap: 20px;
 
     .icons {
         margin-left: 10px;
-        margin-bottom: 25px;
         font-weight: 700;
         #purpose{
-            background-color: #625f5f;
-            color: white;
+            background-color: #c7c1c1dc;
+            // color: white;
             padding: 5px;
             width: fit-content;
             margin-bottom: 5px;
@@ -52,7 +53,7 @@
             font-size: 18px;
         }
 
-        svg {
+        i {
             font-size: 20px;
             color: rgb(48, 35, 235);
         }
@@ -104,7 +105,6 @@
 
     .test {
         display: flex;
-        justify-content: space-between;
         gap: 10px;
 
     }
@@ -116,10 +116,12 @@
         // gap: 50px;
         margin-top: 15px;
 
+        
         .Features1 {
+            margin-top: 25px;
             width: 100%;
             border-radius: 10px;
-            background-color: #D6E8DB;
+            background: #fff;
             padding: 5px;
             font-size: 24px;
             font-weight: 700;
@@ -134,16 +136,19 @@
             border-radius: 10px;
             justify-content: space-between;
             flex-wrap: wrap;
-            background-color: #D6E8DB;
+            background: #fff;
 
-            svg {
-                font-size: 17px;
-                color: rgb(5 249 86);
-            }
+
+           
 
             margin-bottom: 10px;
 
             p {
+                i {
+                    font-size: 17px;
+                    color: rgb(5 249 86);
+                }
+                color:black;
                 font-size: 18px;
                 font-weight: 600;
                 width: 30%;
@@ -170,16 +175,17 @@
     height: 195px;
     width: 35%;
     font-family: system-ui;
+    gap: 10px;
 
     // filter: drop-shadow(0 0 5px rgba(10, 0, 0, 0.3));
-    svg {
+    i {
         font-size: 18px;
         color: rgb(48, 35, 235);
     }
 
     .contact-info {
         // width: 35% ;
-        background-color: #D6E8DB;
+        background: #fff;
         font-size: 16px;
         padding: 6px;
         font-weight: 600;
@@ -200,14 +206,14 @@
     font-family: system-ui;
 
 
-    svg {
+    i {
         font-size: 18px;
         color: rgb(48, 35, 235);
     }
 
     .Property-info {
         // width: 40% ;
-        background-color: #BACDDB;
+        background: #fff;
         font-size: 16px;
         padding: 6px;
         font-weight: 600;

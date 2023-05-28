@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import DetailsPage from './pages/DetailsPage/DetailsPage';
 import PropertyList from './pages/PropertyList/PropertyList';
 import Favorite from './pages/Favorite/Favorite';
 function App() {
@@ -15,7 +14,7 @@ function App() {
       {/* comment from mohamad */}
       <Header/>
       <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/' element={<DetailsPage/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite/>}/>
       <Route path='/property/details' element={<DetailsPage/>}/>
