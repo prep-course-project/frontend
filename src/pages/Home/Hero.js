@@ -3,7 +3,6 @@ import video from "./assets/video.mp4"
 import '../Home/Hero.css'
 import CardSlider from './CardSlider'
 
-
 export default function Hero() {
   return (
     <div className='hero'>
