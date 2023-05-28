@@ -9,7 +9,6 @@ import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Favorite from './pages/Favorite/Favorite';
-import Slide from './SlideShow/Slide';
 
 function App() {
   return (
