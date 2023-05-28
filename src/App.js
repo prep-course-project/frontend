@@ -1,11 +1,13 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './pages/Home/Home';
+import Slide from './SlideShow/Slide';
 
 function App() {
   return (
     <div className="App">
-      <h1>app</h1>
+      <Home/>
+      {/* <Slide/> */}
     </div>
   );
 }

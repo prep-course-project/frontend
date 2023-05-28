@@ -1,4 +1,4 @@
-.section2{
+.section2-home{
      width: 100%;
      display: flex;
      justify-content: center;
@@ -6,14 +6,14 @@
      margin-top: 150px
 }
 
-.section2 img{
+.section2-home img{
      width: 400px;
      height: 400px;
      object-fit: cover;
      border-radius: 20px;
 }
 
-.section2 .text{
+.section2-home .text{
      display: flex;
      flex-direction: column;
      width: 400px;
@@ -21,17 +21,17 @@
 
 }
 
-.text h2{
+.section2-home .text h2{
      font-size: 35px;
 }
 
-.img1{
+.section2-home .img1{
      position: relative;
      left: 300px;
      top: 50px;
 }
 
-.text p {
+.section2-home .text p {
      display: flex;
      gap: 10px;
      align-items: center;

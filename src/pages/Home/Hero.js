@@ -6,9 +6,9 @@ import CardSlider from './CardSlider'
 
 export default function Hero() {
   return (
-    <div className='hero'>
+    <div className='hero-home'>
           <video className='video' src={video} loop autoPlay muted></video>
-          <div className='contant'>
+          <div className='contant-home'>
                <h1>Find Your Next Dream Home</h1>
                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum soluta error vitae? Explicabo blanditiis voluptatum quaerat distinctio voluptate animi, aut provident pariatur mollitia? Vero minus rem placeat ullam sit quis assumenda dignissimos expedita error inventore.</p>
                <div className="btn">
