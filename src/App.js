@@ -12,6 +12,7 @@ import Favorite from './pages/Favorite/Favorite';
 function App() {
   return (
     <div className="App">
+      {/* comment from mohamad */}
       <Header/>
       <Routes>
       <Route path='/' element={<Home/>}/>
