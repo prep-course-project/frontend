@@ -7,13 +7,18 @@ import Home from './pages/Home/Home';
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
-
+import PropertyList from './pages/PropertyList/PropertyList';
+import Favorite from './pages/Favorite/Favorite'
+import PropertyDetail from './pages/DetailsPage/DetailsPage'
 function App() {
   return (
     <div className="App">
       <Header/>
       <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/propertyList' element ={<PropertyList/>}/>
+      <Route path='/favorites' element={<Favorite/>}/>
+      <Route path='/property/details/:id' element={<PropertyDetail/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/>
