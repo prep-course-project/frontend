@@ -1,12 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './DetailsPage.scss'
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
-import MainCards from '../../Components/mainCards/mainCards';
+import MainCards from '../../Components/mainCard/mainCard';
+import axios from 'axios';
 function DetailsPage() {
-
+useEffect(()=>{
+    axios.get('/')
+    .then(res=>console.log(res));
+},[])
     return (
 
         <div className='main-div-for-detalis'>
