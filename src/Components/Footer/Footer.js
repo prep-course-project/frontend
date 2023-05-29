@@ -3,10 +3,7 @@ import React from 'react';
 import { Nav } from 'react-bootstrap';
 import './Footer.css';
 import { Link } from 'react-router-dom';
-
-
 const Footer = () => {
-
 return(
 <footer className="footer">
   <div className="big-container">
