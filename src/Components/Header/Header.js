@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 export default function Header() {
   return (
-    <Navbar className="w-50" style={{width:"50%"}} bg="light" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Elite Sands</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
