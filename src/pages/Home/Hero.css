@@ -28,13 +28,22 @@ body{
      justify-content: center;
 }
 
+.Hero-contant{
+     color: rgba(255, 255, 255, 0.86);
+     font-weight: bold;
+     font-family: 'Gill Sans';
+}
+
 .hero-home p{
      font-size: 20px;
+     font-family: 'Gill Sans';
+     color: rgba(255, 255, 255, 0.86);
 }
 
 .hero-home .btn{
      display: flex;
      padding-left: 0;
+     border: none;
 }
 
 .hero-home .btn .btn-hero{
@@ -43,6 +52,23 @@ body{
      padding: 10px;
      margin-right: 5px;
      width: 65px;
+     transition: 0.5s ease;
+     color: #709ac8;
+     font-size: 18px
+     
+}
+
+
+
+.hero-home .rent:hover{
+     background-color: #005f8b;
+     color: white;
+     font-size: 18px;
+}
+.hero-home .sell:hover{
+     background-color: #005f8b;
+     color: white;
+     font-size: 18px;
 }
 
 .hero-home .section1{
@@ -64,7 +90,8 @@ body{
      gap: 20px;
      align-items: start;
      justify-content: center;
-     padding : 25px
+     padding : 25px;
+     color: #709ac8;
 }
 
 .hero-home .section1 .card h3{
@@ -78,11 +105,12 @@ body{
 .hero-home .section1 .card::after{
      content: "";
      width: 100px;
-     background-color: black;
-     border: 2px solid black;
+     border: 2px solid #709ac8;
      position: absolute;
      top: 120px;
      right: 15px;
+     color: #709ac8;
+
 }
 
 @media screen and (max-width : 700px){
@@ -109,6 +137,12 @@ body{
           justify-content: center;
           flex-wrap: wrap;
      }
+
+     
+
+.hero-home p{
+     font-size: 15px;
+}
      
 
 }
