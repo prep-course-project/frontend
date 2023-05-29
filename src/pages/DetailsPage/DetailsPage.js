@@ -1,37 +1,64 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './DetailsPage.scss'
 import React ,{useState,useEffect}from 'react';
-import ReactPlayer from 'react-player';
+import { useParams } from 'react-router-dom';
+// import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
-import MainCards from '../../Components/mainCard/mainCard';
+import MainCards from '../../Components/mainCards/mainCards';
+import FavCards from '../../Components/favCards/favCards'; 
 function DetailsPage() {
-    const [data1,setdata]=useState()  
+    const { id } = useParams()
+    // console.log(id)
+    
+    // const [data,setdata]=useState()  
+    const [SameCity,setSameCity]=useState()  
+
+    const [loaded,setIsLoaded]=useState(false)
+    const [citLloaded,setCityIsLoaded]=useState(false)
+
      
-        const fetchData = async () =>{
-            try{
-            const theC= await axios.get(`http://localhost:5000`)
-            setdata(theC.data)
-            console.log(theC.data)
-            }catch(error){
-                console.log(error)
-            }
-        } 
+        // const fetchData = async () =>{
+        //     try{
+        //     const cityData= await axios.get(`http://localhost:5000/properites/detail?id=6787227`)
+        //     setdata(cityData.data)
+        //     console.log(cityData.data)
+        //     setIsLoaded(true)
+        //     fetchCity()
+        //     }catch(error){
+        //         console.log(error)
+        //     }
+        // } 
+        // const fetchCity = async () =>{
+        //     // const citylocation =data.location[1]
+        //     try{
+        //         const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=Dubia`)
+        //         setSameCity(theCity.data.hits)
+        //         console.log(theCity)
+        //     setCityIsLoaded(true)
+        //     }catch(error){
+        //         console.log(error)
+        //     }
+        // } 
         
-        useEffect(() => {
-            fetchData();
-        }, [])
+        // useEffect(() => {
+        //     fetchData();
+            
+        // }, [])
 
     return (
 
         <div className='main-div-for-detalis'>
+           
+        {/* {loaded && ( */}
 
+           
             <div className='contant'>
-                
+
                 <div className='top-section'>
                     <section className="slider">
                         <Carousel fade>
@@ -56,7 +83,7 @@ function DetailsPage() {
                     <div className='icons'> <p>  Price {data.price} AED  </p>
                     <p id='purpose'>{data.purpose.toUpperCase()} </p>
                     
-                        <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | {data.area} Sq Ft  <i class="fa-solid fa-ruler-combined"></i>
+                        <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | <i class="fa-solid fa-ruler-combined"></i> {Math.floor(data.area)} Sq Ft  
                                                  
                          </div>
                     <p className='titelP'>{data.title}  </p>
@@ -70,7 +97,7 @@ function DetailsPage() {
                         <section className='main-info'>
                             <div className='contact-info'> <p> <i class="fa-solid fa-address-book"></i>contcat Information:</p> </div>
 
-                            <div className='contact-info'>
+                            <div className='contact-info'>  
                                 <p> <i class="fa-solid fa-user"></i> Owner Name: {data.contactName}    </p>
                                 <p> <i class="fa-solid fa-phone"></i> Phone : {data.phoneNumber.phone} </p>
                                 <p> <i class="fa-brands fa-whatsapp"></i> whatsapp: {data.phoneNumber.whatsapp}</p>
@@ -128,7 +155,7 @@ function DetailsPage() {
                     </div>
                 </section >
             
-            { data.videos.length && (
+            {/* { data.videos.length && (
 
             <section className='video-section'>
                     <p> Video </p>
@@ -138,13 +165,15 @@ function DetailsPage() {
                 
             </section>
 
-            )}
+            )} */}
             <section className='cards-section'>
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
+                 
+            
                     <MainCards data={data}/>
-                    <MainCards  data={data}/>
-                    <MainCards  data={data}/>
+                    {/* <MainCards  data={data}/>
+                    <MainCards  data={data}/> */}
                </div>               
 
             </section>
@@ -153,7 +182,13 @@ function DetailsPage() {
                     <div className='cards-div'>
                         
                     </div>
+                    
                     <div>
+                  
+ 
+                     
+{/*                          
+
                         <Swiper
                             style={{ width: "700px", marginTop: "100px" }}
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -164,25 +199,23 @@ function DetailsPage() {
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
-                        
-                            <SwiperSlide key={data.id}><MainCards data={data}  alt="" style={{ width: "100%", height: "250px", objectFit: "contain" }} /></SwiperSlide> 
-                            {/* {data1.photos.map(item => {
-                                return (
-                                    <div>
-                                        console.log(item)
-                                     <SwiperSlide key={item.id}><img src={item.photos.url} alt="" style={{ width: "100%", height: "250px", objectFit: "contain" }} /></SwiperSlide> 
+                        {citLloaded && ( SameCity.map(item =>{
+                            return (
 
-                                     </div>
-                                )
-                            })} */}
+                                <SwiperSlide key={item.id}><MainCards data={item} style={{width:"100%", height:"250px" , objectFit:"contain"}}/></SwiperSlide>
+                            )
+                        }))}
+                           
                           
-                        </Swiper>
-
+                        </Swiper> */}
+                        <FavCards data={data}/>
                     </div>
                 </section>
           
             </div>
+            {/* )} */}
         </div>
+       
     );
 }
 

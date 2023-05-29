@@ -14,6 +14,7 @@
      width: 550px;
      font-size: 30px;
      text-align: center;
+     color: #709ac8;
 }
 .cities .cards{
      display: flex;
@@ -42,6 +43,7 @@
      flex-wrap: wrap;
      font-size: 30px;
      font-weight: 500;
+     /* color: #ffffffba; */
 }
 
 .cities .cards .city h4{
@@ -90,6 +92,10 @@
           gap: 30px;
           flex-wrap: wrap;
           
+     }
+
+     .cities h1{
+          width: 350px;
      }
 
 }

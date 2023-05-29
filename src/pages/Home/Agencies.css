@@ -1,0 +1,52 @@
+.swiper-cont{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-self: center;
+     flex-wrap: wrap;
+     margin: 5 0px 0 0 0;
+     padding: 70px 0;
+     gap: 50px;
+
+}
+
+
+.swiper-cont h3{
+     font-size: 40px;
+     color: #709ac8;
+     font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+     font-weight: 500;
+
+}
+.swiper-agen{
+     width: 75% ;
+     box-shadow: rgba(95, 152, 199, 0.24) 0px 3px 8px;
+     border-radius: 10px;
+     padding: 30px 20px;
+}
+
+.card-agen{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: white;
+     box-shadow: rgba(95, 152, 199, 0.24) 0px 2px 8px 0px;
+     border-radius: 10px;
+
+}
+
+.card-agen:hover{
+     transform: translateZ(20px)
+ 
+}
+
+.agen-div img{
+     padding: 20px;
+}
+
+
+@media screen and (max-width : 540px) and (min-width : 300px){
+     .swiper-cont h3 {
+          padding-left: 50px;
+     }
+}

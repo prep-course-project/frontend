@@ -1,6 +1,6 @@
-
+import React from 'react';
 import Card from 'react-bootstrap/Card';
-import './mainCards.scss'
+// import './mainCards.scss'
 import { Link } from 'react-router-dom';
 function MainCard({data}) {
   return (

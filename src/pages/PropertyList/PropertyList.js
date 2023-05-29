@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useRef, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import MainCard from '../../Components/mainCard/mainCard';
+import MainCard from '../../Components/mainCards/mainCards';
 import './PropertyList.css'
 import ToggleCheckbox from './ToggleCheckbox'
 import filterReducer from '../../services/FilterReducer'
