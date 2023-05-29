@@ -1,6 +1,7 @@
 
 import Card from 'react-bootstrap/Card';
 import './mainCards.scss'
+import { Link } from 'react-router-dom';
 function MainCard({data}) {
   return (
     <Card style={{ width: '350px',height:'450px',minWidth:'350px',minHeight:'450px' }} className='main__card'>
@@ -13,7 +14,7 @@ function MainCard({data}) {
         <br />
         <div className='main-cards-price'>
         {/* <Button variant="primary"> </Button>  */}
-        <button> Detalis </button>
+        <Link to={`/property/details/:${data.externalId}`}><button > Detalis </button></Link>
        <p>  Price {data.price} AED</p>
         </div>
       </Card.Body>

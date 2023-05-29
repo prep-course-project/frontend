@@ -8,7 +8,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
-import MainCards from '../../Components/mainCards/mainCards';
+import MainCards from '../../Components/mainCard/mainCard';
 function DetailsPage() {
     const [data1,setdata]=useState()  
      
@@ -43,7 +43,6 @@ function DetailsPage() {
                                             src={item.url}
                                             alt="Second slide"
                                         />
-
                                     </Carousel.Item>
                                 )
                             })}

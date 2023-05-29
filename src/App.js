@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, Routes } from 'react-router-dom';
@@ -16,9 +17,11 @@ function App() {
       <Header/>
       <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/propertyList/city/:city' element ={<PropertyList/>}/>
+      <Route path='/propertyList/agency/:agency' element ={<PropertyList/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite/>}/>
-      <Route path='/property/details' element={<DetailsPage/>}/>
+      <Route path='/property/details/:id' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/>
