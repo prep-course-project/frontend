@@ -3,7 +3,23 @@
      height: 40px;
      border-radius: 50%;
 } */
+.onMain__absolute{
+position: absolute;
+left: 100px;
+z-index: 1;
+}
+.onMain__absolute .header-link{
+     color: white;
+     font-size: 20px;
+     transition: 1s;
+}
 
+.header-cont1{
+     background-color: transparent;
+     display: flex;
+     z-index: 1;
+     color: black;
+}
 .header-logo-section{
      display: flex;
      flex-wrap: wrap;
@@ -37,18 +53,11 @@
 
 }
 
-.header-cont1{
-     background-color: transparent;
-     position: absolute;
-     left: 100px;
-     z-index: 1;
-}
+
 
 
 .header-link{
-     color: white;
-     font-size: 20px;
-     transition: 1s;
+    
 }
 
 .header-link:hover{
