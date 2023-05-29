@@ -11,8 +11,8 @@ export default function Hero() {
                <h1>Find Your Next Dream Home</h1>
                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum soluta error vitae? Explicabo blanditiis voluptatum quaerat distinctio voluptate animi, aut provident pariatur mollitia? Vero minus rem placeat ullam sit quis assumenda dignissimos expedita error inventore.</p>
                <div className="btn">
-                    <button className="rent">Rent</button>
-                    <button className="sell">Sell</button>
+                    <button className="rent btn-hero">Rent</button>
+                    <button className="sell btn-hero">Sell</button>
                </div>
            </div>
 

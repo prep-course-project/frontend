@@ -5,6 +5,10 @@ import img1 from './assets/img1.jpg'
 import img2 from './assets/img2.jpg'
 import img3 from './assets/img3.jpg'
 import img4 from './assets/img4.jpg'
+import img7 from './assets/img7.jpg'
+import img8 from './assets/img8.jpg'
+import img9 from './assets/img9.jpg'
+import img10 from './assets/img10.jpg'
 
 export default function Cities() {
   return (
@@ -42,6 +46,35 @@ export default function Cities() {
           <h3>Abu Dhabi</h3>
           </div>
       </Link>
+      </div>
+      {/* {first four} */}
+      <div className="cards">
+        <Link to = '/propertyList/:Umm Al Quwain'className='a'>
+        <div className="city">
+        <img src={img7} alt="" />
+          <h3>Umm Al Quwain</h3>
+          </div>
+      </Link>
+        <Link to = '/propertyList/:Abu-Dhabi'className='a'>
+        <div className="city">
+        <img src={img8} alt="" />
+          <h4>Dibba Al-Fujairah</h4>
+          </div>
+      </Link>
+        <Link to = '/propertyList/:Abu-Dhabi'className='a'>
+        <div className="city">
+        <img src={img10} alt="" />
+          <h4>Ras Al Khaimah</h4>
+          </div>
+      </Link>
+        <Link to = '/propertyList/:Abu-Dhabi'className='a'>
+        <div className="city">
+        <img src={img9} alt="" />
+          <h3>Al Ain</h3>
+          </div>
+      </Link>
+
+
       </div>
     </div>
   )

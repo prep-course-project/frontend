@@ -1,16 +1,32 @@
 import Carousel from 'react-bootstrap/Carousel';
 import './DetailsPage.scss'
-import React, { useEffect } from 'react';
+import React ,{useState,useEffect}from 'react';
 import ReactPlayer from 'react-player';
+import axios from 'axios';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCard/mainCard';
 import axios from 'axios';
 function DetailsPage() {
-useEffect(()=>{
-    axios.get('/')
-    .then(res=>console.log(res));
-},[])
+    const [data1,setdata]=useState()  
+     
+        const fetchData = async () =>{
+            try{
+            const theC= await axios.get(`http://localhost:5000`)
+            setdata(theC.data)
+            console.log(theC.data)
+            }catch(error){
+                console.log(error)
+            }
+        } 
+        
+        useEffect(() => {
+            fetchData();
+        }, [])
+
     return (
 
         <div className='main-div-for-detalis'>
@@ -133,7 +149,38 @@ useEffect(()=>{
                </div>               
 
             </section>
-            
+            <section className='cards-section'>
+                    <p id='cards-titel'> Similar Listings</p>
+                    <div className='cards-div'>
+                        
+                    </div>
+                    <div>
+                        <Swiper
+                            style={{ width: "700px", marginTop: "100px" }}
+                            modules={[Navigation, Pagination, Scrollbar, A11y]}
+                            spaceBetween={10}
+                            slidesPerView={3.5}
+                            navigation
+                            pagination={{ clickable: true }}
+                            onSlideChange={() => console.log('slide change')}
+                            onSwiper={(swiper) => console.log(swiper)}
+                        >
+                        
+                            <SwiperSlide key={data.id}><MainCards data={data}  alt="" style={{ width: "100%", height: "250px", objectFit: "contain" }} /></SwiperSlide> 
+                            {/* {data1.photos.map(item => {
+                                return (
+                                    <div>
+                                        console.log(item)
+                                     <SwiperSlide key={item.id}><img src={item.photos.url} alt="" style={{ width: "100%", height: "250px", objectFit: "contain" }} /></SwiperSlide> 
+
+                                     </div>
+                                )
+                            })} */}
+                          
+                        </Swiper>
+
+                    </div>
+                </section>
           
             </div>
         </div>
