@@ -10,7 +10,7 @@ import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Favorite from './pages/Favorite/Favorite';
-
+import data from './jaon.json'
 function App() {
   return (
     <div className="App">
