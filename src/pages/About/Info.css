@@ -1,0 +1,40 @@
+
+.about-about-us{
+    padding: 4% 10%;
+}
+  .about-about-us{
+    padding-left:100px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(255, 254, 254);
+    display: grid; 
+    grid-template-columns: repeat(2,1fr);
+    gap:4rem;
+  }
+  .about-main-img img{
+    position: relative;
+    top:50px;
+    left:50px;
+  height: 300px;
+  width:400px;
+ 
+  }
+  .about-main-img{
+    display: flex;
+    flex-direction: row;
+  }
+  .about-div1{
+    background-color: #dbe5f1;
+    width:300px;
+    height: 400px;
+}
+
+.about-text{
+    padding: 6% 0;
+}
+.about-text h1{
+    color: rgb(1, 1, 1);
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
