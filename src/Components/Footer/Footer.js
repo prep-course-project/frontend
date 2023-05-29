@@ -2,7 +2,6 @@
 import React from 'react';
 import { Nav } from 'react-bootstrap';
 import './Footer.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
 
