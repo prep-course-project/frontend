@@ -1,0 +1,88 @@
+.about-team-container{
+    display: flex;
+    position:relative;
+    max-width: 60%;
+    width:60%;
+    margin-left: 20%;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    background-color:white;
+    padding: 20px;
+
+  }
+  .about-team-box{
+    display:flex;
+    position: relative;;
+    width:100%;
+    flex:1;
+    transition: .6s;
+  }
+  .about-team-box:hover{
+    display: flex;
+    flex:1;
+    transition: .6s;
+  }
+    .about-team-box img{
+        transition: 0.5s;
+         width:100%;
+         height: 300px;
+         object-fit:cover;
+         filter:grayscale(1);
+        
+    }
+   
+    .about-team-box h3{
+      position: absolute;
+      left:20px;
+      display:none;
+      top:150px;
+      color:aliceblue;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-shadow: 1px 4px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-team-box:hover h3{  
+        display:flex;
+        }
+    .about-team-box p{ 
+        position: absolute;
+        top:100px;
+        left:50px;
+        display:none;
+        padding-top:37%;
+        color: white;
+        font-size: 15px;
+        margin-bottom: 10%;
+        letter-spacing: 1px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+    .about-team-box:hover {
+        flex:2;
+        display: flex;
+        /* justify-content: center;
+        align-items: center; */
+       
+    }
+    .about-team-box:hover p {
+      display: block;
+    
+  }
+    .about-team-box:hover img{
+        filter:grayscale(0);
+        transform: scaleZ(1.5);
+
+    }
+.about-mem-h1{
+text-align: center;
+font-size: 24px;
+margin-top: 5%;
+margin-bottom: 10px;
+color: #333;
+text-transform: uppercase;
+letter-spacing: 1px;
+font-weight: bold;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
