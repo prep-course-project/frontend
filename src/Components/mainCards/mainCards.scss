@@ -1,3 +1,7 @@
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 .main-cards-icons{
     display: flex;
     p{
@@ -14,18 +18,21 @@
 #location{
     color:rgb(71,120,183);
     background-color: rgb(204,220,236);
-    // padding: 6px;
+    
     // border-radius: 60%;
     font-size: 18px;
 }
 .main-cards-price{
+    margin-left: 0 !important;
     display: flex;
     align-items: center;
     width: 100%;
     justify-content: space-between;
     p{
+       
         font-size: 18px;
         font-weight: 600;
     }
 
+}
 }

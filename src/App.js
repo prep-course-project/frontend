@@ -9,7 +9,7 @@ import Footer from './Components/Footer/Footer';
 import PropertyList from './pages/PropertyList/PropertyList';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Favorite from './pages/Favorite/Favorite';
-
+import data from './jaon.json'
 function App() {
   return (
     <div className="App">
@@ -17,8 +17,8 @@ function App() {
       <Routes>
       <Route path='/' element={<DetailsPage/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
-      <Route path='/favorites' element={<Favorite/>}/>
-      <Route path='/property/details' element={<DetailsPage/>}/>
+      <Route path='/favorites' element={<Favorite data={data}/>}/>
+      <Route path='/property/details/:id' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
       </Routes>
       <Footer/>
