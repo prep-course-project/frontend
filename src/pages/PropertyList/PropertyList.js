@@ -10,7 +10,8 @@ export default function PropertyList() {
   const [propertiesList,setPropertiesList]=useState([]);
   const [loadded,setLoaded]=useState(false);
   const {city,agency}=useParams();
-  const [filterValues,setFormValues]=useReducer(filterReducer,initialFilter)
+  const [filterValues,setFormValues]=useReducer(filterReducer,initialFilter);
+  console.log(city,agency)
    function handleChange(type, payload) {
     console.log(type,payload,'in change')
     setFormValues({
@@ -19,15 +20,16 @@ export default function PropertyList() {
     });
     handleFilteration(type,payload)
   }
-  function handleGetAgencyListings(url){
-    axios.get(url)
-    .then(res=>{
-      setPropertiesList(res.data.hits)
-      setLoaded(true);
-      console.log(res.data.hits,'get agenct')
-    })
-    .catch(err=>console.log(err))
-  }
+  // function handleGetAgencyListings(url){
+  //   axios.get(url)
+  //   .then(res=>{
+  //     setPropertiesList(res.data.hits)
+  //     setLoaded(true);
+  //     console.log(res.data.hits,'get agenct')
+  //   })
+  //   .catch(err=>console.log(err))
+  // }
+  console.log(process.env.REACT_APP_URL,'url')
   function handleGetAllProperties(url=process.env.REACT_APP_URL){
     axios.get(`${url}`)
       .then(res=>{
@@ -47,10 +49,11 @@ export default function PropertyList() {
     useEffect(()=>{
       if(city){
        handleGetPropertiesByCity(city)
-        }else if(agency) {
-          handleGetAgencyListings(agency)
-    }
-    else handleGetAllProperties();
+        }else handleGetAllProperties();
+    //     else if(agency) {
+    //       handleGetAgencyListings(agency)
+    // }
+    
   },[]);
     function handleFilteration(type,value){
       let extraQuerie=`&minRooms${initialFilter.minRooms}&maxrooms=${initialFilter.maxRooms}&minBaths=${initialFilter.minBaths}&priceMin=${initialFilter.priceMin}&priceMax=${initialFilter.priceMax}&categoryExternalID=${initialFilter.propertyType}`
@@ -80,10 +83,10 @@ export default function PropertyList() {
             handleGetAllProperties(`${process.env.REACT_APP_URL}?priceMax=${value}&${extraQuerie}`)
             break;
           }
-        case 'filterAgency':{
-          handleGetAgencyListings(`${process.env.REACT_APP_URL}/autoComplete?q=${value}&${extraQuerie}`)
-          break;
-        }
+        // case 'filterAgency':{
+        //   handleGetAgencyListings(`${process.env.REACT_APP_URL}/autoComplete?q=${value}&${extraQuerie}`)
+        //   break;
+        // }
           default :handleGetAllProperties()
         }
 
