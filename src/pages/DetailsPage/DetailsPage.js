@@ -9,7 +9,6 @@ import 'swiper/swiper-bundle.min.css';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCard/mainCard';
-import axios from 'axios';
 function DetailsPage() {
     const [data1,setdata]=useState()  
      
