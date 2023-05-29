@@ -1,10 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import '../Header/Header.css'
 
 export default function Header() {
   return (
-    <Navbar className="w-50" style={{width:"50%"}} bg="light" expand="lg">
+    <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="#home">Elite Sands</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

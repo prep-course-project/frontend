@@ -3,6 +3,7 @@ body{
      padding: 0;
 }
 
+
 .hero-home{
      width: 100%;
      height: 100vh;
@@ -27,17 +28,16 @@ body{
      justify-content: center;
 }
 
-.contant-home p{
+.hero-home p{
      font-size: 20px;
 }
 
-.contant-home .btn{
+.hero-home .btn{
      display: flex;
      padding-left: 0;
-
 }
 
-.contant-home .btn button {
+.hero-home .btn .btn-hero{
      border-radius: 8px;
      border: none;
      padding: 10px;
@@ -83,5 +83,33 @@ body{
      position: absolute;
      top: 120px;
      right: 15px;
+}
+
+@media screen and (max-width : 700px){
+     .hero-home .section1{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 200px;
+          gap: 20px;
+          position: relative;
+          top: -100px;
+          flex-wrap: wrap;
+     }
+
+     .Hero-contant{
+          position: absolute;
+          width: 50%;
+          height: 100vh;
+          color: white;
+          top: 0;
+          left: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          flex-wrap: wrap;
+     }
+     
+
 }
 
