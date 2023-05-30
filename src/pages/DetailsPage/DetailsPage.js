@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCards/mainCards';
 import MainCard from '../../Components/mainCard/mainCard';
 function DetailsPage() {
+<<<<<<< HEAD
     // const { id } = useParams()
     // // console.log(id)
     
@@ -44,6 +45,23 @@ function DetailsPage() {
     //             console.log(error)
     //         }
     //     } 
+        
+    //     useEffect(() => {
+    //         fetchData();
+            
+    //     }, [])
+    const [showInfo, setShowInfo] = useState(false);
+
+  const showMore1 = () => {
+    setShowInfo(!showInfo);
+  }
+
+    return (
+        // <div>
+        //    <MainCard data={data}/>
+        // </div>
+
+=======
     const { id } = useParams() 
     const [SameCity,setSameCity]=useState()  
     const [loaded,setIsLoaded]=useState(false)
@@ -76,10 +94,7 @@ function DetailsPage() {
         }, [])
 
     return (
-        // <div>
-        //    <MainCard data={data}/>
-        // </div>
-
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
         <div className='main-div-for-detalis'>
            
         {loaded && (
@@ -205,15 +220,18 @@ function DetailsPage() {
                 
             </section>
 
+<<<<<<< HEAD
             )} */}
             {/* <section className='cards-section'>
+=======
+            )}
+            <section className='cards-section'>
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
                  
             
                     <MainCards data={data}/>
-                    <MainCards  data={data}/>
-                    <MainCards  data={data}/>
                     <MainCards  data={data}/>
                     <MainCards  data={data}/>
                </div>               
@@ -231,8 +249,11 @@ function DetailsPage() {
                   
  
                      
+<<<<<<< HEAD
                          
 
+=======
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                         <Swiper
                             style={{ width: "700px", marginTop: "100px" }}
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -243,7 +264,11 @@ function DetailsPage() {
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
+<<<<<<< HEAD
                         {/* {citLloaded && ( SameCity.map(item =>{
+=======
+                        {cityLloaded && ( SameCity.map(item =>{
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                             return (
 
                                 <SwiperSlide key={item.id}><MainCards data={item} style={{width:"100%", height:"250px" , objectFit:"contain"}}/></SwiperSlide>
@@ -251,14 +276,23 @@ function DetailsPage() {
                         }))} */}
                            
                           
+<<<<<<< HEAD
                         </Swiper> 
                      
+=======
+                        </Swiper>
+                            <FavCards data={data}/>
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                     </div>
                 </section>
           
             </div>
+<<<<<<< HEAD
             {/* )}  */}
             
+=======
+            )} 
+>>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
         </div>
        
     );
