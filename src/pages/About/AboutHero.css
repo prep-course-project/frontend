@@ -8,6 +8,7 @@
  
 .about-container {
     width: 100%;
+    height: 90vh;
     padding-bottom:10%;
   }
   
@@ -75,8 +76,8 @@
   
   .about-image1 img {
     object-fit:cover;
-margin-left: 315px;
-    width: 75%;
+    margin-left: 23.3%;
+    width: 76.56%;
     height: 100vh;
     border-radius: 1px;
   }

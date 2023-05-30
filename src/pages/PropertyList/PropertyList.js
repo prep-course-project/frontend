@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import MainCards from "../../Components/mainCards/mainCards";
+import MainCard from "../../Components/mainCard/mainCard";
 import FilterSection from "./FilterSection/FilterSection";
 import "./PropertyList.scss";
 import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
@@ -87,7 +87,7 @@ export default function PropertyList() {
       <div className="propertyList__cards">
         {loadded &&
           propertiesList.map((property) => (
-            <MainCards key={property.id} data={property} />
+            <MainCard key={property.id} data={property} />
           ))}
       </div>
     </div>

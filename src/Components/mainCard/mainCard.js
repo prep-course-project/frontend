@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import './secandCard.scss'
 function MainCard({ data }) {
   return (
+     <Link to={`/property/details/${data.externalID}`} style={{textDecoration:'none',color:"black"}}>
     <div>
       < div className='sec-card-main'>
         <img src={data.coverPhoto.url}></img>
@@ -20,7 +21,7 @@ function MainCard({ data }) {
 
         </div >
         <div className='button-cards-sec'> 
-          <Link > <button className='sec-card-button'>Details </button></Link>
+          <Link to={`/property/details/${data.externalID}`} > <button className='sec-card-button'>Details </button></Link>
           <Link > <button className='add-card-button'>ِADD to favorite </button></Link>
             
         </div>
@@ -28,11 +29,11 @@ function MainCard({ data }) {
        </div>
         <div className='main-cards-price'>
         {/* <Button variant="primary"> </Button>  */}
-        <Link to={`/property/details/:${data.externalId}`}><button > Detalis </button></Link>
-       <p>  Price {data.price} AED</p>
+       
         </div>
     </div>
     </div>
+     </Link>
   )
 }
 

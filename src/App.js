@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <Header location={location}/>
       <Routes>
-      <Route path='/' element={<DetailsPage/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/propertyList/city/:city' element ={<PropertyList/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite data={data}/>}/>
