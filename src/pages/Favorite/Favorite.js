@@ -6,12 +6,13 @@ export default function Favorite({data}) {
     <div className='main-div-fav'>
       
       <section className='side-bar-fav'>
-        Favorite2
-      </section>
+
+  <img src={require('../../FullLogo_Transparent (3).png')} alt="Logo" />
+</section>
       <section className='data-fav'>
       <div className='fav-header'>
 
-        <p> Favorite </p>
+        <p> Your Favorite List </p>
       </div>
       <section className='table-header-fav'>
         <p>Thumbnail</p>
