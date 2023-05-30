@@ -10,54 +10,59 @@ import 'swiper/swiper-bundle.min.css';
 import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCards/mainCards';
-import FavCards from '../../Components/favCards/favCards'; 
+import MainCard from '../../Components/mainCard/mainCard';
 function DetailsPage() {
-    const { id } = useParams()
-    // console.log(id)
+    // const { id } = useParams()
+    // // console.log(id)
     
     // const [data,setdata]=useState()  
-    const [SameCity,setSameCity]=useState()  
+    // const [SameCity,setSameCity]=useState()  
 
-    const [loaded,setIsLoaded]=useState(false)
-    const [citLloaded,setCityIsLoaded]=useState(false)
+    // const [loaded,setIsLoaded]=useState(false)
+    // const [citLloaded,setCityIsLoaded]=useState(false)
 
      
-        // const fetchData = async () =>{
-        //     try{
-        //     const cityData= await axios.get(`http://localhost:5000/properites/detail?id=6787227`)
-        //     setdata(cityData.data)
-        //     console.log(cityData.data)
-        //     setIsLoaded(true)
-        //     fetchCity()
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // } 
-        // const fetchCity = async () =>{
-        //     // const citylocation =data.location[1]
-        //     try{
-        //         const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=Dubia`)
-        //         setSameCity(theCity.data.hits)
-        //         console.log(theCity)
-        //     setCityIsLoaded(true)
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // } 
+    //     const fetchData = async () =>{
+    //         try{
+    //         const cityData= await axios.get(`http://localhost:5000/properites/detail?id=6787227`)
+    //         setdata(cityData.data)
+    //         console.log(cityData.data)
+    //         setIsLoaded(true)
+    //         fetchCity()
+    //         }catch(error){
+    //             console.log(error)
+    //         }
+    //     } 
+    //     const fetchCity = async () =>{
+    //         // const citylocation =data.location[1]
+    //         try{
+    //             const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=Dubia`)
+    //             setSameCity(theCity.data.hits)
+    //             console.log(theCity)
+    //         setCityIsLoaded(true)
+    //         }catch(error){
+    //             console.log(error)
+    //         }
+    //     } 
         
-        // useEffect(() => {
-        //     fetchData();
+    //     useEffect(() => {
+    //         fetchData();
             
-        // }, [])
+    //     }, [])
+    const [showInfo, setShowInfo] = useState(false);
+
+  const showMore1 = () => {
+    setShowInfo(!showInfo);
+  }
 
     return (
+        // <div>
+        //    <MainCard data={data}/>
+        // </div>
 
         <div className='main-div-for-detalis'>
            
         {/* {loaded && ( */}
-
-           
-            <div className='contant'>
 
                 <div className='top-section'>
                     <section className="slider">
@@ -78,26 +83,33 @@ function DetailsPage() {
                     </section>
                    
                 </div>
+                {/* )}  */}
+                 {/* {loaded && ( */}
+           
+            <div className='contant'>
+
                 <section className='allDeitalis' >
 
-                    <div className='icons'> <p>  Price {data.price} AED  </p>
+                    <div className='icons'> 
+                    <div className='under-photo'>
+                    <p>  Price {data.price} AED  </p>
                     <p id='purpose'>{data.purpose.toUpperCase()} </p>
-                    
+                    </div>
                         <i class="fa-solid fa-bed"></i> {data.rooms} | <i class="fa-solid fa-bath"></i> {data.baths}  | <i class="fa-solid fa-ruler-combined"></i> {Math.floor(data.area)} Sq Ft  
                                                  
                          </div>
-                    <p className='titelP'>{data.title}  </p>
-                    <h6> <i class="fa-solid fa-location-dot"></i> location:{data.location.map(location => {
+                    {/* <p className='titelP'>{data.title}  </p> */}
+                    <h6> <i class="fa-solid fa-location-dot"></i>  {data.location.map(location => {
                                     return (
-                                        location.name + ','
+                                       location.name + ' , '
                                     )
                                 })}    </h6>
                     <div className='test'>
 
                         <section className='main-info'>
-                            <div className='contact-info'> <p> <i class="fa-solid fa-address-book"></i>contcat Information:</p> </div>
+                            <div className='contact-info'> <p> <i class="fa-solid fa-address-book"></i> contcat Information:</p> </div>
 
-                            <div className='contact-info'>  
+                            <div className='contact-info1'>  
                                 <p> <i class="fa-solid fa-user"></i> Owner Name: {data.contactName}    </p>
                                 <p> <i class="fa-solid fa-phone"></i> Phone : {data.phoneNumber.phone} </p>
                                 <p> <i class="fa-brands fa-whatsapp"></i> whatsapp: {data.phoneNumber.whatsapp}</p>
@@ -107,16 +119,19 @@ function DetailsPage() {
 
 
                         <section className='Property-Details' >
-                            <div className='Property-info'> <p> Property Details:</p> </div>
+                            <div className='Property-info'> <p><i class="fa-solid fa-house-chimney"></i> Property Details:</p> </div>
 
                             <div className='Property-info'>
-                                <h6> <i class="fa-solid fa-location-dot"></i> location:{data.location.map(location => {
+                                <p className='upercase'><i class="fa-solid fa-house-signal"></i>  states :{data.state}</p>
+                                {/* <p> <i class="fa-solid fa-location-dot"></i> {data.location.map(location => {
                                     return (
+                                     
                                         location.name + '-'
+                                       
                                     )
-                                })}    </h6>
+                                })}    </p> */}
                                 <p> <i class="fa-solid fa-house"></i> purpose : {data.purpose} </p>
-                                <p>  <i class="fa-solid fa-ruler-combined"></i> Area: {data.area} Sq Ft </p>
+                                <p>  <i class="fa-solid fa-ruler-combined"></i> Area: {Math.floor(data.area)} Sq Ft </p>
 
                             </div>
                         </section>
@@ -149,8 +164,13 @@ function DetailsPage() {
                         
                         <div className='description'> 
                         <h2>Description:</h2>
-                        {data.description.slice(0, 550)}
-                            <Link>...Read more</Link>
+                        
+          <p>{showInfo ? data.description : `${data.description.slice(0, 550)}...`}</p>
+              <button className='button1' onClick={showMore1}>{showInfo ? 'See less' : 'See more'}</button>
+
+
+
+                       
                         </div>
                     </div>
                 </section >
@@ -166,28 +186,30 @@ function DetailsPage() {
             </section>
 
             )} */}
-            <section className='cards-section'>
+            {/* <section className='cards-section'>
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
                  
             
                     <MainCards data={data}/>
-                    {/* <MainCards  data={data}/>
-                    <MainCards  data={data}/> */}
+                    <MainCards  data={data}/>
+                    <MainCards  data={data}/>
                </div>               
 
-            </section>
+            </section> */}
             <section className='cards-section'>
-                    <p id='cards-titel'> Similar Listings</p>
+                    <p className='cards-titel'> Similar Listings</p>
                     <div className='cards-div'>
-                        
+                    <MainCard data={data}/>
+                    <MainCard data={data}/>
+                    <MainCard data={data}/>
                     </div>
                     
                     <div>
                   
  
                      
-{/*                          
+                         
 
                         <Swiper
                             style={{ width: "700px", marginTop: "100px" }}
@@ -199,21 +221,22 @@ function DetailsPage() {
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
-                        {citLloaded && ( SameCity.map(item =>{
+                        {/* {citLloaded && ( SameCity.map(item =>{
                             return (
 
                                 <SwiperSlide key={item.id}><MainCards data={item} style={{width:"100%", height:"250px" , objectFit:"contain"}}/></SwiperSlide>
                             )
-                        }))}
+                        }))} */}
                            
                           
-                        </Swiper> */}
-                        <FavCards data={data}/>
+                        </Swiper> 
+                     
                     </div>
                 </section>
           
             </div>
-            {/* )} */}
+            {/* )}  */}
+            
         </div>
        
     );

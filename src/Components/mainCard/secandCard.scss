@@ -1,0 +1,109 @@
+.sec-card-main {
+    border-radius: 10px;
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    // gap: 5px;
+    // margin-left: 150px;
+    // margin-bottom: 100px;
+    // margin-top: 150px;
+    gap: 5px;
+
+    .sec-card-price {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 5px;
+        width: 95%;
+
+    }
+
+    .sec-card-price #the-price {
+        font-family: serif;
+        color: #709ac8;
+        font-weight: 900;
+        font-size: 20px;
+    }
+
+    img {
+        height: 200px;
+        border-radius: 5%;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-top: 5px;
+    }
+
+    p {
+        padding-left: 10px;
+        margin: 0px;
+
+    }
+
+    .sec-card-titel {
+        font-size: 16px;
+        font-family: math;
+        font-weight: 600;
+        padding-right: 4px;
+    }
+}
+
+.location-icon {
+    color: rgb(154, 156, 154);
+
+}
+
+.sec-card-icon {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(154, 156, 154);
+    font-size: 19px;
+
+    i {
+        // background-color: rgb(229,219,247);
+        padding: 7px;
+        border-radius: 50%;
+    }
+
+
+}
+
+.button-cards-sec {
+    display: flex;
+    justify-content: space-between;
+    margin:10px ;
+
+    .sec-card-button {
+        border-radius: 8px;
+        border: none;
+        padding: 6px;
+        margin-right: 5px;
+        width: 85px;
+        transition: 1s;
+        color: #709ac8;
+        font-size: 15px;
+        font-weight: 900;
+    }
+    .sec-card-button:hover{
+        background-color: #005f8b;      color: white;
+
+    }
+    .add-card-button:hover{
+        background-color:rgba(255, 68, 0, 0.74);      color: white;
+    }
+
+    .add-card-button {
+        border-radius: 8px;
+        border: none;
+        padding: 7px;
+        margin-right: 5px;
+        width: 120px;
+        transition: 1s;
+        color: #709ac8;
+        font-size: 14px;
+        font-weight: 600;
+
+
+    }
+}

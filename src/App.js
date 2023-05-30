@@ -15,9 +15,9 @@ function App() {
   const location =useLocation().pathname;
   return (
     <div className="App">
-      <Header location={location}/>
+      {/* <Header location={location}/> */}
       <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/' element={<DetailsPage/>}/>
       <Route path='/propertyList/city/:city' element ={<PropertyList/>}/>
       <Route path='/propertyList/agency/:agency' element ={<PropertyList/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
