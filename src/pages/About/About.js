@@ -5,12 +5,11 @@ import Info from './Info';
 import Partner from './Partner'
 import Member from './Member';
 // import Test from './Test'
-import Hero from './Hero';
+import AboutHero from './AboutHero'
 export default function About() {
   return (
     <>
-       <Hero />
-    {/* <Test/> */}
+       <AboutHero />
        <Partner />
        <Info />
       <Services/>
