@@ -3,15 +3,23 @@
      height: 40px;
      border-radius: 50%;
 } */
+
 .onMain__absolute{
 position: absolute;
 left: 100px;
-z-index: 1;
+z-index: 100;
 }
 .onMain__absolute .header-link{
      color: white;
      font-size: 20px;
      transition: 1s;
+     z-index: 10;
+
+}
+
+.header-link{
+     color:#005f8b ;
+     font-size: 20px;
 }
 
 .header-cont1{
@@ -19,6 +27,8 @@ z-index: 1;
      display: flex;
      z-index: 1;
      color: black;
+     z-index: 10;
+
 }
 .header-logo-section{
      display: flex;
@@ -40,29 +50,29 @@ z-index: 1;
      padding-bottom: 0 ;
      padding-top: 5px;
      margin-bottom: 0 ;
-     color: white;
+     color: #005f8b;
      transition: 1s;
      font-size: 25px;
      margin-right: 60px;
+     z-index: 10;
+
 
 }
 
 .header-logo-section h4:hover{
      color:#005f8b;
      border-bottom:#005f8b solid 3px;
+     z-index: 10;
+
 
 }
 
-
-
-
-.header-link{
-    
-}
 
 .header-link:hover{
      color: #005f8b;
      border-bottom:#005f8b solid 3px;
+     z-index: 10;
+
 }
 
 /* .header-link::before{

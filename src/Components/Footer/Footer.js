@@ -100,7 +100,7 @@ return(
       <div>
       <i class="fa-regular fa-copyright"></i>
       </div>
-      <p>All Right Reserved By, Elite Sand 2023</p>
+      <p>All Right Reserved By, Elite Sands 2023</p>
     </div>
     </div> 
 </footer>

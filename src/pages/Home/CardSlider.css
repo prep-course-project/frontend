@@ -6,13 +6,13 @@
      width: 100%;
      /* height: 600px; */
      margin-top: 150px;
-     gap: 30px;
+     gap: 60px;
      
 }
 
 .cities h1{
-     width: 550px;
-     font-size: 30px;
+     width: 650px;
+     font-size: 35px;
      text-align: center;
      color: #709ac8;
 }
@@ -30,13 +30,14 @@
      height: 350px;
      border-radius: 20px;
      transition: 0.5s;
+     z-index: 7;
 
 }
 
 .cities .cards .city h3,
 .cities .cards .city h4{
      position: relative;
-     top: -300px;
+     top: -100px;
      display: flex;
      justify-content: center;
      text-align: center;
@@ -44,6 +45,20 @@
      font-size: 30px;
      font-weight: 500;
      /* color: #ffffffba; */
+     z-index: 11;
+}
+
+.cards .city {
+     position: relative;
+}
+
+.over-lay-city{
+     width: 250px;
+     height: 350px;
+     background-color: rgba(0, 0, 0, 0.147);
+     z-index: 8;
+     position: absolute;
+     border-radius: 20px;
 }
 
 .cities .cards .city h4{
@@ -53,15 +68,20 @@
 .a {
      text-decoration: none;
      color: white;
-     transition: 0.5s;
+     transition: 0.2s ease-out;
+     transition-delay:0;
 
 }
 
 .cards .city img:hover{
-     transform: translateY(-10px);
+     /* transform: translateY(-10px); */
+     transform: scale(1.02);
 }
 .cards .a:hover{
-     transform: translateY(-20px);
+     /* transform: translateY(-20px); */
+     transform: scale(1.03);
+     color: white;
+
 }
 
 

@@ -7,9 +7,11 @@ export default function Hero() {
   return (
     <div className='hero-home'>
           <video className='video' src={video} loop autoPlay muted></video>
+          <div className="over-lay"></div>
           <div className='Hero-contant'>
                <h1>Find Your Next Dream Home</h1>
-               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum soluta error vitae? Explicabo blanditiis voluptatum quaerat distinctio voluptate animi, aut provident pariatur mollitia? Vero minus rem placeat ullam sit quis assumenda dignissimos expedita error inventore.</p>
+               <p>Explore our range of beautiful properties with the addition of separate accommodation suitable for you. </p>
+               
                <div className="btn">
                     <button className="rent btn-hero">Rent</button>
                     <button className="sell btn-hero">Sell</button>
