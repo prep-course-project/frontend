@@ -1,7 +1,35 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './secandCard.scss'
+import axios from 'axios'
 function MainCard({ data }) {
+
+// {
+//   "externalid": 7329447,
+//   "price": 2023,
+//   "title": "anything anything anything anything anything anything anything ",
+//   "imgurl": "http://google.com.png",
+//   "area": "farah",
+//   "purpose": "testing"
+// }
+
+console.log(data);
+
+let obj = {
+    area : data.area,
+    externalID:data.externalID,
+    imgUrl: data.coverPhoto.url,
+    price:data.price,
+    purpose:data.purpose,
+    title : data.title
+}
+  const addFavorite = () => {
+    axios.post(`https://real-estate-back-end.onrender.com/favorites` , obj)
+    .then(result => console.log( result.data) , )
+    .catch(err => console.log('error post fav'))
+  }
+
+
   return (
      <Link to={`/property/details/${data.externalID}`} style={{textDecoration:'none',color:"black"}}>
     <div>
@@ -22,7 +50,7 @@ function MainCard({ data }) {
         </div >
         <div className='button-cards-sec'> 
           <Link to={`/property/details/${data.externalID}`} > <button className='sec-card-button'>Details </button></Link>
-          <Link > <button className='add-card-button'>ِADD to favorite </button></Link>
+          <Link > <button className='add-card-button' onClick={addFavorite}>ِADD to favorite </button></Link>
             
         </div>
        <div className='main-cards-icons'>

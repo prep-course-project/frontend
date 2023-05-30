@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Favorite.scss'
 import FavCards from '../../Components/favCards/favCards'
+import axios from 'axios'
 export default function Favorite({data}) {
+let count = 0
+  const [getFave , setGetFave] = useState([])
+  const getFavorite = async () => {
+    try{
+      const res =  await axios.get(`https://real-estate-back-end.onrender.com/favorites`)
+      console.log(res.data)
+      setGetFave(res.data)
+    }catch(err){
+      console.log('favorite page error');
+    }
+  }
+
+  useEffect(() =>{
+    getFavorite()
+  },[])
+
   return (
     <div className='main-div-fav'>
       
@@ -22,10 +39,12 @@ export default function Favorite({data}) {
       
       </section>
       <div className='cardNumber1'> </div>
-        <FavCards  data={data}/>
-        <FavCards  data={data}/>
-        <FavCards  data={data}/>
-        <FavCards  data={data}/>
+      {
+        getFave.map(item => {
+
+         return <FavCards key={count++} data={item}/>
+        })
+      }
 
         </section>
     </div>
