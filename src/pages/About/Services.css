@@ -18,92 +18,88 @@
         width:150%;
         flex-direction:row;
         justify-content: space-between;
-    }
+        }
     .about-text-services h3{
          padding-left:44%;
          color: #050505aa;
          padding-bottom: 20px;
     }
-    .about-text-services h2{
-        padding-left:44%;
-        color:#000000
+    .about-h2{
+      font-size: 24px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: bold;
+       padding-left:44%;
+      font-size: 24px;
+      margin-top: 3%;
+      color: #333;
+      letter-spacing: 1px;
     
+    }
+    .about-main-cards i{
+color:#005f8bc5;
+font-size: 35px;
+margin: 10px;
+
+
     }
     .about-card1,
     .about-card2,
     .about-card3
      {
+      border-radius: 20px;  
+      padding:10px;
+      transition: .5s;
         margin-right: 30px;
         width:100%;
-        box-shadow: 1px 4px 11px rgba(0, 0, 0, 0.4);
-        margin-top: 2.4%;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    }
+   
+    .about-card1:hover
+     {
+      transform: scale(1.1);
+      
     }
+    .about-card2:hover
+    {
+     transform: scale(1.1);
+   }
+   .about-card3:hover
+   {
+    transform: scale(1.1);
+  }
     .about-card1 img{
     width: 100px;
-    border-width: 1px;
-    border-color: #666;
     height: 100px;
-    border-radius: 50%;
-    margin-top: -20%;
     margin-bottom: 10px;
-    transition: transform 0.3s ease; 
-    border-style:solid;
     
     }
-    
-    .about-card1 img:hover {
-    transform: scale(1.1);
-    box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.4);
-    
-    
-    }
+   
     .about-card2 img{
-      border-style:solid;
-      border-width: 1px;
-      border-color: #666;
+     
         width: 100px;
         height: 100px;
-        margin-top: -20%;
-        border-radius: 50%;
         margin-bottom: 10px;
         transition: transform 0.3s ease; 
         }
-        
-        .about-card2 img:hover {
-        transform: scale(1.1); 
-        box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.4);
     
-        }
         .about-card3 img{
-          border-style:solid;
-          border-color: #666;
-           border-width: 1px;
             width: 100px;
-            margin-top: -20%;
-            height: 100px;
-            border-radius: 50%;
             margin-bottom: 10px;
             transition: transform 0.4s ease; 
             }
-            
-            .about-card3 img:hover {
-            transform: scale(1.1);
-            box-shadow: 3px 4px 20px rgba(0, 0, 0, 0.4);
-    
-            }
             .about-card1 h3{
-                color: #000000;
+                color: #005f8bc5;
                 font-size: 16px;
                 margin: 5px 0;   
                 
               }
             .about-card2 h3{
-                color: #000000;
+                color: #005f8bc5;
                 font-size: 16px;
                   margin: 5px 0; 
             }
             .about-card3 h3{
-                color: #000000;
+                color: #005f8bc5;
                 font-size: 16px;
                 margin: 5px 0; 
             }
@@ -111,10 +107,12 @@
                 color: #7a7070;
                 margin-bottom: 10%;
                padding-top: 20px;
+               display: flex;
                 font-size: 15px;
               letter-spacing: 1px;
               }
             .about-card2 p{
+              padding-left: 3%;;
                 color: #7a7070;
                 padding-top: 20px;
                 font-size: 15px;
@@ -126,6 +124,8 @@
                 letter-spacing: 1px;
                 color: #7a7070;
                 padding-top: 20px;
+                padding-left: 3%;;
+
                 font-size: 15px;
                 margin-bottom: 10%;
             }

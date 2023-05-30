@@ -13,7 +13,7 @@ export default function Info() {
     </div>
 
      <div className='about-text'>
-      <h1>What our Application do for client?</h1>
+      <h1>What our Application do for client</h1>
       <hr></hr>
       <p>Find your house by our website ,you can discover the properties and choose available proprites 
         and filter them based on the city you want to buy and you can discover houses and choose what do you 

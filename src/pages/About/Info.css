@@ -16,7 +16,7 @@
     top:50px;
     left:50px;
   height: 300px;
-  width:400px;
+  width:425px;
  
   }
   .about-main-img{
@@ -33,7 +33,7 @@
     padding: 6% 0;
 }
 .about-text h1{
-    color: rgb(1, 1, 1);
+    color: #005f8bc5;
     text-transform: uppercase;
     font-weight: 500;
     margin-bottom: 10px;
