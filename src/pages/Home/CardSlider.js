@@ -18,29 +18,21 @@ export default function Cities() {
       <h1>We are avilable in many Well-known Cities</h1>
       
       <div className="cards">
-      <Link to = '/propertyList/city/Dubai' className='a'>
+      <Link to = '/propertyList/city/5002' className='a'>
         <div className="city">
           <img src={img1} alt="" />
           <h3>Dubai</h3>
            </div>
       </Link>
 
-        <Link to = '/propertyList/city/Ajman'className='a'>
+        <Link to = '/propertyList/city/5385'className='a'>
         <div className="city">
         <img src={img2} alt="" />
           <h3>Ajman</h3>
           </div>
       </Link>
-
-        <Link to = '/propertyList/city/Fujairah'className='a'>
-        <div className="city">
-        <img src={img3} alt="" />
-          <h3>Fujairah</h3>
-          
-          </div>
-      </Link>
       
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/6020'className='a'>
         <div className="city">
         <img src={img4} alt="" />
           <h3>Abu Dhabi</h3>
@@ -49,25 +41,19 @@ export default function Cities() {
       </div>
       {/* {first four} */}
       <div className="cards">
-        <Link to = '/propertyList/city/Umm Al Quwain'className='a'>
+        <Link to = '/propertyList/city/5544'className='a'>
         <div className="city">
         <img src={img7} alt="" />
           <h3>Umm Al Quwain</h3>
           </div>
       </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
-        <div className="city">
-        <img src={img8} alt="" />
-          <h4>Dibba Al-Fujairah</h4>
-          </div>
-      </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/5509'className='a'>
         <div className="city">
         <img src={img10} alt="" />
           <h4>Ras Al Khaimah</h4>
           </div>
       </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/6057'className='a'>
         <div className="city">
         <img src={img9} alt="" />
           <h3>Al Ain</h3>

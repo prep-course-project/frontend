@@ -11,15 +11,19 @@ z-index: 1;
 .onMain__absolute .header-link{
      color: white;
      font-size: 20px;
-     transition: 1s;
+     transition: .5s;
+     font-weight: 600;
+
 }
-
-
 .header-cont1{
      background-color: transparent;
      display: flex;
+     justify-content: space-around;
+     width: 100%;
      z-index: 1;
      color: black;
+     font-size: 20px;
+     font-weight: 600;
 }
 .header-cont1 .header-cont2 h4{
      font-weight: bold;

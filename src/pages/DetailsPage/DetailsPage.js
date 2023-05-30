@@ -2,59 +2,51 @@ import Carousel from 'react-bootstrap/Carousel';
 import './DetailsPage.scss'
 import React ,{useState,useEffect}from 'react';
 import { useParams } from 'react-router-dom';
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import data from '../../jaon.json'
+// import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCards/mainCards';
 import FavCards from '../../Components/favCards/favCards'; 
 function DetailsPage() {
-    const { id } = useParams()
-    // console.log(id)
-    
-    // const [data,setdata]=useState()  
+    const { id } = useParams() 
     const [SameCity,setSameCity]=useState()  
-
     const [loaded,setIsLoaded]=useState(false)
-    const [citLloaded,setCityIsLoaded]=useState(false)
-
-     
-        // const fetchData = async () =>{
-        //     try{
-        //     const cityData= await axios.get(`http://localhost:5000/properites/detail?id=6787227`)
-        //     setdata(cityData.data)
-        //     console.log(cityData.data)
-        //     setIsLoaded(true)
-        //     fetchCity()
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // } 
-        // const fetchCity = async () =>{
-        //     // const citylocation =data.location[1]
-        //     try{
-        //         const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=Dubia`)
-        //         setSameCity(theCity.data.hits)
-        //         console.log(theCity)
-        //     setCityIsLoaded(true)
-        //     }catch(error){
-        //         console.log(error)
-        //     }
-        // } 
+    const [cityLloaded,setCityIsLoaded]=useState(false)
+    const [data,setDetailsData]=useState({});
+        const fetchData = async () =>{
+            try{
+            const cityData= await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+            setDetailsData(cityData.data)
+            setIsLoaded(true)
+            fetchCity()
+            }catch(error){
+                console.log(error)
+            }
+        } 
+        const fetchCity = async () =>{
+            const citylocation =data.location[1]
+            try{
+                const theCity= await axios.get(`http://localhost:5000/propertyList?locationExternalIDs=${citylocation}`)
+                setSameCity(theCity.data.hits)
+                console.log(theCity)
+                setCityIsLoaded(true)
+            }catch(error){
+                console.log(error)
+            }
+        } 
         
-        // useEffect(() => {
-        //     fetchData();
-            
-        // }, [])
+        useEffect(() => {
+            fetchData();
+        }, [])
 
     return (
-
         <div className='main-div-for-detalis'>
            
-        {/* {loaded && ( */}
+        {loaded && (
 
            
             <div className='contant'>
@@ -155,7 +147,7 @@ function DetailsPage() {
                     </div>
                 </section >
             
-            {/* { data.videos.length && (
+            { data.videos.length && (
 
             <section className='video-section'>
                     <p> Video </p>
@@ -165,7 +157,7 @@ function DetailsPage() {
                 
             </section>
 
-            )} */}
+            )}
             <section className='cards-section'>
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
@@ -178,7 +170,7 @@ function DetailsPage() {
 
             </section>
             <section className='cards-section'>
-                    {/* <p id='cards-titel'> Similar Listings</p> */}
+                    <p id='cards-titel'> Similar Listings</p>
                     <div className='cards-div'>
                         
                     </div>
@@ -187,8 +179,6 @@ function DetailsPage() {
                   
  
                      
-{/*                          
-
                         <Swiper
                             style={{ width: "700px", marginTop: "100px" }}
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -199,7 +189,7 @@ function DetailsPage() {
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
-                        {citLloaded && ( SameCity.map(item =>{
+                        {cityLloaded && ( SameCity.map(item =>{
                             return (
 
                                 <SwiperSlide key={item.id}><MainCards data={item} style={{width:"100%", height:"250px" , objectFit:"contain"}}/></SwiperSlide>
@@ -207,13 +197,13 @@ function DetailsPage() {
                         }))}
                            
                           
-                        </Swiper> */}
-                            {/* <FavCards data={data}/> */}
+                        </Swiper>
+                            <FavCards data={data}/>
                     </div>
                 </section>
           
             </div>
-            {/* )} */}
+            )} 
         </div>
        
     );
