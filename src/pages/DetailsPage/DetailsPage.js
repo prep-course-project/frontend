@@ -7,49 +7,49 @@ import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-// import data from '../../jaon.json'
+import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCards/mainCards';
 import MainCard from '../../Components/mainCard/mainCard';
 function DetailsPage() {
-<<<<<<< HEAD
-    // const { id } = useParams()
-    // // console.log(id)
+    const { id } = useParams()
     
-    // const [data,setdata]=useState()  
-    // const [SameCity,setSameCity]=useState()  
+    console.log(id)
+    const [data,setdata]=useState()  
+    const [SameCity,setSameCity]=useState();
 
-    // const [loaded,setIsLoaded]=useState(false)
-    // const [citLloaded,setCityIsLoaded]=useState(false)
+    const [loaded,setIsLoaded]=useState(false)
+    const [citLloaded,setCityIsLoaded]=useState(false)
 
      
-    //     const fetchData = async () =>{
-    //         try{
-    //         const cityData= await axios.get(`http://localhost:5000/properites/detail?id=6787227`)
-    //         setdata(cityData.data)
-    //         console.log(cityData.data)
-    //         setIsLoaded(true)
-    //         fetchCity()
-    //         }catch(error){
-    //             console.log(error)
-    //         }
-    //     } 
-    //     const fetchCity = async () =>{
-    //         // const citylocation =data.location[1]
-    //         try{
-    //             const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=Dubia`)
-    //             setSameCity(theCity.data.hits)
-    //             console.log(theCity)
-    //         setCityIsLoaded(true)
-    //         }catch(error){
-    //             console.log(error)
-    //         }
-    //     } 
+        const fetchData = async () =>{
+            try{
+            const cityData= await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+            setdata(cityData.data)
+            console.log(cityData.data)
+            setIsLoaded(true)
+            fetchCity()
+            }catch(error){
+                console.log(error)
+            }
+        } 
+        const fetchCity = async () =>{
+            console.log(data)
+            const citylocation =data.location[1]
+            try{
+                const theCity= await axios.get(`http://localhost:5000/propertyList/city?city=${citylocation}`)
+                setSameCity(theCity.data.hits)
+                console.log(theCity)
+            setCityIsLoaded(true)
+            }catch(error){
+                console.log(error)
+            }
+        } 
         
-    //     useEffect(() => {
-    //         fetchData();
+        useEffect(() => {
+            fetchData();
             
-    //     }, [])
+        }, [])
     const [showInfo, setShowInfo] = useState(false);
 
   const showMore1 = () => {
@@ -61,40 +61,6 @@ function DetailsPage() {
         //    <MainCard data={data}/>
         // </div>
 
-=======
-    const { id } = useParams() 
-    const [SameCity,setSameCity]=useState()  
-    const [loaded,setIsLoaded]=useState(false)
-    const [cityLloaded,setCityIsLoaded]=useState(false)
-    const [data,setDetailsData]=useState({});
-        const fetchData = async () =>{
-            try{
-            const cityData= await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
-            setDetailsData(cityData.data)
-            setIsLoaded(true)
-            fetchCity()
-            }catch(error){
-                console.log(error)
-            }
-        } 
-        const fetchCity = async () =>{
-            const citylocation =data.location[1]
-            try{
-                const theCity= await axios.get(`http://localhost:5000/propertyList?locationExternalIDs=${citylocation}`)
-                setSameCity(theCity.data.hits)
-                console.log(theCity)
-                setCityIsLoaded(true)
-            }catch(error){
-                console.log(error)
-            }
-        } 
-        
-        useEffect(() => {
-            fetchData();
-        }, [])
-
-    return (
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
         <div className='main-div-for-detalis'>
            
         {loaded && (
@@ -118,8 +84,8 @@ function DetailsPage() {
                     </section>
                    
                 </div>
-                {/* )}  */}
-                 {/* {loaded && ( */}
+                 )}  
+                  {loaded && ( 
            
             <div className='contant'>
 
@@ -220,13 +186,8 @@ function DetailsPage() {
                 
             </section>
 
-<<<<<<< HEAD
-            )} */}
+            )} 
             {/* <section className='cards-section'>
-=======
-            )}
-            <section className='cards-section'>
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                 <p id='cards-titel'> Similar Listings</p>
                  <div className='cards-div'>
                  
@@ -249,11 +210,8 @@ function DetailsPage() {
                   
  
                      
-<<<<<<< HEAD
                          
 
-=======
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                         <Swiper
                             style={{ width: "700px", marginTop: "100px" }}
                             modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -264,11 +222,7 @@ function DetailsPage() {
                             onSlideChange={() => console.log('slide change')}
                             onSwiper={(swiper) => console.log(swiper)}
                         >
-<<<<<<< HEAD
                         {/* {citLloaded && ( SameCity.map(item =>{
-=======
-                        {cityLloaded && ( SameCity.map(item =>{
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                             return (
 
                                 <SwiperSlide key={item.id}><MainCards data={item} style={{width:"100%", height:"250px" , objectFit:"contain"}}/></SwiperSlide>
@@ -276,23 +230,14 @@ function DetailsPage() {
                         }))} */}
                            
                           
-<<<<<<< HEAD
                         </Swiper> 
                      
-=======
-                        </Swiper>
-                            <FavCards data={data}/>
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
                     </div>
                 </section>
           
             </div>
-<<<<<<< HEAD
-            {/* )}  */}
+            )}  
             
-=======
-            )} 
->>>>>>> 13b7a88d4db8eed2ab7e94c0d2df1ad940d50568
         </div>
        
     );

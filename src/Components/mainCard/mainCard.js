@@ -31,9 +31,6 @@ function MainCard({ data }) {
         <Link to={`/property/details/:${data.externalId}`}><button > Detalis </button></Link>
        <p>  Price {data.price} AED</p>
         </div>
-
-
-    
     </div>
     </div>
   )
