@@ -16,7 +16,9 @@ export default function Hero() {
                     <button className="rent btn-hero">Rent</button>
                     <button className="sell btn-hero">Sell</button>
                </div>
+
            </div>
+
 
           <div className="section1">
                <div className="card">

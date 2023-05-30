@@ -18,7 +18,7 @@ export default function Cities() {
       <h1>We are avilable in many Well-known Cities</h1>
       
       <div className="cards">
-      <Link to = '/propertyList/city/Dubai' className='a'>
+      <Link to = '/propertyList/city/5002' className='a'>
         <div className="city">
           <div className="over-lay-city"></div>
           <img src={img1} alt="" />
@@ -26,7 +26,7 @@ export default function Cities() {
            </div>
       </Link>
 
-        <Link to = '/propertyList/city/Ajman'className='a'>
+        <Link to = '/propertyList/city/5385'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img2} alt="" />
@@ -53,7 +53,7 @@ export default function Cities() {
       </div>
       {/* {first four} */}
       <div className="cards">
-        <Link to = '/propertyList/city/Umm Al Quwain'className='a'>
+        <Link to = '/propertyList/city/5544'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img7} alt="" />
@@ -74,7 +74,7 @@ export default function Cities() {
           <h4>Ras Al Khaimah</h4>
           </div>
       </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/6057'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img9} alt="" />

@@ -21,10 +21,11 @@ z-index: 100;
      color:#005f8b ;
      font-size: 20px;
 }
-
 .header-cont1{
      background-color: transparent;
      display: flex;
+     justify-content: space-around;
+     width: 100%;
      z-index: 1;
      color: black;
      z-index: 10;

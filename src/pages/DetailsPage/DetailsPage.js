@@ -2,12 +2,12 @@ import Carousel from 'react-bootstrap/Carousel';
 import './DetailsPage.scss'
 import React ,{useState,useEffect}from 'react';
 import { useParams } from 'react-router-dom';
-// import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player';
 import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import data from '../../jaon.json'
+// import data from '../../jaon.json'
 import { Link } from 'react-router-dom';
 import MainCards from '../../Components/mainCards/mainCards';
 import MainCard from '../../Components/mainCard/mainCard';
@@ -44,16 +44,36 @@ function DetailsPage() {
     //             console.log(error)
     //         }
     //     } 
+    const { id } = useParams() 
+    const [SameCity,setSameCity]=useState()  
+    const [loaded,setIsLoaded]=useState(false)
+    const [cityLloaded,setCityIsLoaded]=useState(false)
+    const [data,setDetailsData]=useState({});
+        const fetchData = async () =>{
+            try{
+            const cityData= await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+            setDetailsData(cityData.data)
+            setIsLoaded(true)
+            fetchCity()
+            }catch(error){
+                console.log(error)
+            }
+        } 
+        const fetchCity = async () =>{
+            const citylocation =data.location[1]
+            try{
+                const theCity= await axios.get(`http://localhost:5000/propertyList?locationExternalIDs=${citylocation}`)
+                setSameCity(theCity.data.hits)
+                console.log(theCity)
+                setCityIsLoaded(true)
+            }catch(error){
+                console.log(error)
+            }
+        } 
         
-    //     useEffect(() => {
-    //         fetchData();
-            
-    //     }, [])
-    const [showInfo, setShowInfo] = useState(false);
-
-  const showMore1 = () => {
-    setShowInfo(!showInfo);
-  }
+        useEffect(() => {
+            fetchData();
+        }, [])
 
     return (
         // <div>
@@ -62,7 +82,7 @@ function DetailsPage() {
 
         <div className='main-div-for-detalis'>
            
-        {/* {loaded && ( */}
+        {loaded && (
 
                 <div className='top-section'>
                     <section className="slider">
@@ -175,7 +195,7 @@ function DetailsPage() {
                     </div>
                 </section >
             
-            {/* { data.videos.length && (
+            { data.videos.length && (
 
             <section className='video-section'>
                     <p> Video </p>
@@ -192,6 +212,8 @@ function DetailsPage() {
                  
             
                     <MainCards data={data}/>
+                    <MainCards  data={data}/>
+                    <MainCards  data={data}/>
                     <MainCards  data={data}/>
                     <MainCards  data={data}/>
                </div>               

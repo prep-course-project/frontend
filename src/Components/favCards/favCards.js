@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import './favCards.scss'
 function FavCards({ data }) {
     return (
-        <div>
-            <div className='fav-cards-main'>
+        <div className='flex  justify-around'>
+            <div className='fav-cards-main '>
                 <img src={data.coverPhoto.url}></img>
                 <p>{data.price}AED</p>
                 <p>  {Math.floor(data.area)} Sq Ft </p>
