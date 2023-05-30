@@ -20,6 +20,7 @@ export default function Cities() {
       <div className="cards">
       <Link to = '/propertyList/city/Dubai' className='a'>
         <div className="city">
+          <div className="over-lay-city"></div>
           <img src={img1} alt="" />
           <h3>Dubai</h3>
            </div>
@@ -27,6 +28,7 @@ export default function Cities() {
 
         <Link to = '/propertyList/city/Ajman'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img2} alt="" />
           <h3>Ajman</h3>
           </div>
@@ -34,6 +36,7 @@ export default function Cities() {
 
         <Link to = '/propertyList/city/Fujairah'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img3} alt="" />
           <h3>Fujairah</h3>
           
@@ -42,6 +45,7 @@ export default function Cities() {
       
         <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img4} alt="" />
           <h3>Abu Dhabi</h3>
           </div>
@@ -51,24 +55,28 @@ export default function Cities() {
       <div className="cards">
         <Link to = '/propertyList/city/Umm Al Quwain'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img7} alt="" />
           <h3>Umm Al Quwain</h3>
           </div>
       </Link>
         <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img8} alt="" />
           <h4>Dibba Al-Fujairah</h4>
           </div>
       </Link>
         <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img10} alt="" />
           <h4>Ras Al Khaimah</h4>
           </div>
       </Link>
         <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
         <div className="city">
+        <div className="over-lay-city"></div>
         <img src={img9} alt="" />
           <h3>Al Ain</h3>
           </div>
