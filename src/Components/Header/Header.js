@@ -12,7 +12,7 @@ export default function Header({location}) {
     <Navbar  expand="lg" className={`${location==='/'?'onMain__absolute':'header-cont1'} `} >
       <Container className='header-cont2'>
         <Link className='navbar-brand header-logo-section' to="/">
-          <img className='logo-header w-[70px] h-[45px] rounded-lg'  src={logo} alt="" />
+          {/* <img className='logo-header'  src={logo} alt="" /> */}
           <h4 className='navbar-brand navbar-text '>Elite Sands</h4>
           </Link >
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
