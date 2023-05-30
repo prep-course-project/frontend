@@ -7,7 +7,8 @@ const initialFilter={
     priceMin:10000,
     priceMax:90000,
     city:'',
-    propertyType:''
+    propertyType:'',
+    search:'',
   }
   const cities=["Umm Al Quwain5544","Fujairah6542","Ajman5385","Ras Al Khaimah5509","Al Ain6057","Sharjah5351","Abu Dhabi6020","Dubai5002"];
   const propertyTypeList=[

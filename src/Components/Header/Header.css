@@ -14,11 +14,17 @@ z-index: 1;
      transition: 1s;
 }
 
+
 .header-cont1{
      background-color: transparent;
      display: flex;
      z-index: 1;
      color: black;
+}
+.header-cont1 .header-cont2 h4{
+     font-weight: bold;
+     color: black;
+     font-size: 30px;
 }
 .header-logo-section{
      display: flex;

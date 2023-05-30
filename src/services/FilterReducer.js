@@ -1,5 +1,5 @@
 export default  function filterReducer(state,action){
-    console.log(state,"in reducer")
+    console.log(action.type,"in reducer")
       switch(action.type){
           case 'filterCity':{
             return {...state,city:action.payload}

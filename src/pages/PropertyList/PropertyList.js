@@ -1,7 +1,7 @@
 import React, { useEffect, useReducer, useRef, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import MainCard from '../../Components/mainCards/mainCards';
+import MainCards from '../../Components/mainCards/mainCards';
 import './PropertyList.css'
 import ToggleCheckbox from './ToggleCheckbox'
 import filterReducer from '../../services/FilterReducer'
@@ -11,90 +11,83 @@ export default function PropertyList() {
   const [loadded,setLoaded]=useState(false);
   const {city,agency}=useParams();
   const [filterValues,setFormValues]=useReducer(filterReducer,initialFilter);
-  console.log(city,agency)
-   function handleChange(type, payload) {
-    console.log(type,payload,'in change')
+   function handleChange (type, payload) {
     setFormValues({
       type: type,
       payload: payload,
     });
-    handleFilteration(type,payload)
+    handleFilteration()
   }
-  // function handleGetAgencyListings(url){
-  //   axios.get(url)
-  //   .then(res=>{
-  //     setPropertiesList(res.data.hits)
-  //     setLoaded(true);
-  //     console.log(res.data.hits,'get agenct')
-  //   })
-  //   .catch(err=>console.log(err))
-  // }
-  console.log(process.env.REACT_APP_URL,'url')
   function handleGetAllProperties(url=process.env.REACT_APP_URL){
     axios.get(`${url}`)
       .then(res=>{
         setPropertiesList(res.data.hits);
-        setLoaded(true);
-        console.log(res.data.hits,'get all')
+        console.log(res)
+        if(res.data.hits.length){
+          setLoaded(true);
+        }else {
+
+        }
       })
       .catch(err=>console.log(err))
     }
-    function handleGetPropertiesByCity(city){
-      axios.get(`/propertyList/autoComplete?q=${city}`)
-      .then(res=>{
-        setPropertiesList(res.data.hits)
-        setLoaded(true)
-        console.log(res.data.hits,'get in city')
-      })}
+
     useEffect(()=>{
       if(city){
-       handleGetPropertiesByCity(city)
+        setFormValues({
+          type: 'filterCity',
+          payload: city,
+        });
+        handleGetAllProperties(`${process.env.REACT_APP_URL}?locationExternalIDs=${filterValues.city}`)
         }else handleGetAllProperties();
-    //     else if(agency) {
-    //       handleGetAgencyListings(agency)
-    // }
-    
   },[]);
-    function handleFilteration(type,value){
-      let extraQuerie=`&minRooms${initialFilter.minRooms}&maxrooms=${initialFilter.maxRooms}&minBaths=${initialFilter.minBaths}&priceMin=${initialFilter.priceMin}&priceMax=${initialFilter.priceMax}&categoryExternalID=${initialFilter.propertyType}`
+  useEffect(()=>handleGetAllProperties(),[loadded])
+    function handleFilteration(){
+      console.log('in filteration ',filterValues);
+      let extraQuerie=`locationExternalIDs=${filterValues.city}&minRooms=${filterValues.minRooms}&maxrooms=${filterValues.maxRooms}&minBaths=${filterValues.minBaths}&priceMin=${filterValues.priceMin}&priceMax=${filterValues.priceMax}&categoryExternalID=${filterValues.propertyType}`
       setLoaded(false)
-        switch(type){
-          case 'filterCity':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?locationExternalIDs=${value}&${extraQuerie}`)
-            break;
-          }
-          case 'filterPropertyType':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?categoryExternalID=${value}&${extraQuerie}`)
-            break;
-          }
-          case 'minRooms':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?roomsMin=${value}&${extraQuerie}`)
-            break;
-          }
-          case 'maxRooms':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?roomsMax=${value}&${extraQuerie}`)
-            break;
-          }
-          case 'priceMin':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?priceMin=${value}&${extraQuerie}`)
-            break;
-          }
-          case 'priceMax':{
-            handleGetAllProperties(`${process.env.REACT_APP_URL}?priceMax=${value}&${extraQuerie}`)
-            break;
-          }
-        // case 'filterAgency':{
-        //   handleGetAgencyListings(`${process.env.REACT_APP_URL}/autoComplete?q=${value}&${extraQuerie}`)
-        //   break;
+      handleGetAllProperties(`${process.env.REACT_APP_URL}?${extraQuerie}`)
+        // switch(type){
+        //   case 'filterCity':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?locationExternalIDs=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'filterPropertyType':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?categoryExternalID=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'minRooms':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?roomsMin=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'maxRooms':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?roomsMax=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'priceMin':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?priceMin=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'priceMax':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}?priceMax=${value}&${extraQuerie}`)
+        //     break;
+        //   }
+        //   case 'search':{
+        //     handleGetAllProperties(`${process.env.REACT_APP_URL}/autoComplete?q=${value}`)
+        //     break;
+        //   }
+        // // case 'filterAgency':{
+        // //   handleGetAgencyListings(`${process.env.REACT_APP_URL}/autoComplete?q=${value}&${extraQuerie}`)
+        // //   break;
+        // // }
+        //   default :handleGetAllProperties()
         // }
-          default :handleGetAllProperties()
-        }
 
     }
     return (
       <div className='flex flex-col justify-center items-center h-[100%] w-[100%]'>
-        <div className='m-auto flex flex-col justify-around pt-1 w-[50%] h-[100px] bg-[#f2f2f2] my-5'>
-          <div className='flex'>
+        <div className='m-auto flex flex-col justify-around pt-1 w-[50%] h-[100px]  my-5'>
+          <div className='flex items-center justify-around'>
           <ToggleCheckbox handleChange={handleChange} actionType='filterCity' data={cities} checkHeading='City'/>
         <ToggleCheckbox handleChange={handleChange}   actionType='filterPropertyType' data={propertyTypeList} checkHeading='Property Type'/>
         <ToggleCheckbox handleChange={handleChange}   actionType='minBaths' data={roomAndBathNumberList} checkHeading='Min Baths'/>
@@ -111,7 +104,7 @@ export default function PropertyList() {
         </div>
         <div className='sm:flex sm:flex-col sm:justify-center sm:items-center md:justify-around gap-5  d md:items-start flex-row flex-wrap  w-[100%] h-[100%] '>
         {loadded&&
-        propertiesList.map(property=><MainCard key={property.id} data={property}/>)
+        propertiesList.map(property=><MainCards key={property.id} data={property}/>)
        }
         </div>
       </div>

@@ -172,13 +172,13 @@ function DetailsPage() {
                  
             
                     <MainCards data={data}/>
-                    {/* <MainCards  data={data}/>
-                    <MainCards  data={data}/> */}
+                    <MainCards  data={data}/>
+                    <MainCards  data={data}/>
                </div>               
 
             </section>
             <section className='cards-section'>
-                    <p id='cards-titel'> Similar Listings</p>
+                    {/* <p id='cards-titel'> Similar Listings</p> */}
                     <div className='cards-div'>
                         
                     </div>
@@ -208,7 +208,7 @@ function DetailsPage() {
                            
                           
                         </Swiper> */}
-                        <FavCards data={data}/>
+                            {/* <FavCards data={data}/> */}
                     </div>
                 </section>
           
