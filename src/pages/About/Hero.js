@@ -8,6 +8,15 @@ export default function Hero() {
   <div class="about-container">
     <div class="about-content">
       <div class="about-text-hero">
+      <div className="dots">
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p></p>
+          
+        </div>
         <h1>Welcome to Elite Sands </h1>
         <p>We provide professional services to meet your needs by professional interior designers, You can buy properties and more</p>
       </div>
@@ -21,4 +30,3 @@ export default function Hero() {
    
   )
 }
-//  <div className='about-hero'> <div className='about-hero-background'><img src ='https://t4.ftcdn.net/jpg/04/88/36/59/360_F_488365960_DR2CUhFVyPTBHtHMNZ9toR2taLWKx6U3.jpg' alt='image1'/></div></div> 
