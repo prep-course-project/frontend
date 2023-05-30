@@ -14,24 +14,24 @@ function DetailsPage() {
   const [SameCity, setSameCity] = useState();
   const [loaded, setIsLoaded] = useState(false);
   const [cityIsloaded, setCityIsLoaded] = useState(false);
-  const fetchData = () => {
+  const [isClicked,setIsClicked]=useState(false);
+  function handleRerender(){
+    setIsClicked(prev=>!prev);
+  }
+  const fetchData = async() => {
     try {
-      axios
-        .get(`http://localhost:5000/properites/detail?id=${id}`)
-        .then((res) => {
-          setdata(res.data);
-          setIsLoaded(true);
-        })
-        .then((data) => fetchCity());
+      let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+      setdata(responseData.data);
+      setIsLoaded(true);
+      fetchCity(responseData.data.location[1].externalID)
     } catch (error) {
       console.log(error);
     }
-  };
-  const fetchCity = async () => {
-    const citylocation = data?.location[1].externalID;
+  }
+  const fetchCity = async (location) => {
     try {
       const theCity = await axios.get(
-        `http://localhost:5000?locationExternalIDs=${citylocation}`
+        `http://localhost:5000?locationExternalIDs=${location}`
       );
       setSameCity(theCity.data.hits);
       setCityIsLoaded(true);
@@ -42,9 +42,9 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+    window.scrollTo(0, 0)
+  }, [isClicked]);
   const [showInfo, setShowInfo] = useState(false);
-
   const showMore1 = () => {
     setShowInfo(!showInfo);
   };
@@ -201,7 +201,7 @@ function DetailsPage() {
               <div className="video-div">
                 <ReactPlayer
                   controls
-                  url="https://www.youtube.com/watch?v=uMQnn8xU7qs"
+                  url={`${data.coverVideo.url}`}
                 />
               </div>
             </section>
@@ -236,6 +236,8 @@ function DetailsPage() {
                       <SwiperSlide key={item.id}>
                         <MainCard
                           data={item}
+                          handleRerender={handleRerender}
+                          fromDetails='true'
                           style={{
                             width: "100%",
                             height: "250px",

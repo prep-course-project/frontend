@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './secandCard.scss'
-function MainCard({ data }) {
+function MainCard({ data,handleRerender,fromDetails }) {
   return (
-     <Link to={`/property/details/${data.externalID}`} style={{textDecoration:'none',color:"black"}}>
+     <Link onClick={fromDetails?()=>handleRerender():null} to={`/property/details/${data.externalID}`} style={{textDecoration:'none',color:"black"}}>
     <div>
       < div className='sec-card-main'>
         <img src={data.coverPhoto.url}></img>
