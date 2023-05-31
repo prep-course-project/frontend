@@ -1,7 +1,23 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import './secandCard.scss'
-function MainCard({ data,handleRerender,fromDetails }) {
+import axios from 'axios'
+function MainCard({ data,handleRerender,fromDetails,successToast,errorToast }) {
+  function handleAddToFavorite(){
+    let addBody={
+      title:data.title,
+      externalID:data.externalID,
+      price:data.price,
+      imgUrl:data.coverPhoto.url,
+      area:data.area,
+      purpose:data.purpose
+    }
+    axios.post(`${process.env.REACT_APP_URL}/favorites`,addBody)
+    .then(res=>{
+      successToast('Property Added to favorite')
+    })
+    .catch(err=>errorToast('Something went wrong,'))
+  }
   return (
      <Link onClick={fromDetails?()=>handleRerender():null} to={`/property/details/${data.externalID}`} style={{textDecoration:'none',color:"black"}}>
     <div>
@@ -22,7 +38,7 @@ function MainCard({ data,handleRerender,fromDetails }) {
         </div >
         <div className='button-cards-sec'> 
           <Link to={`/property/details/${data.externalID}`} > <button className='sec-card-button'>Details </button></Link>
-          <Link > <button className='add-card-button'>ِADD to favorite </button></Link>
+          <Link onClick={()=>handleAddToFavorite()} > <button className='add-card-button'>ِADD to favorite </button></Link>
             
         </div>
        <div className='main-cards-icons'>

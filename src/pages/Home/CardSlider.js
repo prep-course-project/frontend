@@ -34,7 +34,7 @@ export default function Cities() {
           </div>
       </Link>
 
-        <Link to = '/propertyList/city/Fujairah'className='a'>
+        <Link to = '/propertyList/city/6542'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img3} alt="" />
@@ -43,7 +43,7 @@ export default function Cities() {
           </div>
       </Link>
       
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/6020'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img4} alt="" />
@@ -60,14 +60,14 @@ export default function Cities() {
           <h3>Umm Al Quwain</h3>
           </div>
       </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/6542'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img8} alt="" />
           <h4>Dibba Al-Fujairah</h4>
           </div>
       </Link>
-        <Link to = '/propertyList/city/Abu-Dhabi'className='a'>
+        <Link to = '/propertyList/city/5509'className='a'>
         <div className="city">
         <div className="over-lay-city"></div>
         <img src={img10} alt="" />

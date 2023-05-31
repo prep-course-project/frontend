@@ -5,12 +5,16 @@ import MainCard from "../../Components/mainCard/mainCard";
 import FilterSection from "./FilterSection/FilterSection";
 import "./PropertyList.scss";
 import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function PropertyList() {
   const [propertiesList, setPropertiesList] = useState([]);
   const [loadded, setLoaded] = useState(false);
   const { city,purpose } = useParams();
   const [filterState, setFilterState] = useState(initialFilter);
   const [searchValue, setSearchValue] = useState(getCityName(city)||'All');
+  const errorToast=(message)=> toast.error(message);
+  const successToast=(messaage)=>toast(messaage);
   function handleChange(type, payload) {
     let updatedValue = {};
     updatedValue = { [`${type}`]: payload };
@@ -49,10 +53,10 @@ export default function PropertyList() {
         } else {
         }
       })
-      .catch((err) => console.log(err));
+      .catch((err) => errorToast(err));
   }
 
-  useEffect(() => {
+  useEffect(() => { 
     if (city) {
       let updatedValue = {};
       updatedValue = { [`city`]: city };
@@ -101,9 +105,23 @@ export default function PropertyList() {
       <div className="propertyList__cards">
         {loadded &&
           propertiesList.map((property) => (
-            <MainCard key={property.id} data={property} />
+            <MainCard key={property.id} errorToast={errorToast} successToast={successToast} data={property} />
           ))}
       </div>
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        
+        
+        />
     </div>
   );
 }
