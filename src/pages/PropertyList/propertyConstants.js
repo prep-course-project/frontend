@@ -1,14 +1,16 @@
 const initialFilter = {
   agency: "",
-  minRooms: 0,
-  maxRooms: 7,
-  minBaths: 0,
-  maxBaths: 7,
-  priceMin: 10000,
-  priceMax: 90000,
+  roomsMin: 0,
+  roomsMax: 7,
+  bathMin: 0,
+  bathMax: 7,
+  priceMin: 20000,
+  priceMax: 999999,
   city: "5002,6020",
   propertyType: "",
-  search: "",
+  areaMin:0,
+  areaMax:10000,
+  purpose:'for-rent'
 };
 const cities = [
   "Umm Al Quwain5544",
@@ -20,6 +22,8 @@ const cities = [
   "Abu Dhabi6020",
   "Dubai5002",
 ];
+const areas=[800,1000,1500,2000,2500,3000,3500,4000,4500,5000];
+const purpose=['for-rent','for-sale'];
 const propertyTypeList = [
   { type: "Apartment", ApiQuery: 4 },
   { type: "Townhouses", ApiQuery: 16 },
@@ -31,7 +35,7 @@ const propertyTypeList = [
 ];
 const roomAndBathNumberList = [1, 2, 3, 4, 5, 6, 7];
 const pricesList = [
-  10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000,
+  20000,  30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000,150000,200000,300000,400000
 ];
 const agenciesList = [
   "Espace Real Estate",
@@ -54,4 +58,6 @@ module.exports = {
   roomAndBathNumberList,
   pricesList,
   agenciesList,
+  areas,
+  purpose,
 };

@@ -19,6 +19,7 @@ function App() {
       <Routes>
       <Route path='/' element={<Home/>}/>
       <Route path='/propertyList/city/:city' element ={<PropertyList/>}/>
+      <Route path='/propertyList/purpose/:purpose' element ={<PropertyList/>}/>
       <Route path='/propertyList' element ={<PropertyList/>}/>
       <Route path='/favorites' element={<Favorite data={data}/>}/>
       <Route path='/property/details/:id' element={<DetailsPage/>}/>

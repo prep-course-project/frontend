@@ -2,6 +2,7 @@ import React from 'react'
 import video from "./assets/video.mp4"
 import '../Home/Hero.css'
 import CardSlider from './CardSlider'
+import { Link } from 'react-router-dom'
 
 export default function Hero() {
   return (
@@ -13,8 +14,8 @@ export default function Hero() {
                <p>Explore our range of beautiful properties with the addition of separate accommodation suitable for you. </p>
                
                <div className="btn">
-                    <button className="rent btn-hero">Rent</button>
-                    <button className="sell btn-hero">Sell</button>
+                    <Link to={`/propertyList/purpose/for-sale`}><button className="rent btn-hero">For Sale</button></Link>
+                    <Link to={`/propertyList/purpose/for-rent`}><button className="sell btn-hero">For Rent</button></Link>
                </div>
 
            </div>

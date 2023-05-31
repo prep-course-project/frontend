@@ -1,41 +1,40 @@
-.filters{
+.property__filters{
  display: flex;   
  flex-direction: column;
- justify-content: space-around;
+ justify-content: center;
  align-items: center;
  width: 100%;
- height: 100px;
+ height: 300px;
  overflow: hidden;
  transition: all .5 ease-in;
 
- .property__toggle{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    width: 60%;
-    height: 40px;
-    overflow: hidden;
-    transition: all .5 ease-in;
+ .hide__filters{
+   width: 50%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   overflow: hidden;
+   align-self: center;
+   height: 20%;
+   gap: 20px;
+   transition: all .5s ease-in;
  }
-}
-.showAllFilters{
-    display: flex;   
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    transition: all .5 ease-in;
-    .property__toggle{
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        align-items: flex-start;
-        width: 60%;
-        height: 150px;
-        transition: all .5 ease-in;
 
-     }
+.show__AllFilters{
+   height: 100%;
+   width: 50%;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   overflow: hidden;
+   align-self: center;
+   height: 80%;
+   gap: 20px;
+   transition: all .5s ease-in;
+
+}
+h5{
+   color: #005f8b;
+   font-size: 25px;
+}
 }

@@ -8,14 +8,9 @@ import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
 export default function PropertyList() {
   const [propertiesList, setPropertiesList] = useState([]);
   const [loadded, setLoaded] = useState(false);
-  const { city } = useParams();
-  let targetCity
-  if(city){
-    targetCity= cities.filter(e=>e.slice(e.length-4,e.length)==city)[0]
-  }
+  const { city,purpose } = useParams();
   const [filterState, setFilterState] = useState(initialFilter);
-  cities.filter(e=>e.slice)
-  const [searchValue, setSearchValue] = useState(targetCity?.slice(0,targetCity.length-4)||'All');
+  const [searchValue, setSearchValue] = useState(getCityName(city)||'All');
   function handleChange(type, payload) {
     let updatedValue = {};
     updatedValue = { [`${type}`]: payload };
@@ -23,16 +18,24 @@ export default function PropertyList() {
       ...prevFilter,
       ...updatedValue,
     }));
-    if(payload=='All'){
-    setSearchValue((prev)=>({...prev,payload}))
+    if(payload==='All'){
+    setSearchValue('All')
     }
-   else if(type==='city'){
-     let targetCity= cities.filter(e=>e.slice(e.length-4,e.length)==payload)[0];
-     setSearchValue(`${targetCity.slice(0,targetCity.length-4)}`);
-    }else if(type==='propertyType'){
-      let targetProperty=propertyTypeList.filter(e=>e.ApiQuery==payload)[0];
-      console.log(targetProperty)
-      setSearchValue(`${targetProperty.type}`)
+   else  if(type==='city'){
+    setSearchValue(getCityName(payload));
+   }else if(type==='propertyType'){
+     let targetProperty=propertyTypeList.filter(e=>e.ApiQuery==payload)[0];
+     console.log(targetProperty)
+     setSearchValue(`${targetProperty.type}`)
+   }
+  }
+  function getCityName(cityParameter){
+    if(city){
+      let targetCity;
+      targetCity= cities.filter(e=>e.slice(e.length-4,e.length)==cityParameter)[0];
+      console.log(targetCity,'in get city')
+      targetCity=targetCity.slice(0,targetCity.length-4)
+      return targetCity
     }
   }
   function handleGetAllProperties(url = process.env.REACT_APP_URL) {
@@ -53,7 +56,6 @@ export default function PropertyList() {
     if (city) {
       let updatedValue = {};
       updatedValue = { [`city`]: city };
-      console.log('in city handle')
       setFilterState((prevFilter) => ({
         ...prevFilter,
         ...updatedValue,
@@ -61,13 +63,25 @@ export default function PropertyList() {
       handleGetAllProperties(
         `${process.env.REACT_APP_URL}?locationExternalIDs=${city}`
       );
+    }else if(purpose){
+      let updatedValue = {};
+      updatedValue = { [`purpose`]: purpose };
+      setFilterState((prevFilter) => ({
+        ...prevFilter,
+        ...updatedValue,
+      }));
+      setSearchValue(purpose)
+      handleGetAllProperties(
+        `${process.env.REACT_APP_URL}?purpose${purpose}`
+      );
     } else {
       handleGetAllProperties();
     }
+    window.scrollTo(0,0)
   }, []);
   useEffect(() => {
     if(loadded){
-      let extraQuerie = `locationExternalIDs=${filterState.city}&minRooms=${filterState.minRooms}&maxrooms=${filterState.maxRooms}&minBaths=${filterState.minBaths}&priceMin=${filterState.priceMin}&priceMax=${filterState.priceMax}&categoryExternalID=${filterState.propertyType}`;
+      let extraQuerie = `locationExternalIDs=${filterState.city}&minRooms=${filterState.roomsMin}&maxrooms=${filterState.roomsMax}&minBaths=${filterState.bathMin}&maxBaths=${filterState.bathMax}&priceMin=${filterState.priceMin}&priceMax=${filterState.priceMax}&categoryExternalID=${filterState.propertyType}&purpose=${filterState.purpose}`;
       handleGetAllProperties(`${process.env.REACT_APP_URL}?${extraQuerie}`);
     }
 
