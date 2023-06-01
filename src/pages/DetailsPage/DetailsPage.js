@@ -8,45 +8,87 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import MainCard from "../../Components/mainCard/mainCard";
+import data from '../../jaon.json'
+import ReactStars from "react-rating-stars-component";
+import Test from "../PropertyList/Test";
 function DetailsPage() {
-  const { id } = useParams();
-  const [data, setdata] = useState();
-  const [SameCity, setSameCity] = useState();
-  const [loaded, setIsLoaded] = useState(false);
-  const [cityIsloaded, setCityIsLoaded] = useState(false);
-  const [isClicked,setIsClicked]=useState(false);
-  function handleRerender(){
-    setIsClicked(prev=>!prev);
-  }
-  const fetchData = async() => {
-    try {
-      let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
-      setdata(responseData.data);
-      setIsLoaded(true);
-      fetchCity(responseData.data.location[1].externalID)
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  const fetchCity = async (location) => {
-    try {
-      const theCity = await axios.get(
-        `http://localhost:5000?locationExternalIDs=${location}`
-      );
-      setSameCity(theCity.data.hits);
-      setCityIsLoaded(true);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const { id } = useParams();
+  // const [data, setdata] = useState();
+  // const [SameCity, setSameCity] = useState();
+  // const [loaded, setIsLoaded] = useState(false);
+  // const [cityIsloaded, setCityIsLoaded] = useState(false);
+  // const [isClicked,setIsClicked]=useState(false);
+  // function handleRerender(){
+  //   setIsClicked(prev=>!prev);
+  // }
+  // const fetchData = async() => {
+  //   try {
+  //     let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+  //     setdata(responseData.data);
+  //     setIsLoaded(true);
+  //     fetchCity(responseData.data.location[1].externalID)
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+  // const fetchCity = async (location) => {
+  //   try {
+  //     const theCity = await axios.get(
+  //       `http://localhost:5000?locationExternalIDs=${location}`
+  //     );
+  //     setSameCity(theCity.data.hits);
+  //     setCityIsLoaded(true);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchData();
-    window.scrollTo(0, 0)
-  }, [isClicked]);
-  const [showInfo, setShowInfo] = useState(false);
-  const showMore1 = () => {
-    setShowInfo(!showInfo);
+  // useEffect(() => {
+  //   fetchData();
+  //   window.scrollTo(0, 0)
+  // }, [isClicked]);
+  // const [showInfo, setShowInfo] = useState(false);
+  // const showMore1 = () => {
+  //   setShowInfo(!showInfo);
+  // };
+
+    const [allCommite,setAllCommite ]=useState()
+  const fetchCommite = async() => {
+      try {
+        let responseComiite=await axios.get(`http://localhost:5000/commint/${id}`)
+        setAllCommite(responseData.data);
+        console.log(allCommite)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+
+  const [isUpdated, setIsUpdated] = useState(false)
+
+  const [newRate ,setNewRate]=useState()
+  const AddCommite =(e)=>{
+    e.preventDefault();
+        setIsUpdated(false);
+
+
+    const obj ={
+      Name : e.target.Name.vlaue,
+      Email : e.target.Email.vlaue,
+      commint : e.target.Email.vlaue,
+      Rating: newRate,
+       }
+      axios.post(`http://localhost:5000/commint/${id}`,obj)
+      .then(res =>{
+        setIsUpdated(true);
+        
+
+      }).catch(err => console.log(err))
+  }
+  const ratingChanged = (newRating) => {
+    console.log(newRating);
+    setNewRate(newRating)
+    
   };
 
   return (
@@ -55,26 +97,30 @@ function DetailsPage() {
     // </div>
 
     <div className="main-div-for-detalis">
-      {loaded && (
-        <div className="top-section">
-          <section className="slider">
-            <Carousel fade>
-              {data.photos.map((item) => {
-                return (
-                  <Carousel.Item>
-                    <img
-                      className="d-block w-100"
-                      src={item.url}
-                      alt="Second slide"
-                    />
-                  </Carousel.Item>
-                );
-              })}
-            </Carousel>
-          </section>
-        </div>
-      )}
-      {loaded && (
+      {/* {loaded && ( */}
+      <div className="top-section">
+        <section className="slider">
+          <Carousel fade>
+            {data.photos.map((item) => {
+              return (
+                <Carousel.Item>
+                  <img
+                    className="d-block w-100"
+                    src={item.url}
+                    alt="Second slide"
+                  />
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
+        </section>
+      </div>
+      {/* )} */}
+      {/* {loaded && ( */}
+      <div className="div-for-two-sides">
+
+
+
         <div className="contant">
           <section className="allDeitalis">
             <div className="icons">
@@ -133,7 +179,7 @@ function DetailsPage() {
                   </p>{" "}
                 </div>
 
-                <div className="Property-info">
+                <div className="Property-info1">
                   <p className="upercase">
                     <i class="fa-solid fa-house-signal"></i> states :
                     {data.state}
@@ -183,14 +229,14 @@ function DetailsPage() {
               <div className="description">
                 <h2>Description:</h2>
 
-                <p>
+                {/* <p>
                   {showInfo
                     ? data.description
                     : `${data.description.slice(0, 550)}...`}
                 </p>
                 <button className="button1" onClick={showMore1}>
                   {showInfo ? "See less" : "See more"}
-                </button>
+                </button> */}
               </div>
             </div>
           </section>
@@ -217,7 +263,7 @@ function DetailsPage() {
                </div>               
 
             </section> */}
-          <section className="cards-section">
+          {/* <section className="cards-section">
             <p className="cards-titel"> Similar Listings</p>
             <div>
               <Swiper
@@ -249,9 +295,36 @@ function DetailsPage() {
                   })}
               </Swiper>
             </div>
-          </section>
+          </section> */}
         </div>
-      )}
+        {/* )} */}
+        <section className="side-section-detalis">
+          <Test data={data} />
+          <section className='Form-section-detalis'>
+            <form onSubmit={AddCommite} className="rating-form-detalis">
+              <p id='review'>Add Review</p>
+                
+              <label> Your Name</label>
+              <input id='Name'type="text"></input>
+              <label> Email</label>
+              <input  id='Email' type="email"></input>
+              <label> commint</label>
+              <textarea id='commint'></textarea>
+              <p> How was your experience? </p>
+              <div className="stars">
+                 <ReactStars
+                  count={5}
+                  onChange={ratingChanged}
+                  size={42}
+                  activeColor="#ffd700"
+                  
+                 />
+                 </div>
+              <button type="submit"> Submit</button>
+            </form>
+          </section>
+        </section>
+      </div>
     </div>
   );
 }

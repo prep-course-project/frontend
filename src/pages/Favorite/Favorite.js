@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Favorite.scss'
 import FavCards from '../../Components/favCards/favCards'
-import Test from "../PropertyList/test";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
