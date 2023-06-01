@@ -1,78 +1,63 @@
 .fav-cards-main {
-    margin-left: 10px;
-    display: flex;
-    width: 90%;
-    filter: drop-shadow(0 0 2px rgba(10, 0, 0, 0.3));
-    justify-content: space-around;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 10px;
-    background-color: #fff;
+  margin-left: 15px;
+  display: flex;
+  width: 90%;
+  filter: drop-shadow(0 0 2px rgba(10, 0, 0, 0.3));
+  justify-content: flex-start;
+  gap: 130px;
+  align-items: center;
+  transition: 0.5s;
+  border-radius: 10px;
+  background-color: #fff;
+  height: 150px;
 
-    p {
-        font-family: sans-serif;
-    }
-    
-    img {
-        padding: 6px;
-        object-fit: cover;
+  p {
+    font-family: sans-serif;
+  }
 
-        height: 90px;
+  img {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
 
-
-    }
-
-    .fav-card-titel {
-        width: 150px;
-        font-size: 15px;
-        line-height: 1.1;
-
-
-
-    }
-
-    i {
-        color: blue;
-        font-size: 22px;
-    }
-
-    .icons-fav-card {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-    }
-
-    .main-cards-price {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-
-}
-.button-fav-card{
+  .button-fav-card {
     padding: 5px;
     background: white;
     color: #fff;
     border-radius: 10%;
     border: none;
     font-weight: 600;
-}
-.button-fav-card i{
+  }
+
+  .button-fav-card i {
     transition: 0.5s;
     color: black;
     font-size: 17px;
-}
-.button-fav-card i:hover{
-    color: rgb(255, 0, 0)
-}
-.fav-cards-main:hover{
- transform: scale(1.02);
-}   
-.fav_detalis{
+  }
+
+  .button-fav-card i:hover {
+    color: rgb(255, 0, 0);
+  }
+
+  .fav-details {
     display: flex;
     position: relative;
     left: 20%;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .fav-card-image {
+    display: flex;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+    height: 100%;
+    max-height: 100%;
+  }
 }

@@ -4,9 +4,11 @@ import './favCards.scss'
 function FavCards({ data,handleDeleteFavorite}) {
     return (
         <div className='flex  justify-around'>
-            <div className='fav-cards-main '>
-                <img src={data.imgurl}></img>
-                <p>{data.price}AED</p>
+           <div className='fav-cards-main'>
+  <div className='fav-card-image'>
+    <img src={data.imgurl} alt="Card Image" />
+  </div>
+                    <p><strong>{data.price} AED</strong></p>
                 <p>  {Math.floor(data.area)} Sq Ft </p>
                 <p>{data.purpose} </p>
             <div classname = 'fav_detalis'>
