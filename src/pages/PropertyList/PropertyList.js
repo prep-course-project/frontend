@@ -7,6 +7,7 @@ import "./PropertyList.scss";
 import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Test from './test'
 export default function PropertyList() {
   const [propertiesList, setPropertiesList] = useState([]);
   const [loadded, setLoaded] = useState(false);
@@ -122,6 +123,7 @@ export default function PropertyList() {
         
         
         />
+        <Test/>
     </div>
   );
 }
