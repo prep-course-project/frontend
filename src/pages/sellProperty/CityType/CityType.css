@@ -5,6 +5,20 @@
     padding-left: 40px;
     justify-content:space-around;
 }
+.city-select {
+    width:100%;
+    font-size: larger;
+     /* background-color: rgb(96, 158, 209); */
+}
+.city-select:hover {
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+.city-select option{
+    width:100%;
+    /* background-color: rgb(152, 195, 230); */
+}
 .sell-city{
     width: 70%;
     display: flex;
@@ -36,19 +50,29 @@
       border-width: 2px;
       border-color: black;
   }
+
 .sell-type{
-    width: 70%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     gap: 16px;
     align-items: center;   
     flex-wrap: wrap;
-    
+
+}
+.sell-type i{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+.city-type-h2{
+   padding-left: 100px;
 
 }
 .sell-type button{
-    width: 100px;
-    height: 100px;
+    /* width: 90px; */
+    height: 88px;
     color:black;
     background-color: rgba(140, 159, 196, 0);
     border-style: solid;

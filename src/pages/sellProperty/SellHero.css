@@ -13,7 +13,8 @@
 }
   
   .sell-title{
-    color: #333;
+    color: rgb(55, 161, 180);
+    
     justify-content:flex-start;
     width:30%;
     max-width:30%;
@@ -46,10 +47,10 @@
   }
   
   .sell-p1 h2{
-    color: #333;
+    /* color: #333; */
     font-size: 30px;
     /* color: #005f8bc5; */
-    color:aliceblue;
+    color:rgb(55, 161, 180);
     font-weight: bold;
     padding-top: 20px;
     padding-left: 15px;
