@@ -1,5 +1,4 @@
 const initialFilter = {
-  agency: "",
   roomsMin: 0,
   roomsMax: 7,
   bathMin: 0,
