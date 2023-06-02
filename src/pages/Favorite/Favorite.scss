@@ -1,33 +1,55 @@
-.main-div-fav{
+.main-div-fav {
     display: flex;
-    height: 100vh;
-}
-.data-fav{
-    min-height: 100vh;
+    height: 100%;
+  }
+  
+  .data-fav {
     width: 100%;
-    background-color: rgb(247,248,249);;
+    background-color: rgb(247, 248, 249);
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-}
-.side-bar-fav {
+    height: 100%;
+  }
+  
+  .side-bar-fav {
+    height: auto;
     width: 18%;
     background-color: rgb(0, 43, 75);
-    height: 100%;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-  
-    img {
-      width: 100%; 
-      max-width: 280px; 
-    }
+    justify-content: flex-start;
   }
-.fav-header{
-
+  
+  .side-bar-fav img {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .sidebar-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .sidebar-tabs .tab {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar-tabs .tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .fav-header {
     display: flex;
     background-color: #fff;
     width: 100%;
@@ -36,24 +58,28 @@
     align-items: center;
     justify-content: center;
     padding-right: 70px;
-    
-}
-.table-header-fav{
-    background-color: rgb(247,248,249);;
+  }
+  
+  .table-header-fav {
+    background-color: rgb(247, 248, 249);
     width: 62%;
     display: flex;
-    justify-content: space-between;
-   
+    justify-content: left;
+    gap: 160px;
     margin: 0 100px;
-    p{
-        font-weight: 600;
-    }
-
-}
-.cardNumber1{
+  }
+  
+  .table-header-fav p {
+    font-weight: 600;
+  }
+  
+  .cardNumber1 {
+    height: 100%;
     width: 100%;
-display: flex;
-justify-content: space-between;
-gap: 15px;
-align-items: center;
-}
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    // align-items: center;
+    margin-bottom: 25px;
+  }
+  
