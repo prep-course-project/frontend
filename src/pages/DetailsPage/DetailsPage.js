@@ -12,50 +12,52 @@
 // import ReactStars from "react-rating-stars-component";
 // import Test from "../PropertyList/Test";
 // function DetailsPage() {
-//   // const { id } = useParams();
-//   // const [data, setdata] = useState();
-//   // const [SameCity, setSameCity] = useState();
-//   // const [loaded, setIsLoaded] = useState(false);
-//   // const [cityIsloaded, setCityIsLoaded] = useState(false);
-//   // const [isClicked,setIsClicked]=useState(false);
-//   // function handleRerender(){
-//   //   setIsClicked(prev=>!prev);
-//   // }
-//   // const fetchData = async() => {
-//   //   try {
-//   //     let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
-//   //     setdata(responseData.data);
-//   //     setIsLoaded(true);
-//   //     fetchCity(responseData.data.location[1].externalID)
-//   //   } catch (error) {
-//   //     console.log(error);
-//   //   }
-//   // }
-//   // const fetchCity = async (location) => {
-//   //   try {
-//   //     const theCity = await axios.get(
-//   //       `http://localhost:5000?locationExternalIDs=${location}`
-//   //     );
-//   //     setSameCity(theCity.data.hits);
-//   //     setCityIsLoaded(true);
-//   //   } catch (error) {
-//   //     console.log(error);
-//   //   }
-//   // };
+//   const { id } = useParams();
+//   const [data, setdata] = useState();
+//   const [SameCity, setSameCity] = useState();
+//   const [loaded, setIsLoaded] = useState(false);
+//   const [cityIsloaded, setCityIsLoaded] = useState(false);
+//   const [isClicked,setIsClicked]=useState(false);
+//   const [isUpdated, setIsUpdated] = useState(false)
+//   function handleRerender(){
+//     setIsClicked(prev=>!prev);
+//   }
+//   const fetchData = async() => {
+//     try {
+//       let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+//       setdata(responseData.data);
+//       setIsLoaded(true);
+//       fetchCity(responseData.data.location[1].externalID)
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   }
+//   const fetchCity = async (location) => {
+//     try {
+//       const theCity = await axios.get(
+//         `http://localhost:5000?locationExternalIDs=${location}`
+//       );
+//       setSameCity(theCity.data.hits);
+//       setCityIsLoaded(true);
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
 
-//   // useEffect(() => {
-//   //   fetchData();
-//   //   window.scrollTo(0, 0)
-//   // }, [isClicked]);
-//   // const [showInfo, setShowInfo] = useState(false);
-//   // const showMore1 = () => {
-//   //   setShowInfo(!showInfo);
-//   // };
+//   useEffect(() => {
+//     fetchData();
+//   fetchCommite()
+//     window.scrollTo(0, 0)
+//   }, [isClicked,isUpdated]);
+//   const [showInfo, setShowInfo] = useState(false);
+//   const showMore1 = () => {
+//     setShowInfo(!showInfo);
+//   };
 
 //     const [allCommite,setAllCommite ]=useState()
 //   const fetchCommite = async() => {
 //       try {
-//         let responseComiite=await axios.get(`http://localhost:5000/commint/${id}`)
+//         let responseData=await axios.get(`http://localhost:5000/commint/${id}`)
 //         setAllCommite(responseData.data);
 //         console.log(allCommite)
 //       } catch (error) {
@@ -64,40 +66,40 @@
 //     }
 
 
-//   const [isUpdated, setIsUpdated] = useState(false)
+ 
 
-//   const [newRate ,setNewRate]=useState()
-//   const AddCommite =(e)=>{
-//     e.preventDefault();
-//         setIsUpdated(false);
+// //   const [newRate ,setNewRate]=useState()
+// //   const AddCommite =(e)=>{
+// //     e.preventDefault();
+// //         setIsUpdated(false);
 
 
-//     const obj ={
-//       Name : e.target.Name.vlaue,
-//       Email : e.target.Email.vlaue,
-//       commint : e.target.Email.vlaue,
-//       Rating: newRate,
-//        }
-//       axios.post(`http://localhost:5000/commint/${id}`,obj)
-//       .then(res =>{
-//         setIsUpdated(true);
+// //     const obj ={
+// //       Name : e.target.Name.vlaue,
+// //       Email : e.target.Email.vlaue,
+// //       commint : e.target.Email.vlaue,
+// //       Rating: newRate,
+// //        }
+// //       axios.post(`http://localhost:5000/commint/${id}`,obj)
+// //       .then(res =>{
+// //         setIsUpdated(true);
         
 
-//       }).catch(err => console.log(err))
-//   }
-//   const ratingChanged = (newRating) => {
-//     console.log(newRating);
-//     setNewRate(newRating)
+// //       }).catch(err => console.log(err))
+// //   }
+// //   const ratingChanged = (newRating) => {
+// //     console.log(newRating);
+// //     setNewRate(newRating)
     
-//   };
+// //   };
 
-//   return (
-//     // <div>
-//     //    <MainCard data={data}/>
-//     // </div>
+// //   return (
+// //     // <div>
+// //     //    <MainCard data={data}/>
+// //     // </div>
 
 //     <div className="main-div-for-detalis">
-//       {/* {loaded && ( */}
+//       {loaded && (
 //       <div className="top-section">
 //         <section className="slider">
 //           <Carousel fade>
@@ -115,12 +117,13 @@
 //           </Carousel>
 //         </section>
 //       </div>
-//       {/* )} */}
+//        )} 
 //       {/* {loaded && ( */}
+       
 //       <div className="div-for-two-sides">
 
 
-
+//       {loaded && (
 //         <div className="contant">
 //           <section className="allDeitalis">
 //             <div className="icons">
@@ -152,118 +155,117 @@
 //                   </p>{" "}
 //                 </div>
 
-//                 <div className="contact-info1">
-//                   <p>
-//                     {" "}
-//                     <i class="fa-solid fa-user"></i> Owner Name:{" "}
-//                     {data.contactName}{" "}
-//                   </p>
-//                   <p>
-//                     {" "}
-//                     <i class="fa-solid fa-phone"></i> Phone :{" "}
-//                     {data.phoneNumber.phone}{" "}
-//                   </p>
-//                   <p>
-//                     {" "}
-//                     <i class="fa-brands fa-whatsapp"></i> whatsapp:{" "}
-//                     {data.phoneNumber.whatsapp}
-//                   </p>
-//                 </div>
-//               </section>
+// //                 <div className="contact-info1">
+// //                   <p>
+// //                     {" "}
+// //                     <i class="fa-solid fa-user"></i> Owner Name:{" "}
+// //                     {data.contactName}{" "}
+// //                   </p>
+// //                   <p>
+// //                     {" "}
+// //                     <i class="fa-solid fa-phone"></i> Phone :{" "}
+// //                     {data.phoneNumber.phone}{" "}
+// //                   </p>
+// //                   <p>
+// //                     {" "}
+// //                     <i class="fa-brands fa-whatsapp"></i> whatsapp:{" "}
+// //                     {data.phoneNumber.whatsapp}
+// //                   </p>
+// //                 </div>
+// //               </section>
 
-//               <section className="Property-Details">
-//                 <div className="Property-info">
-//                   {" "}
-//                   <p>
-//                     <i class="fa-solid fa-house-chimney"></i> Property Details:
-//                   </p>{" "}
-//                 </div>
+// //               <section className="Property-Details">
+// //                 <div className="Property-info">
+// //                   {" "}
+// //                   <p>
+// //                     <i class="fa-solid fa-house-chimney"></i> Property Details:
+// //                   </p>{" "}
+// //                 </div>
 
-//                 <div className="Property-info1">
-//                   <p className="upercase">
-//                     <i class="fa-solid fa-house-signal"></i> states :
-//                     {data.state}
-//                   </p>
-//                   {/* <p> <i class="fa-solid fa-location-dot"></i> {data.location.map(location => {
-//                                     return (
+// //                 <div className="Property-info1">
+// //                   <p className="upercase">
+// //                     <i class="fa-solid fa-house-signal"></i> states :
+// //                     {data.state}
+// //                   </p>
+// //                   {/* <p> <i class="fa-solid fa-location-dot"></i> {data.location.map(location => {
+// //                                     return (
                                      
-//                                         location.name + '-'
+// //                                         location.name + '-'
                                        
-//                                     )
-//                                 })}    </p> */}
-//                   <p>
-//                     {" "}
-//                     <i class="fa-solid fa-house"></i> purpose : {data.purpose}{" "}
-//                   </p>
-//                   <p>
-//                     {" "}
-//                     <i class="fa-solid fa-ruler-combined"></i> Area:{" "}
-//                     {Math.floor(data.area)} Sq Ft{" "}
-//                   </p>
-//                 </div>
-//               </section>
-//             </div>
-//             <div className="Features-div">
-//               <section className="Features2">
-//                 <div className="Features1">
-//                   {" "}
-//                   <p>Features:</p>{" "}
-//                 </div>
+// //                                     )
+// //                                 })}    </p> */}
+// //                   <p>
+// //                     {" "}
+// //                     <i class="fa-solid fa-house"></i> purpose : {data.purpose}{" "}
+// //                   </p>
+// //                   <p>
+// //                     {" "}
+// //                     <i class="fa-solid fa-ruler-combined"></i> Area:{" "}
+// //                     {Math.floor(data.area)} Sq Ft{" "}
+// //                   </p>
+// //                 </div>
+// //               </section>
+// //             </div>
+// //             <div className="Features-div">
+// //               <section className="Features2">
+// //                 <div className="Features1">
+// //                   {" "}
+// //                   <p>Features:</p>{" "}
+// //                 </div>
 
-//                 <div className="Features">
-//                   {data.amenities.map((item) => {
-//                     return item.amenities.map((Features) => {
-//                       return (
-//                         <p>
-//                           {" "}
-//                           <i class="fa-solid fa-circle-check"></i>{" "}
-//                           {Features.text}
-//                         </p>
-//                       );
-//                     });
-//                   })}
-//                 </div>
-//               </section>
-//             </div>
-//             <div className="main-description">
-//               <div className="description">
-//                 <h2>Description:</h2>
+// //                 <div className="Features">
+// //                   {data.amenities.map((item) => {
+// //                     return item.amenities.map((Features) => {
+// //                       return (
+// //                         <p>
+// //                           {" "}
+// //                           <i class="fa-solid fa-circle-check"></i>{" "}
+// //                           {Features.text}
+// //                         </p>
+// //                       );
+// //                     });
+// //                   })}
+// //                 </div>
+// //               </section>
+// //             </div>
+// //             <div className="main-description">
+// //               <div className="description">
+// //                 <h2>Description:</h2>
 
-//                 {/* <p>
+//                 <p>
 //                   {showInfo
 //                     ? data.description
 //                     : `${data.description.slice(0, 550)}...`}
 //                 </p>
 //                 <button className="button1" onClick={showMore1}>
 //                   {showInfo ? "See less" : "See more"}
-//                 </button> */}
+//                 </button>
 //               </div>
 //             </div>
 //           </section>
 
-//           {data.videos.length && (
-//             <section className="video-section">
-//               <p> Video </p>
-//               <div className="video-div">
-//                 <ReactPlayer
-//                   controls
-//                   url={`${data.coverVideo.url}`}
-//                 />
-//               </div>
-//             </section>
-//           )}
-//           {/* <section className='cards-section'>
-//                 <p id='cards-titel'> Similar Listings</p>
-//                  <div className='cards-div'>
+// //           {data.videos.length && (
+// //             <section className="video-section">
+// //               <p> Video </p>
+// //               <div className="video-div">
+// //                 <ReactPlayer
+// //                   controls
+// //                   url={`${data.coverVideo.url}`}
+// //                 />
+// //               </div>
+// //             </section>
+// //           )}
+// //           {/* <section className='cards-section'>
+// //                 <p id='cards-titel'> Similar Listings</p>
+// //                  <div className='cards-div'>
                  
             
-//                     <MainCards data={data}/>
-//                     <MainCards  data={data}/>
-//                     <MainCards  data={data}/>
-//                </div>               
-
+// //                     <MainCards data={data}/>
+// //                     <MainCards  data={data}/>
+// //                     <MainCards  data={data}/>
+// //                </div>               
 //             </section> */}
-//           {/* <section className="cards-section">
+//           <section className="cards-section">
 //             <p className="cards-titel"> Similar Listings</p>
 //             <div>
 //               <Swiper
@@ -295,38 +297,95 @@
 //                   })}
 //               </Swiper>
 //             </div>
-//           </section> */}
+//           </section>
+//        <section style={{color:'#000',backgroundColor:'#f3f2f2'}} >
+//   <div class="container py-5">
+//     <div class="row d-flex justify-content-center">
+//       <div class="col-md-10 col-xl-8 text-center">
+//         <h3 class="fw-bold mb-4">Testimonials</h3>
+//         <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+//           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+//           numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+//           quisquam eum porro a pariatur veniam.
+//         </p>
+//       </div>
+//     </div>
+// {allCommite.length &&(allCommite.map((review)=>{
+//   return(
+
+ 
+        
+
+//     <div class="row text-center">
+//       <div class="col-md-4 mb-4 mb-md-0" className='main-revie-div'>
+//         <div class="card">
+//           <div class="card-body py-4 mt-2"
+//           className="inside-card">
+//             <div class="d-flex justify-content-center mb-4">
+//               <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+//                 class="rounded-circle shadow-1-strong" width="100" height="100" />
+//             </div>
+//             <h5 class="font-weight-bold">{review.Name}</h5>
+//             <ReactStars
+//                   count={5}
+//                   onChange={ratingChanged}
+//                   size={25}
+//                   activeColor="#ffd700"
+//                   value={4}
+//                   edit={false}
+                  
+//                  />
+//             <h6 class="font-weight-bold my-3">{review.Email}</h6>
+          
+//             <p class="mb-2">
+//               <i class="fas fa-quote-left pe-2"></i>{review.commint}
+//             </p>
+//           </div>
 //         </div>
-//         {/* )} */}
+//       </div>
+//       {/* <div class="col-md-4 mb-4 mb-md-0">
+        
+//       </div>
+//       <div class="col-md-4 mb-0">
+       
+//       </div> */}
+//     </div>
+//      )
+//     })
+//     )}
+//   </div>
+// </section>
+//         </div>
+//          )} 
 //         <section className="side-section-detalis">
 //           <Test data={data} />
 //           <section className='Form-section-detalis'>
 //             <form onSubmit={AddCommite} className="rating-form-detalis">
 //               <p id='review'>Add Review</p>
                 
-//               <label> Your Name</label>
-//               <input id='Name'type="text"></input>
-//               <label> Email</label>
-//               <input  id='Email' type="email"></input>
-//               <label> commint</label>
-//               <textarea id='commint'></textarea>
-//               <p> How was your experience? </p>
-//               <div className="stars">
-//                  <ReactStars
-//                   count={5}
-//                   onChange={ratingChanged}
-//                   size={42}
-//                   activeColor="#ffd700"
+// //               <label> Your Name</label>
+// //               <input id='Name'type="text"></input>
+// //               <label> Email</label>
+// //               <input  id='Email' type="email"></input>
+// //               <label> commint</label>
+// //               <textarea id='commint'></textarea>
+// //               <p> How was your experience? </p>
+// //               <div className="stars">
+// //                  <ReactStars
+// //                   count={5}
+// //                   onChange={ratingChanged}
+// //                   size={42}
+// //                   activeColor="#ffd700"
                   
-//                  />
-//                  </div>
-//               <button type="submit"> Submit</button>
-//             </form>
-//           </section>
-//         </section>
-//       </div>
-//     </div>
-//   );
-// }
+// //                  />
+// //                  </div>
+// //               <button type="submit"> Submit</button>
+// //             </form>
+// //           </section>
+// //         </section>
+// //       </div>
+// //     </div>
+// //   );
+// // }
 
-// export default DetailsPage;
+// // export default DetailsPage;

@@ -82,6 +82,25 @@
         
     }
 }
+.card {
+    border-radius: .7rem;
+  }
+  .main-revie-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  
+  .inside-card{
+    width: calc(30%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+
+  }
+}
 
 .contant {
     width: 60%;
