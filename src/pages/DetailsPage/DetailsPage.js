@@ -12,50 +12,52 @@ import data from '../../jaon.json'
 import ReactStars from "react-rating-stars-component";
 import Test from "../PropertyList/Test";
 function DetailsPage() {
-  // const { id } = useParams();
-  // const [data, setdata] = useState();
-  // const [SameCity, setSameCity] = useState();
-  // const [loaded, setIsLoaded] = useState(false);
-  // const [cityIsloaded, setCityIsLoaded] = useState(false);
-  // const [isClicked,setIsClicked]=useState(false);
-  // function handleRerender(){
-  //   setIsClicked(prev=>!prev);
-  // }
-  // const fetchData = async() => {
-  //   try {
-  //     let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
-  //     setdata(responseData.data);
-  //     setIsLoaded(true);
-  //     fetchCity(responseData.data.location[1].externalID)
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-  // const fetchCity = async (location) => {
-  //   try {
-  //     const theCity = await axios.get(
-  //       `http://localhost:5000?locationExternalIDs=${location}`
-  //     );
-  //     setSameCity(theCity.data.hits);
-  //     setCityIsLoaded(true);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const { id } = useParams();
+  const [data, setdata] = useState();
+  const [SameCity, setSameCity] = useState();
+  const [loaded, setIsLoaded] = useState(false);
+  const [cityIsloaded, setCityIsLoaded] = useState(false);
+  const [isClicked,setIsClicked]=useState(false);
+  const [isUpdated, setIsUpdated] = useState(false)
+  function handleRerender(){
+    setIsClicked(prev=>!prev);
+  }
+  const fetchData = async() => {
+    try {
+      let responseData=await axios.get(`http://localhost:5000/properites/detail?id=${id}`)
+      setdata(responseData.data);
+      setIsLoaded(true);
+      fetchCity(responseData.data.location[1].externalID)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  const fetchCity = async (location) => {
+    try {
+      const theCity = await axios.get(
+        `http://localhost:5000?locationExternalIDs=${location}`
+      );
+      setSameCity(theCity.data.hits);
+      setCityIsLoaded(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   fetchData();
-  //   window.scrollTo(0, 0)
-  // }, [isClicked]);
-  // const [showInfo, setShowInfo] = useState(false);
-  // const showMore1 = () => {
-  //   setShowInfo(!showInfo);
-  // };
+  useEffect(() => {
+    fetchData();
+  fetchCommite()
+    window.scrollTo(0, 0)
+  }, [isClicked,isUpdated]);
+  const [showInfo, setShowInfo] = useState(false);
+  const showMore1 = () => {
+    setShowInfo(!showInfo);
+  };
 
     const [allCommite,setAllCommite ]=useState()
   const fetchCommite = async() => {
       try {
-        let responseComiite=await axios.get(`http://localhost:5000/commint/${id}`)
+        let responseData=await axios.get(`http://localhost:5000/commint/${id}`)
         setAllCommite(responseData.data);
         console.log(allCommite)
       } catch (error) {
@@ -64,7 +66,7 @@ function DetailsPage() {
     }
 
 
-  const [isUpdated, setIsUpdated] = useState(false)
+ 
 
   const [newRate ,setNewRate]=useState()
   const AddCommite =(e)=>{
@@ -97,7 +99,7 @@ function DetailsPage() {
     // </div>
 
     <div className="main-div-for-detalis">
-      {/* {loaded && ( */}
+      {loaded && (
       <div className="top-section">
         <section className="slider">
           <Carousel fade>
@@ -115,12 +117,13 @@ function DetailsPage() {
           </Carousel>
         </section>
       </div>
-      {/* )} */}
+       )} 
       {/* {loaded && ( */}
+       
       <div className="div-for-two-sides">
 
 
-
+      {loaded && (
         <div className="contant">
           <section className="allDeitalis">
             <div className="icons">
@@ -229,14 +232,14 @@ function DetailsPage() {
               <div className="description">
                 <h2>Description:</h2>
 
-                {/* <p>
+                <p>
                   {showInfo
                     ? data.description
                     : `${data.description.slice(0, 550)}...`}
                 </p>
                 <button className="button1" onClick={showMore1}>
                   {showInfo ? "See less" : "See more"}
-                </button> */}
+                </button>
               </div>
             </div>
           </section>
@@ -263,7 +266,7 @@ function DetailsPage() {
                </div>               
 
             </section> */}
-          {/* <section className="cards-section">
+          <section className="cards-section">
             <p className="cards-titel"> Similar Listings</p>
             <div>
               <Swiper
@@ -295,9 +298,66 @@ function DetailsPage() {
                   })}
               </Swiper>
             </div>
-          </section> */}
+          </section>
+       <section style={{color:'#000',backgroundColor:'#f3f2f2'}} >
+  <div class="container py-5">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bold mb-4">Testimonials</h3>
+        <p class="mb-4 pb-2 mb-md-5 pb-md-0">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet
+          numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum
+          quisquam eum porro a pariatur veniam.
+        </p>
+      </div>
+    </div>
+{allCommite.length &&(allCommite.map((review)=>{
+  return(
+
+ 
+        
+
+    <div class="row text-center">
+      <div class="col-md-4 mb-4 mb-md-0" className='main-revie-div'>
+        <div class="card">
+          <div class="card-body py-4 mt-2"
+          className="inside-card">
+            <div class="d-flex justify-content-center mb-4">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp"
+                class="rounded-circle shadow-1-strong" width="100" height="100" />
+            </div>
+            <h5 class="font-weight-bold">{review.Name}</h5>
+            <ReactStars
+                  count={5}
+                  onChange={ratingChanged}
+                  size={25}
+                  activeColor="#ffd700"
+                  value={4}
+                  edit={false}
+                  
+                 />
+            <h6 class="font-weight-bold my-3">{review.Email}</h6>
+          
+            <p class="mb-2">
+              <i class="fas fa-quote-left pe-2"></i>{review.commint}
+            </p>
+          </div>
         </div>
-        {/* )} */}
+      </div>
+      {/* <div class="col-md-4 mb-4 mb-md-0">
+        
+      </div>
+      <div class="col-md-4 mb-0">
+       
+      </div> */}
+    </div>
+     )
+    })
+    )}
+  </div>
+</section>
+        </div>
+         )} 
         <section className="side-section-detalis">
           <Test data={data} />
           <section className='Form-section-detalis'>
