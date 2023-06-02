@@ -10,13 +10,7 @@ export default function City_Type() {
       <div>
         <h2>Choose the City of your Property</h2>
          <div className='sell-city'>
-       {
-       cities.map((city)=>{
-       return(
-        // console.log(imagesObj[city.slice(0,city.length-4)])
-           <img src={`/assets/${city.slice(0,city.length-4)}.jpg`} alt="fdsafds" />
-        )})
-       }
+   
         </div>
         </div>
         <div>

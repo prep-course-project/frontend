@@ -47,7 +47,6 @@ export default function PropertyList() {
       .get(`${url}`)
       .then((res) => {
         setPropertiesList(res.data.hits);
-        console.log(res);
         if (res.data.hits.length) {
           setLoaded(true);
         } else {
