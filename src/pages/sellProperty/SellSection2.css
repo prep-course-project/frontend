@@ -1,0 +1,30 @@
+.sell-section2{
+    width:100%;
+    height:calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sell-text-section2{
+    width:45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+.sell-text-section2 p,h1{
+    width:70%;
+}
+.sell-text-section2 p{
+    font-size: 20px;
+}
+.sell-img-section2{
+    width:40%;
+    height: 70%;
+}
+.sell-img-section2 img{
+    width:100%;
+    height: 100%;
+}

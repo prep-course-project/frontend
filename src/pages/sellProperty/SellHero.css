@@ -1,0 +1,89 @@
+
+.sell-main-hero {
+  display: flex;
+  height:calc(100vh - 50px);
+  width:100%;
+  justify-content: space-around;
+  align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80');
+}
+  
+  .sell-title{
+    color: #333;
+    justify-content:flex-start;
+    width:30%;
+    max-width:30%;
+    min-width: 30%; 
+  }
+  
+  .sell-content {
+    height: 95%;
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(247, 180, 180, 0);
+    box-shadow: 0 0 30px rgba(0, 0, 0,.8);
+    background-color:transparent;
+    padding-left: 5%;
+     background-color:transparent;
+    
+  }
+  
+  .sell-p1{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+
+  }
+  
+  .sell-p1 h2{
+    color: #333;
+    font-size: 30px;
+    /* color: #005f8bc5; */
+    color:aliceblue;
+    font-weight: bold;
+    padding-top: 20px;
+    padding-left: 15px;
+  }
+  
+  .sell-p1 p{
+    color: #333;
+  }
+  .sell-img{
+    width:100px;
+    height: 100%;
+  }
+  .sell-p1 img{
+   height: 100%;
+   width: 100%;
+   
+  } 
+
+  button {
+    width:30%;
+    height: 45px;
+    display: block;
+  padding: 10px 20px;
+  align-self: center;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+ 

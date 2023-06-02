@@ -114,3 +114,128 @@
   width: 100%;
   height: 100%;
 }
+
+@media screen and (max-width : 1000px){ 
+  .about-team-container{
+    max-width: 100%;
+    width:100%;
+  }
+  .about-team-box img{
+     width:100%;
+}
+.about-team-box:hover img{
+  height: 300px;
+   }
+  .about-mem-h2{
+   padding-left: 30%; 
+
+    }
+  .about-team-box{
+    width:100%;
+    height:100%;
+  } 
+  .about-team-box h3{
+    font-size: 20px;
+  }
+  .about-team-box p{   
+    font-size: 16px;
+    }
+    .about-font i{
+      left:50px;
+    }
+    .about-font2 i{
+       left:150px;
+    }
+    .about-font3 i{
+      left:100px;
+    }
+}
+  @media screen and (max-width : 550px){ 
+    .about-team-container{
+      flex-direction: column;
+      max-width: 100%;
+      width:100%;
+    }
+    .about-team-box img{
+       width:100%;
+       height: 100px; 
+  }
+  .about-team-box:hover img{
+    height: 300px;
+     }
+    .about-mem-h2{
+     padding-left: 30%; 
+
+      }
+    .about-team-box{
+      width:100%;
+      height:100%;
+    } 
+    .about-team-box h3{
+      font-size: 26px;
+    }
+    .about-team-box p{   
+      padding-top:20%;
+      font-size: 25px;
+      }
+      .about-font i{
+        top:10px;
+        left:50px;
+      }
+      .about-font2 i{
+        top:10px;
+        left:150px;
+      }
+      .about-font3 i{
+        top:10px;
+        left:100px;
+      }
+   
+    
+  
+  }
+  @media screen and (max-width : 790px){ 
+    .about-team-container{
+      flex-direction: column;
+      max-width: 100%;
+      width:100%;
+    }
+    .about-team-box img{
+       width:100%;
+       height: 100px; 
+  }
+  .about-team-box:hover img{
+    height: 500px;
+     }
+    .about-mem-h2{
+     padding-left: 30%; 
+
+      }
+    .about-team-box{
+      width:100%;
+      height:100%;
+      flex:1;
+      transition: .6s;
+    } 
+    .about-team-box h3{
+      font-size: 36px;
+    }
+    .about-team-box p{   
+      padding-top:20%;
+      font-size: 35px;
+      }
+      .about-font i{
+        top:-10px;
+        left:50px;
+      }
+      .about-font2 i{
+        top:-10px;
+         left:150px;
+      }
+      .about-font3 i{
+        top:-10px;
+        left:100px;
+      }
+    } 
+    
+    

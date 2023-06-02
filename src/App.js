@@ -11,6 +11,9 @@ import PropertyList from './pages/PropertyList/PropertyList';
 import DetailsPage from './pages/DetailsPage/DetailsPage';
 import Favorite from './pages/Favorite/Favorite';
 import data from './jaon.json'
+import SellProperty from './pages/sellProperty/SellProperty';
+// import SellProperty from './pages/SellProperty/SellProperty';
+
 function App() {
   const location =useLocation().pathname;
   return (
@@ -24,6 +27,9 @@ function App() {
       <Route path='/favorites' element={<Favorite data={data}/>}/>
       <Route path='/property/details/:id' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
+
+      <Route path='/sellProperty' element={<SellProperty />}/>
+      
       </Routes>
       <Footer/>
     </div>

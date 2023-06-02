@@ -79,7 +79,23 @@
     color: #7a7070;
   }
 
+  @media screen and (max-width : 1000px){ 
+    .about-partner-h2 { 
+                margin-top: 10%;
 
+      } 
+    }
+    @media screen and (max-width : 550px){ 
+      .about-partner-h2 {
+        margin-top: 10%;
+
+        } }
+    @media screen and (max-width : 790px){ 
+      .about-partner-h2 {
+          margin-top: 10%;
+          
+      }
+      } 
 
 
 
