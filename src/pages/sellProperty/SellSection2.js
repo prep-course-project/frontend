@@ -15,7 +15,6 @@ export default function SellSection2() {
            <div className='sell-img-section2'>
              <img src='https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg' alt='img-section2'></img>
            </div>
-          
       </div>
 
   )
