@@ -1,0 +1,56 @@
+[
+    {
+        "id": 21,
+        "externalid": 5917714,
+        "price": 4998,
+        "title": "Sports Court View | Fully Furnished | Convenient Location",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/321915790/a7fd5bc72e8d4643a9e0d60aa85269d2",
+        "area": "44.5934592",
+        "purpose": "for-rent"
+    },
+    {
+        "id": 22,
+        "externalid": 6076547,
+        "price": 7899,
+        "title": "Skyscraper | Health Club | Fully Furnished",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/233171495/3371331ec1b84203852d2cf133683c3c",
+        "area": "65.58954624",
+        "purpose": "for-rent"
+    },
+    {
+        "id": 23,
+        "externalid": 6829607,
+        "price": 54999,
+        "title": "Summer Offer 3 P/Months Offer |  4 BDR | Opera Grand I Spectacular View of Burj Khalifa",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/379502786/f8c4062cdf044450827f6e565c89cd67",
+        "area": "277.3155744",
+        "purpose": "for-rent"
+    },
+    {
+        "id": 24,
+        "externalid": 6511319,
+        "price": 16000,
+        "title": "Summer Fixed Price  3  Months I 3 BDR + Maid I The Cove Creek Harbour",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/297603659/91da9c6a848049919f1d65a7a4d045ff",
+        "area": "170.7567165504",
+        "purpose": "for-rent"
+    },
+    {
+        "id": 25,
+        "externalid": 6377014,
+        "price": 18000,
+        "title": "Fixed Price offer  3  Months I 1 BR W/ BALCONY CITY VIEW | DOWNTOWN",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/282959542/2f21789439fa4791a54b6ec2d0b876d8",
+        "area": "71.94968835840001",
+        "purpose": "for-rent"
+    },
+    {
+        "id": 26,
+        "externalid": 6566112,
+        "price": 22000,
+        "title": "Living at BLVD | Weekly Cleaning | No Commission",
+        "imgurl": "https://bayut-production.s3.eu-central-1.amazonaws.com/image/305821445/5fa2e616a53d454fa450db4063af79bb",
+        "area": "130.5287712",
+        "purpose": "for-rent"
+    }
+]
