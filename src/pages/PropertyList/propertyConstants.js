@@ -12,7 +12,7 @@ const initialFilter = {
   purpose:'for-rent'
 };
 const cities = [
-  "Umm Al Quwain5544",
+  "Umm AlQuwain5544",
   "Fujairah6542",
   "Ajman5385",
   "Ras Al Khaimah5509",
