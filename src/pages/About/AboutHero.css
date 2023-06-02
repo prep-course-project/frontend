@@ -83,3 +83,21 @@
   }
 
 
+@media screen and (max-width : 900px){
+  .about-image1 img{
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .about-text-hero {
+    margin-top: 20%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width : 550px){
+  .about-text-hero {
+    margin-top: 40%;
+
+  }
+}

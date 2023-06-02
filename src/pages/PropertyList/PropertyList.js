@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import MainCard from "../../Components/mainCard/mainCard";
 import FilterSection from "./FilterSection/FilterSection";
 import "./PropertyList.scss";
+import "./PropertyList.css";
 import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -43,11 +44,14 @@ export default function PropertyList() {
       return targetCity
     }
   }
+  const [loding , setLoding] = useState(false)
   function handleGetAllProperties(url = process.env.REACT_APP_URL) {
+    setLoding(true)
     axios
       .get(`${url}`)
       .then((res) => {
         setPropertiesList(res.data.hits);
+        setLoding(false)
         console.log(res);
         if (res.data.hits.length) {
           setLoaded(true);
@@ -94,7 +98,13 @@ export default function PropertyList() {
 
   return (
     <div className="propertyList__main">
+
       <div className="property__filterCont">
+        
+    {
+        loding && 
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      }
         <div className="">
           <FilterSection handleChange={handleChange} />
         </div>
@@ -109,6 +119,7 @@ export default function PropertyList() {
             <MainCard key={property.id} errorToast={errorToast} successToast={successToast} data={property} />
           ))}
       </div>
+ 
       <ToastContainer 
         position="bottom-right"
         autoClose={1500}
@@ -123,7 +134,7 @@ export default function PropertyList() {
         
         
         />
-        <Test/>
+        {/* <Test/> */}
     </div>
   );
 }

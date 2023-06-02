@@ -9,7 +9,7 @@ export default function Serction2() {
           <div className="text">
                <h2>We're Here To Help You Find Your Dream House</h2>
                <div>
-               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui odit velit porro illum aliquid doloremque maxime recusandae, reiciendis esse dolor quasi rerum, debitis maiores facilis.</p>
+               <p>Find comfort in the house with us, want ti find a house ? we are ready to help you wholeeterdly based on what you need The house with </p>
                <p><i class="fa-solid fa-star"></i>Property Managment</p>
                <p><i class="fa-solid fa-star"></i>Construction Services</p>
                <p><i class="fa-solid fa-star"></i>Online Services</p>
