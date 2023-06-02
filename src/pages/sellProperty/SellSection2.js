@@ -13,7 +13,7 @@ export default function SellSection2() {
                  how many guests can stay</p>
            </div>
            <div className='sell-img-section2'>
-             <img src='https://www.rocketmortgage.com/resources-cmsassets/RocketMortgage.com/Article_Images/Large_Images/TypesOfHomes/types-of-homes-hero.jpg' alt='img-section2'></img>
+             <img src='https://cdn.dribbble.com/users/486985/screenshots/14582600/media/69d4c0351517ce886dc456f5794f310a.jpg?compress=1&resize=1200x900&vertical=top' alt='img-section2'></img>
            </div>
           
       </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import SellSection2 from './SellSection2';
 import SellHero from './SellHero'
-import City_Type from './City_Type/City_Type';
+import CityType from './CityType/CityType';
 
 export default function SellProperty() {
   
@@ -10,7 +10,7 @@ export default function SellProperty() {
       <SellHero/>
       <SellSection2/>
       
-      <City_Type/>
+      <CityType/>
 
     </div>
   )
