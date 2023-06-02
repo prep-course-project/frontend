@@ -7,10 +7,16 @@
 }
 
 section {
-    width: 600px;
+  width: 600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+section:last-child {
+  border-bottom: none;
 }
 
 h3 {
@@ -21,26 +27,25 @@ h3 {
 .input-wrapper {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 10px;
 }
 
-
-button {
-  padding: 5px;
-  font-size: 18px;
+.button {
+  padding: 15px;
+  font-size: 24px;
 }
 
 .price-input,
 .area-input {
   width: 100px;
   padding: 5px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .property-details {
-    font-size: 34px;
-  }
-  
+  font-size: 28px;
+}
+
 .description {
-    font-size: 26px;
-  }
+  font-size: 20px;
+}
