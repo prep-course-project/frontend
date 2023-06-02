@@ -5,7 +5,7 @@
   .about-about-us{
     padding-left:100px;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: rgb(255, 254, 254);
     display: grid; 
     grid-template-columns: repeat(2,1fr);
@@ -38,3 +38,56 @@
     font-weight: 500;
     margin-bottom: 10px;
 }
+@media screen and (max-width : 1000px){ 
+ .about-text{
+    padding: 6% 2%;
+}
+.about-main-img img{
+  top:50px;
+  left:-30px;
+  width:120%;
+}
+
+
+ }
+@media screen and (max-width : 550px){ 
+  .about-about-us{
+    margin-top: 10%;
+    margin-bottom: -66%;
+}
+  .about-text{
+    padding: 6% 2%;
+    width:333px;
+}
+.about-main-img img{
+  top:50px;
+  left:20px;
+  width:333px;
+}
+.about-about-us{
+  padding-left:10px;
+ 
+}
+
+
+/* .about-text h1{
+ 
+  font-weight: 50;
+  margin-bottom: 10px;
+} */
+
+@media screen and (max-width : 790px){ 
+ 
+  .about-text{
+    padding: 9% 2%;
+    width:303px;
+
+}
+.about-main-img img{
+  top:50px;
+  left:20px;
+  width:333px;
+}
+
+  
+}}
