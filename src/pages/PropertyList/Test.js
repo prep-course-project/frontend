@@ -5,6 +5,10 @@ import './Test.scss'
 
 
 function Test({data}) {
+  const [buttonVisible, setButtonVisible] = useState(true);
+  const handleClick = () => {
+    setButtonVisible(false);
+  };
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDeqmOQPJjA_Pg3u-cnJuyCljSqh1EvIs4"
@@ -33,8 +37,10 @@ function Test({data}) {
   //     lng: {data.geography.lng}
   //   };
   return isLoaded ? (
-    <div style={{justifyContent:'space-around',display:'flex' ,flexDirection:'column',alignItems:'center',height:'450px'}}> 
-      <button onClick={()=>{ setNextZoom(15)}}> Show Location</button>
+    <div style={{justifyContent:'space-around',position:'relative',display:'flex' ,flexDirection:'column',alignItems:'center',height:'400px'}}> 
+      {buttonVisible && (<button className='map-button'onClick={()=>{
+        handleClick()
+         setNextZoom(15)}}> Show Location</button>)}
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={{lat:x,lng:y}}
