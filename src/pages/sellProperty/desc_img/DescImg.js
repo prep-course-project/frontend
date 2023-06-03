@@ -21,7 +21,6 @@ function DescImg() {
         <h1>Add a description to your house</h1>
         <textarea name="description" id="" cols="30" rows="10"></textarea>
       </div>
- 
     </div>
   )
 }

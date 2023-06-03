@@ -21,7 +21,7 @@ export default function City_Type() {
         </div>
         <div>
         <h2>Choose the Type of your Property</h2>
-
+       
         <div className='sell-type'>
        {
            propertyTypeList.map(item=>{
