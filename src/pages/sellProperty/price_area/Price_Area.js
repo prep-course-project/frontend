@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import '../price_area/Price_Area.css'; 
+import '../price_area/Price_Area.css';
 
 export default function PriceArea() {
   const [rooms, setRooms] = useState(0);
   const [bathrooms, setBathrooms] = useState(0);
   const [price, setPrice] = useState(20000);
   const [area, setArea] = useState(0);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
   const incrementRooms = () => {
     if (rooms < 7) {
@@ -45,30 +47,62 @@ export default function PriceArea() {
     }
   };
 
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
+  };
+
+  const handleDescriptionChange = (e) => {
+    setDescription(e.target.value);
+  };
+
   return (
+    <div className="price-area-main-container">
+      <div className="titleO-descriptionO-container">
+        <div className="titleO-container">
+          <h2 className="titleO-heading">Now it's time to come up with a title for your apartment</h2>
+          <p className="titleO-descriptionO">Remember, shorter titles tend to have a greater impact. So, let your creativity flow and have fun with it!</p>
+          <input
+            type="text"
+            className="titleO-input"
+            value={title}
+            onChange={handleTitleChange}
+          />
+        </div>
+        <div className="descriptionO-container">
+          <h2>Add Description</h2>
+          <textarea
+            className="descriptionO-input"
+            value={description}
+            onChange={handleDescriptionChange}
+          ></textarea>
+        </div>
+      </div>
+
       <div className="price-area-container">
-   <h2 className="property-details">Your Property Details</h2> 
-    <p className="description">Please provide the following details:</p> 
-    <section>
-          <h3>Rooms</h3>
+        <div className="property-details">
+          <h2>Your Property Details</h2>
+          <p>Please provide the following details:</p>
+        </div>
+        <section class='RBPA'>
+          <h3 class='RBPA'>Rooms</h3>
           <div className="input-wrapper">
-            <button onClick={decrementRooms}>-</button>
+            <button className="buttonO" onClick={decrementRooms}>-</button>
             <span>{rooms}</span>
-            <button onClick={incrementRooms}>+</button>
+            <button className="buttonO" onClick={incrementRooms}>+</button>
           </div>
         </section>
-    
-        <section>
-          <h3>Bathrooms</h3>
+
+        <section class='RBPA'>
+        <h3 class='RBPA'>Bathrooms</h3>
           <div className="input-wrapper">
-            <button onClick={decrementBathrooms}>-</button>
+            <button className="buttonO" onClick={decrementBathrooms}>-</button>
             <span>{bathrooms}</span>
-            <button onClick={incrementBathrooms}>+</button>
+            <button className="buttonO" onClick={incrementBathrooms}>+</button>
           </div>
         </section>
-    
-        <section>
-          <h3>Price</h3>
+
+        <section class='RBPA'>
+        <h3 class='RBPA'>Price</h3>
           <div className="input-wrapper">
             <input
               type="number"
@@ -78,12 +112,12 @@ export default function PriceArea() {
               value={price}
               onChange={handlePriceChange}
             />
-            <span>AED</span> 
+            <span>AED</span>
           </div>
         </section>
-    
-        <section>
-          <h3>Area</h3>
+
+        <section class='RBPA'>
+        <h3 class='RBPA'>Area</h3>
           <div className="input-wrapper">
             <input
               type="number"
@@ -97,6 +131,6 @@ export default function PriceArea() {
           </div>
         </section>
       </div>
-    );
-    
+    </div>
+  );
 }
