@@ -1,0 +1,20 @@
+.map-button{
+    position: absolute;
+    z-index: 5;
+    padding: 10%;
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.336);
+    // backdrop-filter: blur(20px);
+    font-size: 40px;
+    font-family: math;
+    font-weight: 600;
+    // filter: blur(1px);
+
+
+    
+
+}
+.map-button:hover{
+    color: #E57C23;
+}
