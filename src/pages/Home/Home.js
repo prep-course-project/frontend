@@ -7,6 +7,7 @@ import Agencies from './Agencies'
 import './Home.css'
 import Feature from '../../feature/Feature'
 import ScrollProgress from '../../feature/Scroll-progress'
+import Sell_features from '../sellProperty/sell_features/sell_features'
 
 export default function Home() {
   return (

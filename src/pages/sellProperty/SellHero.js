@@ -41,7 +41,7 @@ export default function SellHero() {
           </div>
          </div>
        
-         <button >Get Started</button>
+         <button className='sell-hero-btn' >Get Started</button>
 
       </div>
 

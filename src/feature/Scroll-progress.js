@@ -8,7 +8,6 @@ export default function ScrollProgress() {
           let scrollTop = document.documentElement.scrollTop
           setProgress(`${(scrollTop / height) * 100}%`)
      })
-     console.log(progress);
 
   return (
     <div className='scroll-progress' style={{width : `${progress}` }}>
