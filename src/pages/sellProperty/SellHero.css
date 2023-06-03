@@ -69,7 +69,7 @@
    
   } 
 
-  button {
+  .sell-hero-btn {
     width:30%;
     height: 45px;
     display: block;
@@ -84,7 +84,7 @@
   
   }
   
-  button:hover {
+  .sell-hero-btn:hover {
     background-color: #0056b3;
   }
  
