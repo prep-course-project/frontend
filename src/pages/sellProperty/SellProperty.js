@@ -4,6 +4,7 @@ import SellHero from './SellHero'
 import CityType from './CityType/CityType';
 import PriceArea from './price_area/Price_Area';
 import SellContact from './SellContact/SellContact';
+import SellFinish from './SellFinish/SellFinish';
 
 export default function SellProperty() {
   
@@ -14,6 +15,7 @@ export default function SellProperty() {
       <CityType/>
       <PriceArea/>
       <SellContact/>
+      <SellFinish/>
     </div>
   )
 }
