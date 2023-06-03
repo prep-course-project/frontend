@@ -14,6 +14,8 @@ import data from './jaon.json'
 import SellProperty from './pages/sellProperty/SellProperty';
 // import SellProperty from './pages/SellProperty/SellProperty';
 
+import UserPost from './pages/UserPost/UserPost'
+
 function App() {
   const location =useLocation().pathname;
   return (
@@ -29,7 +31,9 @@ function App() {
       <Route path='/About' element = {<About />}/>
 
       <Route path='/sellProperty' element={<SellProperty />}/>
-      
+
+      <Route path='/usersProperties' element={<UserPost/>}/>
+
       </Routes>
       <Footer/>
     </div>
