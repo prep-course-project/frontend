@@ -29,9 +29,7 @@ function App() {
       <Route path='/favorites' element={<Favorite data={data}/>}/>
       <Route path='/property/details/:id' element={<DetailsPage/>}/>
       <Route path='/About' element = {<About />}/>
-
       <Route path='/sellProperty' element={<SellProperty />}/>
-
       <Route path='/usersProperties' element={<UserPost/>}/>
 
       </Routes>

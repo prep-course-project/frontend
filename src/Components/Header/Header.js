@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../Header/Header.css'
 import logo from '../../pages/Home/assets/logo'
+import UserPost from '../../pages/UserPost/UserPost';
 import { Link } from 'react-router-dom';
 
 export default function Header({location}) {
@@ -21,6 +22,8 @@ export default function Header({location}) {
             <Link className='nav-link header-link' to='/'>Home</Link>
             <Link className='nav-link header-link' to='/PropertyList'>PropertyList</Link>
             <Link className='nav-link header-link' to='/favorites'>Favorite</Link>
+            <Link className='nav-link header-link' to='/sellProperty'>Sell Now</Link>
+            <Link className='nav-link header-link' to='/usersProperties'>User property</Link>
             <Link className='nav-link header-link' to='/About'>About</Link>
              {/* <Nav.Link href="/">Home</Nav.Link>
              <Nav.Link href="/PropertyList">PropertyList</Nav.Link>
