@@ -49,7 +49,7 @@ export default function PriceArea() {
       <div className="price-area-container">
    <h2 className="property-details">Your Property Details</h2> 
     <p className="description">Please provide the following details:</p> 
-    <section>
+    <section className='price-area-sec'>
           <h3>Rooms</h3>
           <div className="input-wrapper">
             <button onClick={decrementRooms}>-</button>
@@ -58,7 +58,7 @@ export default function PriceArea() {
           </div>
         </section>
     
-        <section>
+        <section className='price-area-sec'>
           <h3>Bathrooms</h3>
           <div className="input-wrapper">
             <button onClick={decrementBathrooms}>-</button>
@@ -67,7 +67,7 @@ export default function PriceArea() {
           </div>
         </section>
     
-        <section>
+        <section className='price-area-sec'>
           <h3>Price</h3>
           <div className="input-wrapper">
             <input
@@ -82,7 +82,7 @@ export default function PriceArea() {
           </div>
         </section>
     
-        <section>
+        <section className='price-area-sec'>
           <h3>Area</h3>
           <div className="input-wrapper">
             <input

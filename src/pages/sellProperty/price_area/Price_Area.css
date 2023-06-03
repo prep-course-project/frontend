@@ -6,7 +6,7 @@
   margin-bottom: 20px;
 }
 
-section {
+.price-area-sec {
   width: 600px;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@ section {
   padding-bottom: 10px;
 }
 
-section:last-child {
+.price-area-sec:last-child {
   border-bottom: none;
 }
 
