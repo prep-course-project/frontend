@@ -57,21 +57,21 @@ export default function PriceArea() {
 
   return (
     <div className="price-area-main-container">
-      <div className="title-description-container">
-        <div className="title-container">
-          <h2 className="title-heading">Now it's time to come up with a title for your apartment</h2>
-          <p className="title-description">Remember, shorter titles tend to have a greater impact. So, let your creativity flow and have fun with it!</p>
+      <div className="titleO-descriptionO-container">
+        <div className="titleO-container">
+          <h2 className="titleO-heading">Now it's time to come up with a title for your apartment</h2>
+          <p className="titleO-descriptionO">Remember, shorter titles tend to have a greater impact. So, let your creativity flow and have fun with it!</p>
           <input
             type="text"
-            className="title-input"
+            className="titleO-input"
             value={title}
             onChange={handleTitleChange}
           />
         </div>
-        <div className="description-container">
+        <div className="descriptionO-container">
           <h2>Add Description</h2>
           <textarea
-            className="description-input"
+            className="descriptionO-input"
             value={description}
             onChange={handleDescriptionChange}
           ></textarea>
@@ -83,26 +83,26 @@ export default function PriceArea() {
           <h2>Your Property Details</h2>
           <p>Please provide the following details:</p>
         </div>
-        <section>
-          <h3>Rooms</h3>
+        <section class='RBPA'>
+          <h3 class='RBPA'>Rooms</h3>
           <div className="input-wrapper">
-            <button className="button" onClick={decrementRooms}>-</button>
+            <button className="buttonO" onClick={decrementRooms}>-</button>
             <span>{rooms}</span>
-            <button className="button" onClick={incrementRooms}>+</button>
+            <button className="buttonO" onClick={incrementRooms}>+</button>
           </div>
         </section>
 
-        <section>
-          <h3>Bathrooms</h3>
+        <section class='RBPA'>
+        <h3 class='RBPA'>Bathrooms</h3>
           <div className="input-wrapper">
-            <button className="button" onClick={decrementBathrooms}>-</button>
+            <button className="buttonO" onClick={decrementBathrooms}>-</button>
             <span>{bathrooms}</span>
-            <button className="button" onClick={incrementBathrooms}>+</button>
+            <button className="buttonO" onClick={incrementBathrooms}>+</button>
           </div>
         </section>
 
-        <section>
-          <h3>Price</h3>
+        <section class='RBPA'>
+        <h3 class='RBPA'>Price</h3>
           <div className="input-wrapper">
             <input
               type="number"
@@ -116,8 +116,8 @@ export default function PriceArea() {
           </div>
         </section>
 
-        <section>
-          <h3>Area</h3>
+        <section class='RBPA'>
+        <h3 class='RBPA'>Area</h3>
           <div className="input-wrapper">
             <input
               type="number"
