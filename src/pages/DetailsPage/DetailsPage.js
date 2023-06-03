@@ -45,9 +45,10 @@ function DetailsPage() {
 
   useEffect(() => {
     fetchData();
-    // fetchcomment()
+    fetchcomment()
     window.scrollTo(0, 0)
   }, [isClicked]);
+
   const [showInfo, setShowInfo] = useState(false);
   const showMore1 = () => {
     setShowInfo(!showInfo);
@@ -58,7 +59,6 @@ function DetailsPage() {
     try {
       let responseData = await axios.get(`${process.env.REACT_APP_URL}/comment/${id}`)
       setAllcomment(responseData.data);
-      console.log(allcomment)
     } catch (error) {
       console.log(error);
     }
@@ -74,14 +74,16 @@ function DetailsPage() {
 
 
     const obj = {
-      ownerName: e.target.Name.vlaue,
+      commentName: e.target.Name.vlaue,
       Email: e.target.Email.vlaue,
       comment: e.target.Email.vlaue,
       Rating: newRate,
     }
     axios.post(`${process.env.REACT_APP_URL}/comment/${id}`, obj)
       .then(res => {
-        console.log(res)
+       let newComments=allcomment;
+        newComments.push(res[0])   
+        setAllcomment(newComments)
 
       }).catch(err => console.log(err))
   }
