@@ -11,25 +11,26 @@
   flex: .0.75;
   margin-left: 10px;
   margin-right: 20px;
-  
 }
 
 .titleO-container,
-.descriptionO-container {
+.descriptionO-container,
+.url-container {
   margin-bottom: 20px;
 }
 
-
 .titleO-container h2,
 .descriptionO-container h2,
+.url-container h2,
 .property-details h2 {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 5px;
   text-align: center;
 }
 
-.titleO-input {
+.titleO-input,
+.url-input {
   width: 100%;
   padding: 5px;
   font-size: 18px;
@@ -84,16 +85,15 @@ h3.RBPA {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #007bff;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   border: none;
 }
 
 .buttonO:hover {
-  background-color: #0056b3;
+  background-color: #3c81cb;
   cursor: pointer;
 }
-
 
 .price-input,
 .area-input {
