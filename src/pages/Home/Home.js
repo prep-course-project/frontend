@@ -5,6 +5,8 @@ import Cities from './CardSlider'
 import Serction2 from './Serction2'
 import Agencies from './Agencies'
 import './Home.css'
+import Feature from '../../feature/Feature'
+import ScrollProgress from '../../feature/Scroll-progress'
 
 export default function Home() {
   return (
@@ -13,6 +15,8 @@ export default function Home() {
       <Cities/>
       <Agencies/>
       <Serction2/>
+      <Feature/>
+      <ScrollProgress/>
     </div>
   )
 }

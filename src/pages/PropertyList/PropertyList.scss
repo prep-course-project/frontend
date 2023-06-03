@@ -21,9 +21,14 @@ body{
         align-items: center;
         flex-wrap: wrap;
         gap: 60px;
+        margin: 50px 0 100px;
     }
     .property__searchVal{
-        color: #005f8b;
+        color: #005f8bcf;
         font-weight:600;
+        margin: 0 10px;
+        font-family: sans-serif;
+        font-size: 30px;
+        
     }
 }
