@@ -21,7 +21,7 @@ export default function PropertyList() {
     updatedValue = { [`${type}`]: payload };
     setFilterState((prevFilter) => ({
       ...prevFilter,
-      ...updatedValue,
+      ...updatedValue,  
     }));
     if(payload==='All'){
     setSearchValue('All')
