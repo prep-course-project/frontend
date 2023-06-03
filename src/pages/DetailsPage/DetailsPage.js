@@ -183,18 +183,18 @@ function DetailsPage() {
                     <div className="contact-info1">
                       <p>
                         {" "}
-                        <i class="fa-solid fa-user"></i> Owner Name:{" "}
-                        {data.contactName}{" "}
+                        <i class="fa-solid fa-user"></i> Owner Name:{" "}<span className="not-bold-detalis">
+                        {data.contactName}{" "}</span>
                       </p>
                       <p>
                         {" "}
-                        <i class="fa-solid fa-phone"></i> Phone :{" "}
-                        {data.phoneNumber.phone}{" "}
+                        <i class="fa-solid fa-phone"></i> Phone :{" "}<span className="not-bold-detalis">
+                        {data.phoneNumber.phone}{" "}</span>
                       </p>
                       <p>
                         {" "}
-                        <i class="fa-brands fa-whatsapp"></i> whatsapp:{" "}
-                        {data.phoneNumber.whatsapp}
+                        <i class="fa-brands fa-whatsapp"></i> whatsapp:{" "}<span className="not-bold-detalis">
+                        {data.phoneNumber.whatsapp}</span>
                       </p>
                     </div>
                   </section>
@@ -209,18 +209,18 @@ function DetailsPage() {
 
                     <div className="Property-info1">
                       <p className="upercase">
-                        <i class="fa-solid fa-house-signal"></i> states :
-                        {data.state}
+                        <i class="fa-solid fa-house-signal"></i> states :<span className="not-bold-detalis">
+                        {data.state}</span>
                       </p>
 
                       <p>
                         {" "}
-                        <i class="fa-solid fa-house"></i> purpose : {data.purpose}{" "}
+                        <i class="fa-solid fa-house"></i> purpose : <span className="not-bold-detalis">{data.purpose}{" "}</span>
                       </p>
                       <p>
                         {" "}
-                        <i class="fa-solid fa-ruler-combined"></i> Area:{" "}
-                        {Math.floor(data.area)} Sq Ft{" "}
+                        <i class="fa-solid fa-ruler-combined"></i> Area:{" "}<span className="not-bold-detalis">
+                        {Math.floor(data.area)} Sq Ft{" "}</span>
                       </p>
                     </div>
                   </section>
