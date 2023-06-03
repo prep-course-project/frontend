@@ -3,6 +3,7 @@ import SellSection2 from './SellSection2';
 import SellHero from './SellHero'
 import CityType from './CityType/CityType';
 import PriceArea from './price_area/Price_Area';
+import SellContact from './SellContact/SellContact';
 
 export default function SellProperty() {
   
@@ -12,6 +13,7 @@ export default function SellProperty() {
       <SellSection2/>
       <CityType/>
       <PriceArea/>
+      <SellContact/>
     </div>
   )
 }
