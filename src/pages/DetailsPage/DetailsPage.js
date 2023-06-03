@@ -8,7 +8,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import "swiper/swiper-bundle.min.css";
 import MainCard from "../../Components/mainCard/mainCard";
-import data from '../../jaon.json'
 import ReactStars from "react-rating-stars-component";
 import Test from "../PropertyList/Test";
 function DetailsPage() {
@@ -94,9 +93,7 @@ function DetailsPage() {
   };
 
   return (
-    // <div>
-    //    <MainCard data={data}/>
-    // </div>
+   
 
     <div className="main-div-for-detalis">
       {loaded && (
@@ -118,7 +115,7 @@ function DetailsPage() {
         </section>
       </div>
        )} 
-      {/* {loaded && ( */}
+    
        
       <div className="div-for-two-sides">
 
@@ -136,7 +133,7 @@ function DetailsPage() {
               <i class="fa-solid fa-ruler-combined"></i> {Math.floor(data.area)}{" "}
               Sq Ft
             </div>
-            {/* <p className='titelP'>{data.title}  </p> */}
+            
             <h6>
               {" "}
               <i class="fa-solid fa-location-dot"></i>{" "}
@@ -187,13 +184,7 @@ function DetailsPage() {
                     <i class="fa-solid fa-house-signal"></i> states :
                     {data.state}
                   </p>
-                  {/* <p> <i class="fa-solid fa-location-dot"></i> {data.location.map(location => {
-                                    return (
-                                     
-                                        location.name + '-'
-                                       
-                                    )
-                                })}    </p> */}
+                 
                   <p>
                     {" "}
                     <i class="fa-solid fa-house"></i> purpose : {data.purpose}{" "}
@@ -255,17 +246,7 @@ function DetailsPage() {
               </div>
             </section>
           )}
-          {/* <section className='cards-section'>
-                <p id='cards-titel'> Similar Listings</p>
-                 <div className='cards-div'>
-                 
-            
-                    <MainCards data={data}/>
-                    <MainCards  data={data}/>
-                    <MainCards  data={data}/>
-               </div>               
-
-            </section> */}
+          
           <section className="cards-section">
             <p className="cards-titel"> Similar Listings</p>
             <div>
@@ -276,8 +257,7 @@ function DetailsPage() {
                 slidesPerView={4}
                 navigation
                 pagination={{ clickable: true }}
-                // onSlideChange={() => console.log('slide change')}
-                // onSwiper={(swiper) => console.log(swiper)}
+                
               >
                 {cityIsloaded &&
                   SameCity.map((item) => {
@@ -344,12 +324,7 @@ function DetailsPage() {
           </div>
         </div>
       </div>
-      {/* <div class="col-md-4 mb-4 mb-md-0">
-        
-      </div>
-      <div class="col-md-4 mb-0">
-       
-      </div> */}
+      
     </div>
      )
     })
