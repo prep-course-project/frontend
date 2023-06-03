@@ -1,7 +1,27 @@
 import React from 'react'
 import './SellContact.css'
+import axios from 'axios'
 
-export default function SellContact() {
+export default function SellContact({objPost , data}) {
+
+  const userName = (e) =>{
+    objPost(current => ({...current , name:e.target.value}))
+  }
+  const userPhone = (e) =>{
+
+    objPost(current => ({...current , phoneNum:e.target.value}))
+  }
+
+  const submit = (e) =>{
+    e.preventDefault()
+    axios.post(`https://propertylist.onrender.com/usersProperties`, data).then(res => {
+      console.log(res.data)
+    })
+    .catch(err => console.log('err from sell contact'))
+  }
+
+  
+
   return (
     <div className='sell-contact-container'>
 
@@ -11,15 +31,15 @@ export default function SellContact() {
 
          <form>
             <label for='name'>Name:</label><br></br>
-            <input type='text' id='name' placeholder='  Enter Your Name'></input>
+            <input type='text' id='name' placeholder='  Enter Your Name' onChange={userName}></input>
             <br></br>
             <hr></hr> 
             <label for='phone'>Phone Number:</label>
             
-            <input type='tel' id='phone' placeholder='  Enter Your Phone Number'></input>
+            <input type='tel' id='phone' placeholder='  Enter Your Phone Number' onChange={userPhone}></input>
             <br></br>
             <br></br>
-            <input type='Submit' value='Submit'></input>
+            <input type='Submit' value='Submit' onClick={submit}></input>
             
          </form>
        

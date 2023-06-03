@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../price_area/Price_Area.css';
 
-export default function PriceArea() {
+export default function PriceArea({objPost}) {
   const [rooms, setRooms] = useState(0);
   const [bathrooms, setBathrooms] = useState(0);
   const [price, setPrice] = useState(20000);
@@ -10,35 +10,59 @@ export default function PriceArea() {
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
 
+  // let arr = []
+  // // arr.push(rooms)
+
+  // // console.log(arr);
+
+  // const priceClick = (e) =>{
+  // }
+    
+  // // objPost(current => ({...current ,price:0 }))
+    
+
   const incrementRooms = () => {
     if (rooms < 7) {
       setRooms(rooms + 1);
     }
+
+   objPost(current => ({...current ,roomsNum: rooms + 1 }))
+
   };
 
   const decrementRooms = () => {
     if (rooms > 0) {
       setRooms(rooms - 1);
     }
+    objPost(current => ({...current ,roomsNum: rooms -1 }))
+
   };
 
   const incrementBathrooms = () => {
     if (bathrooms < 7) {
       setBathrooms(bathrooms + 1);
     }
+    objPost(current => ({...current ,bathsNum: bathrooms + 1 }))
+
   };
 
   const decrementBathrooms = () => {
     if (bathrooms > 0) {
       setBathrooms(bathrooms - 1);
     }
+    objPost(current => ({...current ,bathsNum: bathrooms  -1 }))
+
   };
+
+
 
   const handlePriceChange = (e) => {
     const newPrice = parseInt(e.target.value);
     if (newPrice >= 20000 && newPrice <= 999999) {
       setPrice(newPrice);
     }
+    objPost(current => ({...current ,price: newPrice }))
+
   };
 
   const handleAreaChange = (e) => {
@@ -46,14 +70,20 @@ export default function PriceArea() {
     if (newArea >= 0 && newArea <= 10000) {
       setArea(newArea);
     }
+    objPost(current => ({...current ,widthArea: newArea }))
+
   };
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
+    objPost(current => ({...current ,title: e.target.value }))
+
   };
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
+    objPost(current => ({...current ,propertyDescription: e.target.value }))
+
   };
 
   const handleUrlChange = (e) => {

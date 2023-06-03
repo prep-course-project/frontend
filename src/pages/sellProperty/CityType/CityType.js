@@ -1,18 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {cities} from '../../PropertyList/propertyConstants'
 import {propertyTypeList} from '../../PropertyList/propertyConstants'
 import './CityType.css'
 import Form from 'react-bootstrap/Form';
 
-export default function CityType() {
+export default function CityType({objPost}) {
+
+
+
+  const cityTypeClick = (e) =>{
+    
+    objPost(current => ({...current ,type:e.target.innerText }))
+
+  }
+  const cityClick = (e) =>{    
+    objPost(current => ({...current ,cityName:e.target.value }))
+
+  }
 
   return (
     <div className='city-sell-container'>
-      <div>
+      <div className="city-sell-container0">
+
+      
+      <div className='city-sell-container1'>
         <h2>Choose the City of your Property</h2>
          <div className='sell-city'>
        {
-      <Form.Select className='city-select' aria-label="Default select example">
+      <Form.Select onChange={cityClick} className='city-select' aria-label="Default select example">
          <option value='null'>Select Your city</option>
          {
          cities.map(city=>{
@@ -24,10 +39,10 @@ export default function CityType() {
        }
        </Form.Select>
        }
-        </div>
+         </div>
         </div>
 
-        <div>
+        <div className='city-sell-container2'>
           <div className='city-type-h2'>
         <h2>Choose the Type of your Property</h2>
         </div>
@@ -36,29 +51,30 @@ export default function CityType() {
            propertyTypeList.map(item=>{
             // return <button>{item.type}</button>  
             if (item.type === 'Apartment') {
-              return <button><i class="fa-sharp fa-solid fa-building"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick} ><i class="fa-sharp fa-solid fa-building"></i>{item.type}</button>
             }
             if (item.type === 'Townhouses') {
-              return <button><i class="fa-solid fa-house-chimney"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-house-chimney"></i>{item.type}</button>
             }
             if (item.type === 'Villas') {
-              return <button><i class="fa-solid fa-house"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-house"></i>{item.type}</button>
             }
             if (item.type === 'Penthouses') {
-              return <button><i class="fa-solid fa-house"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-house"></i>{item.type}</button>
             }
             if (item.type === 'Hotel Apartments') {
-              return <button><i class="fa-solid fa-hotel"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-hotel"></i>{item.type}</button>
             }
             if (item.type === 'Shop') {
-              return <button><i class="fa-solid fa-shop"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-shop"></i>{item.type}</button>
             }
             if (item.type === 'Warehouse') {
-              return <button><i class="fa-solid fa-house"></i>{item.type}</button>
+              return <button onClick = {cityTypeClick}><i class="fa-solid fa-house"></i>{item.type}</button>
             }
            })
         }
 
+        </div>
         </div>
         </div>
     </div>

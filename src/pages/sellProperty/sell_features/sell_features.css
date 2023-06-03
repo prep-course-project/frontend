@@ -84,3 +84,19 @@
      background-color: red;
      border-radius: 3px;
 }
+
+
+.add-feature-btn{
+     border: none;
+     color: white;
+     background-color: #709ac8;
+     padding: 5px 10px;
+     border-radius: 10px;
+     margin: 15px 0;
+     transition: 0.3s;
+}
+
+.add-feature-btn:hover{
+     background-color: #367dca;
+
+}
