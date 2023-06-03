@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react'
 // import UserPropertyCard from '../../Components/UserPropertyCard/UserPropertyCard'
 import axios from 'axios'
-import FavCards from '../../Components/favCards/favCards';
+import UserPostCard from '../../Components/userPostCard/UserPostCard';
 export default function UserPost() {
-
     const [userPost, setUserPost] = useState([]);
 
-   function getAll(){
-    axios.get('https://propertylist.onrender.com/usersProperties')
+   function getUsersPosts(){
+    axios.get(`${process.env.REACT_APP_URL}/usersProperties`)
     .then((res) => {
       setUserPost(res.data);
       console.log(res)
@@ -18,7 +17,7 @@ export default function UserPost() {
      }
 
     useEffect(() => {
-        getAll();
+      getUsersPosts();
       }, []);
 
   return (
@@ -26,7 +25,7 @@ export default function UserPost() {
 
      {
         userPost.map((userPost)=>(
-            <FavCards key={userPost.id} data={userPost}/>
+            <UserPostCard key={userPost.id} data={userPost}/>
         ))
      }
 
