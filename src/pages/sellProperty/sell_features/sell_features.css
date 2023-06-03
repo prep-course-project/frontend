@@ -35,7 +35,7 @@
 }
 
 .feature-card:hover{
-     border: rgba(19, 59, 190, 0.518) 3px solid;
+     border:   rgb(55, 161, 180) 3px solid;
 
 }
 
@@ -89,7 +89,8 @@
 .add-feature-btn{
      border: none;
      color: white;
-     background-color: #709ac8;
+     background-color: rgba(55, 161, 180, 0.688)
+     ;
      padding: 5px 10px;
      border-radius: 10px;
      margin: 15px 0;
@@ -97,6 +98,7 @@
 }
 
 .add-feature-btn:hover{
-     background-color: #367dca;
+     background-color:  rgb(47, 166, 187)
+     ;
 
 }

@@ -20,7 +20,9 @@ export default function SellProperty() {
     name :0 ,
     phoneNum : 0,
     features : 0,
-    widthArea:0
+    widthArea:0,
+    imgUrl : 0
+
   }
   const [objPost ,setObjPost ] = useState(obj)
 

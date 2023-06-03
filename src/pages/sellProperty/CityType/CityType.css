@@ -34,6 +34,7 @@
     padding-bottom:34px;
     font-weight: bold;
     font-size:27px;
+    color: rgb(55, 161, 180);
 
 }
 .sell-city button{
@@ -67,6 +68,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    color: rgb(55, 161, 180);
+    margin-bottom: 5px;
    
 }
 .city-type-h2{

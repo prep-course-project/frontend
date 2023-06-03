@@ -57,7 +57,9 @@
   }
   
   .sell-p1 p{
-    color: #333;
+    color: rgba(255, 255, 255, 0.684);
+    font-size: 20px;
+
   }
   .sell-img{
     width:100px;
@@ -75,7 +77,8 @@
     display: block;
   padding: 10px 20px;
   align-self: center;
-  background-color: #007bff;
+  background-color: #709ac8;
+  ;
   color: #fff;
   border: none;
   border-radius: 5px;

@@ -4,7 +4,6 @@ export default function SellHero() {
   return (
     <div className='sell-main-hero'>
         <div className='sell-title'>
-            <h2>It’s easy to get started on Elite Sands</h2>
          </div>
        <div className='sell-content'>
          <div className='sell-p1'>

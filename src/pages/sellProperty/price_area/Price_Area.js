@@ -88,6 +88,7 @@ export default function PriceArea({objPost}) {
 
   const handleUrlChange = (e) => {
     setUrl(e.target.value);
+    objPost(current => ({...current ,imgUrl: e.target.value }))
   };
 
   return (
