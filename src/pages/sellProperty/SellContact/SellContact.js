@@ -39,11 +39,9 @@ export default function SellContact({objPost , data}) {
             <input type='tel' id='phone' placeholder='  Enter Your Phone Number' onChange={userPhone}></input>
             <br></br>
             <br></br>
-            <input type='Submit' value='Submit' onClick={submit}></input>
-            
          </form>
-       
       </div>
+      <button onClick={()=>window.scrollBy(0,window.innerHeight)} className='sell_contactBtn'>Next</button>
     </div>
   )
 }

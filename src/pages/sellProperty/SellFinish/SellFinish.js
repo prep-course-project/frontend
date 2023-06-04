@@ -1,7 +1,22 @@
-import React from 'react'
+import React from 'react';
+import axios from 'axios';
 import './SellFinish.css'
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import {imageFinish} from '../../../../public/assets/imageFinish.png'
-export default function SellFinish() {
+export default function SellFinish({objPost , data,errorToast,successToast}) {
+ const navigate=useNavigate();
+  const submit = () =>{
+    axios.post(`https://propertylist.onrender.com/usersProperties`,objPost).then(res => {
+      successToast('Your House has been Published');
+      setTimeout(()=>{
+        navigate('/usersProperties')
+      },1000)
+      
+    })
+    .catch(err =>errorToast('Sorry Something went Wrong'))
+  }
   return (
 
       <div className='sell-Finish'>
@@ -9,8 +24,7 @@ export default function SellFinish() {
           <div className='sell-text-Finish'>
               <h1>Finish up and publish</h1>
                <p>In this step, Finally, you will submit the inputs, click on Publish Now to confirm your information</p>
-               <input type='Submit' value='Publish Now'></input>
-
+               <input type='Submit' value='Publish Now' onClick={submit}></input>
            </div>
 
            <div className='sell-img-Finish'>
@@ -20,7 +34,7 @@ export default function SellFinish() {
              {/* <img src= {imageFinish} alt='img-Finish'></img> */}
              
            </div>
-
+      
       </div>
 
   )

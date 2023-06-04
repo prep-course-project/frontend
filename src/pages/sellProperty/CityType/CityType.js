@@ -76,6 +76,7 @@ export default function CityType({objPost}) {
 
         </div>
         </div>
+        <button className='cityType__btn' onClick={()=>window.scrollBy(0,window.innerHeight-150)}>Next</button>
         </div>
     </div>
   )

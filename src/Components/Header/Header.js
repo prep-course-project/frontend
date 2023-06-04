@@ -7,10 +7,10 @@ import logo from '../../pages/Home/assets/logo'
 import UserPost from '../../pages/UserPost/UserPost';
 import { Link } from 'react-router-dom';
 
-export default function Header({location}) {
+export default function Header({location,}) {
   console.log(location)
   return (
-    <Navbar  expand="lg" className={`${location==='/'?'onMain__absolute':'header-cont1'} `} >
+    <Navbar  expand="lg"  className={`${location==='/'?'onMain__absolute':'header-cont1'} ${location==='/favorites'?'fav__none':''} ${location==='/sellProperty'?'fav__none':''} `} >
       <Container className='header-cont2'>
         <Link className='navbar-brand header-logo-section' to="/">
           {/* <img className='logo-header'  src={logo} alt="" /> */}
@@ -23,7 +23,7 @@ export default function Header({location}) {
             <Link className='nav-link header-link' to='/PropertyList'>PropertyList</Link>
             <Link className='nav-link header-link' to='/favorites'>Favorite</Link>
             <Link className='nav-link header-link' to='/sellProperty'>Sell Now</Link>
-            <Link className='nav-link header-link' to='/usersProperties'>User property</Link>
+            <Link className='nav-link header-link' to='/usersProperties'>From Owner</Link>
             <Link className='nav-link header-link' to='/About'>About</Link>
              {/* <Nav.Link href="/">Home</Nav.Link>
              <Nav.Link href="/PropertyList">PropertyList</Nav.Link>

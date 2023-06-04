@@ -76,6 +76,9 @@ z-index: 100;
      z-index: 10;
 
 }
+.fav__none{
+     display: none;
+}
 
 /* .header-link::before{
      width: 0;

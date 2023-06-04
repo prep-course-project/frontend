@@ -4,10 +4,13 @@ import SellHero from './SellHero'
 import CityType from './CityType/CityType';
 import PriceArea from './price_area/Price_Area';
 import SellContact from './SellContact/SellContact';
-import Finial from './Finial/Finial';
 import Sell_features from './sell_features/sell_features';
-
+import SellFinish from './SellFinish/SellFinish'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function SellProperty() {
+  const errorToast=(message)=> toast.error(message);
+  const successToast=(messaage)=>toast(messaage);
   let obj = {
     propertyType : 0,
     area : 0,
@@ -30,13 +33,28 @@ export default function SellProperty() {
   
   return (
     <div>
+      
       <SellHero  />
       <SellSection2/>
       <CityType objPost = {setObjPost}/>
       <PriceArea objPost = {setObjPost}/>
       <Sell_features objPost = {setObjPost}/>
       <SellContact objPost = {setObjPost} data={objPost} />
-      <Finial  objPost = {objPost} />
+      <SellFinish errorToast={errorToast} successToast={successToast} objPost = {objPost} />
+      <ToastContainer 
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        
+        
+        />
     </div>
   )
 }

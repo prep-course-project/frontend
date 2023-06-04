@@ -19,10 +19,8 @@ export default function UserPost() {
     useEffect(() => {
       getUsersPosts();
       }, []);
-
   return (
     <div>
-
      {
         userPost.map((userPost)=>(
             <UserPostCard key={userPost.id} data={userPost}/>

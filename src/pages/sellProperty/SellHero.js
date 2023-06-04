@@ -1,6 +1,6 @@
 import React from 'react'
 import './SellHero.css'
-export default function SellHero() {
+export default function SellHero({handleSelect}) {
   return (
     <div className='sell-main-hero'>
         <div className='sell-title'>
@@ -40,7 +40,7 @@ export default function SellHero() {
           </div>
          </div>
        
-         <button className='sell-hero-btn' >Get Started</button>
+         <button className='sell-hero-btn' onClick={()=>window.scrollBy(0,window.innerHeight)}>Get Started</button>
 
       </div>
 

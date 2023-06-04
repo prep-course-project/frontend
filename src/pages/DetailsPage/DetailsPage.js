@@ -91,9 +91,6 @@ function DetailsPage() {
   const Addcomment = (e) => {
     e.preventDefault();
     setIsUpdated(false);
-    console.log(e.target.Name.value, "from rivew")
-
-
     const obj = {
       commentName: e.target.Name.value,
       Email: e.target.Email.value,
@@ -104,9 +101,7 @@ function DetailsPage() {
       .then(res => {
         let newComments = allcomment;
         newComments.push(res.data[0])
-        console.log(res.data[0])
-        setAllcomment(newComments)
-        console.log(allcomment)
+        setAllcomment((current)=>[...current,res.data[0]])
 
       }).catch(err => console.log(err))
   }
@@ -126,7 +121,7 @@ function DetailsPage() {
 
           <div className="top-section">
             <section className="slider">
-              <Carousel fade>
+              <Carousel  fade>
                 {data.photos.map((item) => {
                   return (
                     <Carousel.Item>
@@ -377,6 +372,18 @@ function DetailsPage() {
             </section>
           </div>
 
+          <ToastContainer 
+        position="bottom-right"
+        autoClose={1500}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        />
         </div>
       )}
     </>

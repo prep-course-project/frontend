@@ -15,9 +15,7 @@ function UserPostCard({ data }) {
 
         <div className="userPost__details">
           <h6>{data.title}</h6>
-        
           <p>{data.price} AED </p>
-        
         <p> {Math.floor(data.area)} Sq Ft </p>
         <p>{data.purpose} </p>
         <div classname="fav_detalis">

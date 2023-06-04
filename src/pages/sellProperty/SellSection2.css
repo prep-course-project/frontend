@@ -37,3 +37,24 @@
     /* border-color: black; */
     /* border-radius: 21px; */
 }
+.sell__section2Btn {
+    width:30%;
+    height: 45px;
+    display: block;
+  padding: 10px 20px;
+  align-self: center;
+  background-color: #709ac8;
+  align-self: flex-start;
+  margin-top: 10%;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+  }
+  
+  .sell__section2Btn:hover {
+    background-color: #0056b3;
+  }
+ 

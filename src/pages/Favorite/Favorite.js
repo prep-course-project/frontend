@@ -5,7 +5,6 @@ import FavCards from '../../Components/favCards/favCards';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import trialData from './favData.json';
 
 export default function Favorite({ data }) {
   const [favoriteList, setFavoriteList] = useState([]);
@@ -51,7 +50,9 @@ export default function Favorite({ data }) {
           <Link className="Fav-Home tab" to="/">Home</Link>
           <Link className="Fav-Prop tab" to="/PropertyList">PropertyList</Link>
           <Link className="Fav-Fav tab" to="/favorites">Favorite</Link>
-          <Link className="Fav-About tab" to="/About">About</Link>
+          <Link className="Fav-Home tab" to='/sellProperty'>Sell Now</Link>
+          <Link  to="/usersProperties" className="Fav-Home tab" >From Owner</Link>
+          <Link  to="/About" className="Fav-Home tab" >About</Link>
         </div>
       </section>
       <section className="data-fav">
@@ -66,7 +67,7 @@ export default function Favorite({ data }) {
           <p>Purpose</p>
         </section>
         <div className="cardNumber1">
-        {trialData.map((item) => (
+        {favoriteList.map((item) => (
           <FavCards handleDeleteFavorite={handleDeleteFavorite} data={item} />
         ))}
       </div>

@@ -130,10 +130,7 @@ export default function PropertyList() {
         draggable
         pauseOnHover
         theme="light"
-        
-        
         />
-        {/* <Test/> */}
     </div>
   );
 }

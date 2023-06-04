@@ -11,6 +11,7 @@ export default function SellSection2() {
                <p>In this step, we'll ask you which type of property you have 
                 and some info about your property Then let us know the location and 
                  how many guests can stay</p>
+                 <button  className='sell__section2Btn' onClick={()=>window.scrollBy(0,window.innerHeight)}>Next</button>
            </div>
            <div className='sell-img-section2'>
              <img src='https://m.media-amazon.com/images/I/71qE0TRjUQL._AC_SX679_.jpg' alt='img-section2'></img>

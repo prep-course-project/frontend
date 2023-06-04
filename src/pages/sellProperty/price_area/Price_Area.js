@@ -124,6 +124,7 @@ export default function PriceArea({objPost}) {
             onChange={handleUrlChange}
           />
         </div>
+        <button className='nextArea__btn' onClick={()=>window.scrollBy(0,window.innerHeight)}>Next</button>
       </div>
 
       <div className="price-area-container">
@@ -178,6 +179,8 @@ export default function PriceArea({objPost}) {
             <span>Sq Ft</span>
           </div>
         </section>
+        <button className='nextArea__btn' onClick={()=>window.scrollBy(0,window.innerHeight)}>Next</button>
+
       </div>
     </div>
   );
