@@ -7,7 +7,7 @@ import logo from '../../pages/Home/assets/logo'
 import UserPost from '../../pages/UserPost/UserPost';
 import { Link } from 'react-router-dom';
 
-export default function Header({location,}) {
+export default function Header({location}) {
   console.log(location)
   return (
     <Navbar  expand="lg"  className={`${location==='/'?'onMain__absolute':'header-cont1'} ${location==='/favorites'?'fav__none':''} ${location==='/sellProperty'?'fav__none':''} `} >

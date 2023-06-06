@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 import MainCard from "../../Components/mainCard/mainCard";
 import FilterSection from "./FilterSection/FilterSection";
 import "./PropertyList.scss";
-import "./PropertyList.css";
 import { initialFilter,propertyTypeList,cities } from "./propertyConstants";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function PropertyList() {
+  const [loding , setLoding] = useState(false)
   const [propertiesList, setPropertiesList] = useState([]);
   const [loadded, setLoaded] = useState(false);
   const { city,purpose } = useParams();
@@ -17,8 +17,10 @@ export default function PropertyList() {
   const errorToast=(message)=> toast.error(message);
   const successToast=(messaage)=>toast(messaage);
   function handleChange(type, payload) {
+    console.log(type,payload)
     let updatedValue = {};
     updatedValue = { [`${type}`]: payload };
+    console.log([updatedValue])
     setFilterState((prevFilter) => ({
       ...prevFilter,
       ...updatedValue,
@@ -29,8 +31,9 @@ export default function PropertyList() {
    else  if(type==='city'){
     setSearchValue(getCityName(payload));
    }else if(type==='propertyType'){
+    console.log(payload,'targetType')
+    console.log(propertyTypeList)
      let targetProperty=propertyTypeList.filter(e=>e.ApiQuery==payload)[0];
-     console.log(targetProperty)
      setSearchValue(`${targetProperty.type}`)
    }
   }
@@ -43,7 +46,6 @@ export default function PropertyList() {
       return targetCity
     }
   }
-  const [loding , setLoding] = useState(false)
   function handleGetAllProperties(url = process.env.REACT_APP_URL) {
     setLoding(true)
     axios
@@ -59,37 +61,29 @@ export default function PropertyList() {
       })
       .catch((err) => errorToast(err));
   }
-
+function updateQueries(type,payload){
+  let  updatedValue={};
+  updatedValue={[`${type}`]:payload}
+  setFilterState((prevState)=>({
+    ...prevState,
+    ...updatedValue,
+  }))
+}
   useEffect(() => { 
+    setSearchValue(`${purpose?purpose:null}  ${city?getCityName(city):''}`);
     if (city) {
-      let updatedValue = {};
-      updatedValue = { [`city`]: city };
-      setFilterState((prevFilter) => ({
-        ...prevFilter,
-        ...updatedValue,
-      }));
-      handleGetAllProperties(
-        `${process.env.REACT_APP_URL}?locationExternalIDs=${city}`
-      );
-    }else if(purpose){
-      let updatedValue = {};
-      updatedValue = { [`purpose`]: purpose };
-      setFilterState((prevFilter) => ({
-        ...prevFilter,
-        ...updatedValue,
-      }));
-      setSearchValue(purpose)
-      handleGetAllProperties(
-        `${process.env.REACT_APP_URL}?purpose${purpose}`
-      );
-    } else {
-      handleGetAllProperties();
+        updateQueries('city',city)
+        handleGetAllProperties(`${process.env.REACT_APP_URL}?locationExternalIDs=${filterState.city}`)
+      }
+    else if(purpose) {
+      updateQueries('purpose',city)
     }
+    else handleGetAllProperties()
     window.scrollTo(0,0)
   }, []);
   useEffect(() => {
     if(loadded){
-      let extraQuerie = `locationExternalIDs=${filterState.city}&minRooms=${filterState.roomsMin}&maxrooms=${filterState.roomsMax}&minBaths=${filterState.bathMin}&maxBaths=${filterState.bathMax}&priceMin=${filterState.priceMin}&priceMax=${filterState.priceMax}&categoryExternalID=${filterState.propertyType}&purpose=${filterState.purpose}`;
+      let extraQuerie = `locationExternalIDs=${filterState.city}&minRooms=${filterState.roomsMin}&maxRooms=${filterState.roomsMax}&minBaths=${filterState.bathMin}&maxBaths=${filterState.bathMax}&priceMin=${filterState.priceMin}&priceMax=${filterState.priceMax}&categoryExternalID=${filterState.propertyType}&purpose=${filterState.purpose}`;
       handleGetAllProperties(`${process.env.REACT_APP_URL}?${extraQuerie}`);
     }
 
@@ -107,7 +101,7 @@ export default function PropertyList() {
         <div className="">
           <FilterSection handleChange={handleChange} />
         </div>
-        <h2>
+        <h2>ً
           Showing Result for :{" "}
           <span className="property__searchVal">{searchValue}</span>
         </h2>
