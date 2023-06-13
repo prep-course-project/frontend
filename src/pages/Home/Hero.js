@@ -1,5 +1,5 @@
 import React from 'react'
-import video from "./assets/Video.mp4"
+import video from "./assets/video.mp4"
 import '../Home/Hero.css'
 import CardSlider from './CardSlider'
 import { Link } from 'react-router-dom'
