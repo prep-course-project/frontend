@@ -13,14 +13,12 @@ export default function PropertyList() {
   const [loadded, setLoaded] = useState(false);
   const { city,purpose } = useParams();
   const [filterState, setFilterState] = useState(initialFilter);
-  const [searchValue, setSearchValue] = useState(getCityName(city)||'All');
+  const [searchValue, setSearchValue] = useState('All');
   const errorToast=(message)=> toast.error(message);
   const successToast=(messaage)=>toast(messaage);
   function handleChange(type, payload) {
-    console.log(type,payload)
     let updatedValue = {};
     updatedValue = { [`${type}`]: payload };
-    console.log([updatedValue])
     setFilterState((prevFilter) => ({
       ...prevFilter,
       ...updatedValue,
@@ -31,8 +29,6 @@ export default function PropertyList() {
    else  if(type==='city'){
     setSearchValue(getCityName(payload));
    }else if(type==='propertyType'){
-    console.log(payload,'targetType')
-    console.log(propertyTypeList)
      let targetProperty=propertyTypeList.filter(e=>e.ApiQuery==payload)[0];
      setSearchValue(`${targetProperty.type}`)
    }
@@ -41,7 +37,6 @@ export default function PropertyList() {
     if(city){
       let targetCity;
       targetCity= cities.filter(e=>e.slice(e.length-4,e.length)==cityParameter)[0];
-      console.log(targetCity,'in get city')
       targetCity=targetCity.slice(0,targetCity.length-4)
       return targetCity
     }
@@ -53,9 +48,9 @@ export default function PropertyList() {
       .then((res) => {
         setPropertiesList(res.data.hits);
         setLoding(false)
-        console.log(res);
         if (res.data.hits.length) {
           setLoaded(true);
+          
         } else {
         }
       })
@@ -73,12 +68,16 @@ function updateQueries(type,payload){
     setSearchValue(`${purpose?purpose:null}  ${city?getCityName(city):''}`);
     if (city) {
         updateQueries('city',city)
+        setSearchValue(getCityName(city))
         handleGetAllProperties(`${process.env.REACT_APP_URL}?locationExternalIDs=${filterState.city}`)
       }
     else if(purpose) {
       updateQueries('purpose',city)
     }
-    else handleGetAllProperties()
+    else {
+      handleGetAllProperties()
+      setSearchValue('All')
+    }
     window.scrollTo(0,0)
   }, []);
   useEffect(() => {
@@ -101,7 +100,7 @@ function updateQueries(type,payload){
         <div className="">
           <FilterSection handleChange={handleChange} />
         </div>
-        <h2>ً
+        <h2>
           Showing Result for :{" "}
           <span className="property__searchVal">{searchValue}</span>
         </h2>
